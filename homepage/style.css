@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+.box {
+    background-color: black;
+    opacity:0.8;
+    max-width: 500px;
+    align-items: left;
+    margin-left: 170px ;
+    border-radius: 20px;
+}
+
+.a{
+    text-align: justify;
+    min-width:225px ;
+    margin-left: 525px;
+    margin-top: -140px;
+}
+
+.a h3{
+    margin-left: 80px;
+}
+
+.owner {
+    text-align: justify;
+    min-width: 225px ;
+    margin-left: 975px;
+    margin-top: -443px;
+}
+
+.border {
+    position: relative;
+    border: 0.5px solid #f98e1d;
+}
+
+.about{
+    margin-left: 10px;
+    margin-top: 70px;
+}
+.contact
+{ 
+    margin:3%;
+    margin-top:150x;
+}
+.get
+{
+    margin:3%;
+}
+.contact-us .no{
+    margin:3%;
+    margin-top:-100px;
+}
+.border2 {
+    position: relative;
+    border: 0.5px solid #f98e1d;
+}
+.no2
+{
+    text-align:justify;
+    min-width:300px;
+    margin-left:820px;
+    margin-top:-240px;
+}
+carousel
+{
+    position:relative
+}
+.border3 {
+    position: relative;
+    border: 0.5px solid #f98e1d;
+}
+.review
+{ 
+    margin:3%;
+    margin-top:200px;
+}
+.testimonials
+{
+    margin:50px auto;
+}
+.testimonials h1{
+    text-align:center;
+    font-weight:bold;
+    padding-bottom:50px;
+    text-transform:uppercase;
+
+}
+.testimonials h1::after{
+    content:'';
+    background:#f98e1d;
+    display:block;
+    height:3px;
+    width:170px;
+    margin:20px auto 5px;
+
+}
+.testimonials .row
+{
+    margin-top:30px;
+
+}
+.col-md-4
+{
+    margin:40px auto;
+}
+.profile
+{
+    padding:70px 10px 10px;
+    background-color:#f98e1d;
+}
+.profile img
+{
+    top:1800px;
+    position:absolute;
+    left:calc(80% -50px);
+    border:10px solid white;
+}
+.user
+{
+    width:120px;
+    height:120px;
+    border-radius:90%;
+}
+blockquote
+{
+    font-size:16px;
+    line-height:30px;
+}
+blockquote::before
+{
+    content:'❝';
+    font-size:50px;
+    position:relative;
+    color:#ffff;
+    line-height:20px;
+    bottom:-15px;
+    right:5px;
+}
+blockquote::after
+{
+    content:'❞';
+    font-size:50px;
+    position:relative;
+    color:#ffff;
+    line-height:20px;
+    bottom:-15px;
+    left:5px;
+}
+.profile:hover
+{
+    box-shadow:o o 15px 5px rgba(0,0,0,0.2);
+    cursor:pointer;
+    transition:0.5s;
+}
+
+.navbar-nav a:hover {
+    background-color: #f98e1d;
+    color: #ffff;
+}
+
+.slideshow {
+    width: 1200px;
+    height: 800px;
+    margin-left: 160px;
+    background-color: #d6d2ce;
+}
