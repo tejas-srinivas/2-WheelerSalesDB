@@ -50,31 +50,31 @@
             </a>
           </li>
           <li class="nav-link">
-            <a href="#">
+            <a href="vechileBooking.php">
             <i class="fa-solid fa-cart-shopping icon"></i>
               <span class="text nav-text">Vechile Booking</span>
             </a>
           </li>
           <li class="nav-link">
-            <a href="#">
+            <a href="fittings">
             <i class="fa-solid fa-bars icon"></i>
               <span class="text nav-text">Fittings</span>
             </a>
           </li>
           <li class="nav-link">
-            <a href="#">
+            <a href="payment_details">
             <i class="fa-solid fa-money-bill icon"></i>
               <span class="text nav-text">Payment Details</span>
             </a>
           </li>
           <li class="nav-link">
-            <a href="#">
+            <a href="updates_changes.php">
             <i class="fa-solid fa-wrench icon"></i>
               <span class="text nav-text">Updates/Changes</span>
             </a>
           </li>
           <li class="nav-link">
-            <a href="#">
+            <a href="orderCancellation.php">
             <i class="fa-solid fa-ban icon"></i>
               <span class="text nav-text">Order Cancellation</span>
             </a>
@@ -137,21 +137,12 @@
         <h1 class="jupiter" style="color:#f98e1d" ><u>JUPITER 125</u></h1>
         <h3 class="paragraph3">TVS Jupiter is a variomatic scooter launched in September 2013 by India's TVS Motor Company. ... On 7th October 2021, TVS Launched the 125cc Variant of Jupiter in order to compete TVS Ntorq, Honda Activa 125 and Suzuki Access 125. and uses an all new 124.8 cc engine.</h3>
   </br>
-  
     <a href="../userpage/jupiterdetails/jupiter.html" class="click3">click here for further details</a>
-  
-  
   </div>
-  
       </div>
   </br>
   </br>
   <div class="border3"></div> 
-  
-  
-
-
    </section>
-    
   </body>
 </html>

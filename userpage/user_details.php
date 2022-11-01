@@ -18,7 +18,7 @@
     <!-- Bootstrap CSS -->
     <link href="user_details.css" rel="stylesheet" type="text/css">
     <link href="user_style.css" rel="stylesheet" type="text/css">
-    <title>VEHICAL ENQUIRY</title>
+    <title>User Details</title>
   </head>
   <body>
     <nav class="designer-slider">
@@ -62,7 +62,7 @@
             </a>
           </li>
           <li class="nav-link">
-            <a href="#">
+            <a href="payment_details.php">
             <i class="fa-solid fa-money-bill icon"></i>
               <span class="text nav-text">Payment Details</span>
             </a>
@@ -74,7 +74,7 @@
             </a>
           </li>
           <li class="nav-link">
-            <a href="#">
+            <a href="orderCancellation.php">
             <i class="fa-solid fa-ban icon"></i>
               <span class="text nav-text">Order Cancellation</span>
             </a>
@@ -100,10 +100,18 @@
         <center><h2 style="margin-top:-10px ;">Provide Your Details for Booking ...</h2></center>
           <div class="row">
             <div class="col-25">
-              <label for="fname">Full Name</label>
+              <label for="fname">First Name</label>
             </div>
             <div class="col-75">
-              <input type="text" id="fname" name="fullname" placeholder="Enter full name">
+              <input type="text" id="fname" name="first_name" placeholder="<?php echo $_SESSION['first_name']; ?>" disabled>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="fname">Last Name</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="fname" name="last_name" placeholder="<?php echo $_SESSION['last_name']; ?>" disabled>
             </div>
           </div>
           <div class="row">
@@ -122,13 +130,13 @@
               <input type="text" id="license" name="driving_license" placeholder="Enter DL no.">
             </div>
           <div class="button">
-          <button type='submit' class="book-now" name="submit" value="Register" id="submit"><b>BOOK NOW</b></button>
-          <button type='submit' class="back" name="submit" value="Register" id="submit"><b>BACK</b></button>
+            <button type='submit' class="book-now" name="submit" value="Register" id="submit"><b>BOOK NOW</b></button>
+            <button type='submit' class="back" name="submit" id="submit">
+              <a href="../userpage/dashboard.php" style="text-decoration: none; color:white"><b>BACK</b></a></button>
           </div> 
-          </div>
-        </form>
       </div>
-</section>
-
+      </form>
+    </div>
+  </section>
   </body>
 </html>

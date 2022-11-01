@@ -89,3 +89,7 @@
     margin-left:700px;
     margin-top:-220px;
 }
+.nav-item:hover {
+    background-color: #f98e1d;
+    color: #ffff;
+}

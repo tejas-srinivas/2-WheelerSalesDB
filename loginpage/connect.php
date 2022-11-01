@@ -38,6 +38,7 @@
                     $_SESSION['username'] = $username;
                     $_SESSION['first_name'] = $hash['first_name']; //retrive firstname from users table
                     $_SESSION['last_name'] = $hash['last_name'];   //retrive lastname from users table
+                    $_SESSION['email'] = $hash['email']; 
                     echo "<script>window.location.href='../userpage/dashboard.php'</script>";
                 } else {
                     echo "<script>alert('Enter Valid password');</script>";
