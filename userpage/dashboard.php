@@ -18,7 +18,7 @@
     <!-- Bootstrap CSS -->
     
     <link href="user_style.css" rel="stylesheet" type="text/css">
-    <title>Dashboard page</title>
+    <title>VEHICAL ENQUIRY</title>
   </head>
   <body>
     <nav class="designer-slider">
@@ -90,15 +90,67 @@
     </div> 
   </nav>  
    <section class="home">
-      <div class="text"><h1>Dashboard</h1></div>
+      <div class="text"><h1 style="color:#f98e1d">VECHILE ENQUIRY</h1></div>
       <div class="border"></div>
       <br>
-      <h2><u>Activa</u></h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos architecto rerum accusamus consectetur ipsam voluptates deleniti labore eligendi aut. Odit?</p>
-      <h2><u>Access</u></h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit perferendis distinctio, consequuntur eum accusantium perspiciatis et debitis ipsum magnam enim?</p>
-      <h2><u>Jupiter</u></h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio dicta iste nobis cumque pariatur deserunt quidem adipisci, velit sit consequatur.</p> 
+      <div>
+        <img class="img1" src="activa6g.png" href="#" width="300px" height="250px ">
+      </img>
+      <div class="activadetails">
+    
+        <h1 class="axtiva" style="color:#f98e1d" ><u>ACTIVA 6G</u></h1>
+        <h3 class="paragraph1">The Honda Activa is a motor scooter made by Honda Motorcycle and Scooter India (HMSI). It was launched in India in May 2000. Production in Mexico began in 2004.</h3>
+  </br>
+  
+    <a href="../userpage/vehicledetails/activa.html" class="click1">click here for further details</a>
+  
+  
+  </div>
+  
+      </div>  
+  </br>
+  <div class="border1"></div>  
+  </br>
+  <div>
+        <img class="img2" src="access (2).png" href="#" width="500px" height="300px ">
+      </img>
+      <div class="accessdetails">
+    
+        <h1 class="access" style="color:#f98e1d" ><u>ACCESS 125</u></h1>
+        <h3 class="paragraph2">The Suzuki Access 125 is a scooter produced by the Japanese motorcycle company Suzuki through its Indian subsidiary. It was introduced on September 18, 2007.</h3>
+  </br>
+  
+    <a href="../userpage/accessdetails/access.html" class="click2">click here for further details</a>
+  
+  
+  </div>
+  
+      </div>  
+  </br>
+  <div class="border2"></div>  
+  </br>
+  <div>
+        <img class="img3" src="jupiter125.png" href="#" width="500px" height="300px ">
+      </img>
+      <div class="jupiterdetails">
+    
+        <h1 class="jupiter" style="color:#f98e1d" ><u>JUPITER 125</u></h1>
+        <h3 class="paragraph3">TVS Jupiter is a variomatic scooter launched in September 2013 by India's TVS Motor Company. ... On 7th October 2021, TVS Launched the 125cc Variant of Jupiter in order to compete TVS Ntorq, Honda Activa 125 and Suzuki Access 125. and uses an all new 124.8 cc engine.</h3>
+  </br>
+  
+    <a href="../userpage/jupiterdetails/jupiter.html" class="click3">click here for further details</a>
+  
+  
+  </div>
+  
+      </div>
+  </br>
+  </br>
+  <div class="border3"></div> 
+  
+  
+
+
    </section>
     
   </body>
