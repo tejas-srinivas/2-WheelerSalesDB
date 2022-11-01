@@ -16,7 +16,7 @@
     <!-- CDN CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Bootstrap CSS -->
-    
+    <link href="user_details.css" rel="stylesheet" type="text/css">
     <link href="user_style.css" rel="stylesheet" type="text/css">
     <title>VEHICAL ENQUIRY</title>
   </head>
@@ -89,3 +89,46 @@
       </div>
     </div> 
   </nav>  
+  <section class="home">
+      <div class="text"><h1 style="color:#000"><b>User Details</b></h1></div>
+      <div class="border"></div>
+      <br>
+      <br>
+      <div class="container">
+        <form action="user_details.php" method="post">
+        <center><img src="../registerpage/logo.png" style="width: 450px; height: 150px; margin-top:-45px"></center>
+        <center><h2 style="margin-top:-10px ;">Provide Your Details for Booking ...</h2></center>
+          <div class="row">
+            <div class="col-25">
+              <label for="fname">Full Name</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="fname" name="fullname" placeholder="Enter full name">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="lname">Aadhar Number</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="aadhar" name="aadhar_no" placeholder="Enter aadhar no.">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-25">
+              <label for="lname">Driving License Number</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="license" name="driving_license" placeholder="Enter DL no.">
+            </div>
+          <div class="button">
+          <button type='submit' class="book-now" name="submit" value="Register" id="submit"><b>BOOK NOW</b></button>
+          <button type='submit' class="back" name="submit" value="Register" id="submit"><b>BACK</b></button>
+          </div> 
+          </div>
+        </form>
+      </div>
+</section>
+
+  </body>
+</html>

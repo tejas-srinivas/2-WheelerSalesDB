@@ -21,7 +21,8 @@ if(isset($_POST['submit']))  {
     $stmt->bind_param('sisss',$name,$mob_no,$email,$model,$location_);  //s=string ,i=integer
     $stmt->execute(); //executes the function
     if($stmt) {
-        echo "<script>alert('Your test ride has been booked Successfully!');</script>";
+        echo "<script>alert('Your test ride has been booked Successfully! and
+        Our Person will contact you shortly...');</script>";
         echo "<script>window.location.href='../loginpage/login.html'</script>";
     }
     else {

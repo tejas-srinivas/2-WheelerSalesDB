@@ -90,7 +90,7 @@
     </div> 
   </nav>  
    <section class="home">
-      <div class="text"><h1 style="color:#f98e1d">VECHILE ENQUIRY</h1></div>
+      <div class="text"><h1 style="color:#000"><b>Vechile Enquiry</b></h1></div>
       <div class="border"></div>
       <br>
       <div>

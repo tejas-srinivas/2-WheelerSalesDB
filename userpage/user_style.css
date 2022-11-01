@@ -135,7 +135,7 @@ header .logo-text .sub-heading {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow-y: scroll;
+
 }
 
 .home {
@@ -195,7 +195,6 @@ header .logo-text .sub-heading {
     padding:8px;
     text-align:center;
     text-decoration:none;
-    text-decoration:none;
     text-transform:uppercase;
     color:#ffff;
     border-radius:7px;
@@ -204,8 +203,7 @@ header .logo-text .sub-heading {
 }
 .img1
 {
-    margin-left: 60px;
-    
+    margin-left: 60px; 
 }
 .border1
 {
@@ -241,7 +239,6 @@ header .logo-text .sub-heading {
     padding:8px;
     text-align:center;
     text-decoration:none;
-    text-decoration:none;
     text-transform:uppercase;
     color:#ffff;
     border-radius:7px;
@@ -251,8 +248,6 @@ header .logo-text .sub-heading {
 .img2
 {
     margin-left: -20px;
-   
-
 }
 .border2
 {
@@ -287,7 +282,6 @@ header .logo-text .sub-heading {
       width:450px;
       padding:8px;
       text-align:center;
-      text-decoration:none;
       text-decoration:none;
       text-transform:uppercase;
       color:#ffff;
