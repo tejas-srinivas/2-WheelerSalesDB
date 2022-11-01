@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    resize: vertical;
+    margin-left: 20px;
+  }
+  
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    margin-left: -40px;
+  }
+  
+  .book-now {
+    background-color: #f98e1d;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    float: right;
+    margin-top :10px;
+    margin-left: 20px;
+    font-size: 18px;
+  }
+  .back {
+    background-color: #f98e1d;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top :10px;
+    margin-left: 40px;
+    font-size: 18px;
+  }
+  
+  .book-now:hover {
+    background-color: #a85a0c;
+  }
+
+  .back:hover {
+    background-color: #a85a0c;
+  }
+  
+  .container {
+    border-radius: 10px;
+    background-color: #f2f3f7;
+    padding: 50px 90px ;
+    box-shadow: 5px 5px 10px #999;
+    margin-left: 17rem;
+  }
+  
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
