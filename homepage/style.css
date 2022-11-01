@@ -35,11 +35,13 @@
 .border {
     position: relative;
     border: 0.5px solid #f98e1d;
+    margin-top: -35px;
 }
 
 .about{
     margin-left: 10px;
     margin-top: 70px;
+    margin: 3%;
 }
 .contact
 { 
@@ -57,6 +59,7 @@
 .border2 {
     position: relative;
     border: 0.5px solid #f98e1d;
+    margin-top: -35px;
 }
 .no2
 {
@@ -72,6 +75,7 @@ carousel
 .border3 {
     position: relative;
     border: 0.5px solid #f98e1d;
+    margin-top: -10px;
 }
 .review
 { 
@@ -114,7 +118,7 @@ carousel
 }
 .profile img
 {
-    top:1800px;
+    top:2250px;
     position:absolute;
     left:calc(80% -50px);
     border:10px solid white;
@@ -167,4 +171,23 @@ blockquote::after
     height: 800px;
     margin-left: 160px;
     background-color: #d6d2ce;
+}
+
+ .btn-lg {
+    margin-top: 80px;
+    size:500px;
+    
+}
+
+.dealership {
+    margin-top: 150px;
+}
+
+.review {
+    margin-top: 30px;
+}
+.logo-image {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }

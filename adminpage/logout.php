@@ -3,5 +3,5 @@
     session_start();
     session_unset();
     session_destroy();
-    echo "<script>window.location.href='../adminpage/admin_login.html'</script>";
+    echo "<script>window.location.href='../homepage/landing.html'</script>";
 ?>

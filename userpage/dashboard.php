@@ -38,7 +38,7 @@
       <div class="menu">
         <ul class="menu-links">
         <li class="nav-link">
-            <a href="enquiry.php">
+            <a href="dashboard.php" style="background-color: #f98e1d; color: white">
             <i class="fa-solid fa-motorcycle icon"></i>
               <span class="text nav-text">Vechile Enquiry</span>
             </a>
