@@ -35,7 +35,7 @@
                 if ($verify == 1) {
                     session_start();
                     echo "<script>alert('Login Successfull');</script>";
-                    $_SESSION['username'] = $username;
+                    $_SESSION['username'] = $hash['username'];
                     $_SESSION['first_name'] = $hash['first_name']; //retrive firstname from users table
                     $_SESSION['last_name'] = $hash['last_name'];   //retrive lastname from users table
                     $_SESSION['email'] = $hash['email']; 
@@ -53,6 +53,6 @@
             exit();
         }
     }
-    ?> 
+?> 
         
     
