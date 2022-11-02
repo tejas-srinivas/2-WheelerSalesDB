@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-user-details'])
             </a>
           </li>
           <li class="nav-link">
-            <a href="vechileBooking.php">
+            <a href="#">
               <i class="fa-solid fa-cart-shopping icon"></i>
               <span class="text nav-text">Vechile Booking</span>
             </a>
@@ -138,7 +138,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-user-details'])
             <label for="fname">First Name</label>
           </div>
           <div class="col-75">
-            <input type="text" id="fname" name="firstname" placeholder="<?php echo $_SESSION['first_name']; ?>">
+            <input type="text" id="fname" name="firstname" value="<?php echo $_SESSION['first_name']; ?>" required>
           </div>
         </div>
         <div class="row">
@@ -146,7 +146,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-user-details'])
             <label for="fname">Last Name</label>
           </div>
           <div class="col-75">
-            <input type="text" id="last_name" name="lastname" placeholder="<?php echo $_SESSION['last_name']; ?>">
+            <input type="text" id="last_name" name="lastname" value="<?php echo $_SESSION['last_name']; ?>" required>
           </div>
         </div>
         <div class="row">
@@ -154,7 +154,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-user-details'])
             <label for="lname">Aadhar Number</label>
           </div>
           <div class="col-75">
-            <input type="text" id="aadhar" name="aadhar_no" placeholder="Enter aadhar no.">
+            <input type="text" id="aadhar" name="aadhar_no" placeholder="Enter aadhar no. (eg: 1234-5678-9101)" required>
           </div>
         </div>
         <div class="row">
@@ -162,7 +162,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-user-details'])
             <label for="lname">Driving License Number</label>
           </div>
           <div class="col-75">
-            <input type="text" id="license" name="driving_license" placeholder="Enter DL no.">
+            <input type="text" id="license" name="driving_license" placeholder="Enter DL no. (eg: KA01-202012345)" required>
           </div>
           <div class="button">
             <button type='submit' class="book-now" name="submit-user-details" value="book-now" id="submit-user-details">
