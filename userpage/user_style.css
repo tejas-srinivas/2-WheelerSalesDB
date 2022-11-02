@@ -143,8 +143,8 @@ header .logo-text .sub-heading {
     top: 0;
     left: 250px;
     height: 100vh;
-    width: calc(100%-250px);
-    background-color: #faeee2;
+    width: calc(100%-250px); 
+    background-color: #a3774b;   
 }
 
 .home .text{
