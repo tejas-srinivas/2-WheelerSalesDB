@@ -17,18 +17,19 @@
     if (mysqli_connect_error()) {
       exit('Error connecting to the database' . mysqli_connect_errno());
     }
-    if (isset($_POST['email']) && isset($_POST['ph_no']) && isset($_POST['model']) && isset($_POST['location']) && isset($_POST['color'])) {
+    if (isset($_POST['email']) && isset($_POST['ph_no']) && isset($_POST['model']) && isset($_POST['location_']) && isset($_POST['color']) && isset($_POST['varient'])) {
       $email = $_POST['email'];
       $ph_no = $_POST['ph_no'];
       $model = $_POST['model'];
-      $location = $_POST['location'];
+      $location = $_POST['location_'];
       $color = $_POST['color'];
       $varient = $_POST['varient'];
       if (isset($_POST['submit-vechile-booking'])) {
-        $stmt = $con->prepare('INSERT INTO vechile_booking(email,ph_no,model,location,color,varient) VALUES (?,?,?,?,?,?)');   //end-to-end password protection
-        $stmt->bind_param('sissss',$email,$ph_no,$model,$location,$color,$varient);  //s=string ,i=integer
+        $stmt = $con->prepare('INSERT INTO vechile_booking(email,ph_no,model,color,varient,location_) VALUES (?,?,?,?,?,?)');   //end-to-end password protection
+        $stmt->bind_param('sissss',$email,$ph_no,$model,$color,$varient,$location);  //s=string ,i=integer
         $stmt->execute(); //executes the function
         if ($stmt) {
+          echo "<script>alert('Your Vechile is booked Successfully...');</script>";
           echo "<script>window.location.href='../userpage/fittings.php'</script>";
         } else {
           echo 'Error Occured inserting into records';
@@ -100,13 +101,13 @@
             </a>
           </li>
           <li class="nav-link">
-            <a href="updates_changes.php">
+            <a href="#">
             <i class="fa-solid fa-wrench icon"></i>
               <span class="text nav-text">Updates/Changes</span>
             </a>
           </li>
           <li class="nav-link">
-            <a href="orderCancellation.php">
+            <a href="#">
             <i class="fa-solid fa-ban icon"></i>
               <span class="text nav-text">Order Cancellation</span>
             </a>
@@ -151,8 +152,8 @@
               <label for="model">Model</label>
             </div>
             <div class="col-75">
-              <select id="model" name="model" onchange="dropdownChange(this.id,'color')" required>
-                <option value="#">Select Model</option>
+              <select id="model" name="model" onchange="dropdownChange(this.id,'color');" required>
+                <option value="">Select Model</option>
                 <option name="activa" value="Activa-6G">Activa 6G</option>
                 <option name="access" value="Access-125">Access 125</option>
                 <option name="jupiter" value="Jupiter-125">Jupiter 125</option>
@@ -165,9 +166,9 @@
               <label for="color">Color</label>
             </div>
             <div class="col-75">
-              <select id="color" name="color" required>
-                
-                </select>
+              <select id="color" name="color" required> 
+                <option value="">Select Color</option>
+              </select>
             </div>
           </div>  
                 
@@ -177,7 +178,7 @@
             </div>
             <div class="col-75">
               <select id="varient" name="varient" required>
-                <option value="#">Select Varient</option>
+                <option value="">Select Varient</option>
                 <option value="DRUM-BRAKE">DRUM BRAKE VARIENT</option>
                 <option value="DISC-BRACK-ALLOY">DISC BRAKE VARIENT(ALLOY WHEELS)</option>
                 <option value="DISC-BRACK-W/O-ALLOY">DISC BRAKE VARIENT(W/O ALLOY WHEELS)</option>
@@ -186,11 +187,11 @@
           </div>
           <div class="row">
             <div class="col-25">
-              <label for="model">Select Delivery Location</label>
+              <label for="location">Select Delivery Location</label>
             </div>
             <div class="col-75">
-              <select id="location" name="location" required>
-                <option value="#">Select Location</option>
+              <select id="location" name="location_" required>
+                <option value="">Select Location</option>
                 <option value="Vijaynagar">Vijaynagar</option>
                 <option value="Yelanka">Yelanka</option>
                 <option value="Indranagar">Indranagar</option>
@@ -200,7 +201,7 @@
           </div>
           
           <div class="button">
-            <button type='submit' class="book-now" name="submit-vechile-details" value="submit-vechile-details" id="submit-vechile-details"><b>BOOK NOW</b></button>
+            <button type="submit" class="book-now" name="submit-vechile-details" value="submit-vechile-details" id="submit-vechile-details"><b>BOOK NOW</b></button>
             <button type='button' class="back" name="back" id="back" style="margin-left: 170px;">
               <a href="../userpage/user_details.php" style="text-decoration: none; color:white;"><b>BACK</b></a></button>
           </div> 
@@ -208,36 +209,5 @@
       </form>
     </div>
   </section>
-
-  <!-- <script>
-    function dropdownChange(s1,s2) 
-    {
-      var s1 = document.getElementById(s1);
-      var s2 = document.getElementById(s2);
-
-      s2.innerHTML = "";
-      if(s1.value == "Activa-6G")
-      {
-        var array = ['White|White','Silver|Silver','Black|Black','Wine_Red|Wine Red','Aqua_Green|Aqua Green '];
-      }
-      else if(s1.value == "Access-125")
-      {
-        var array = ['White|White','Silver|Silver','Black|Black','Red|Red','Yellow|Yellow'];
-      }
-      else if(s1.value == "Jupiter-125")
-      {
-        var array = ['White|White','Silver|Silver','Brown|Brown','Blue|Blue','Aqua_Green|Aqua Green'];
-      }
-      for(var option in array)
-      {
-        var pair = array[option].split("|");
-        var newoption = document.createElement("option");
-
-        newoption.value = pair[0];
-        newoption.innerHTML = pair[1];
-        s2.options.add(newoption);
-      }
-    }
-  </script> -->
   </body>
 </html>
