@@ -19,10 +19,10 @@ function dropdownChange(s1,s2)
       for(var option in array)
       {
         var pair = array[option].split("|");
-        var newoption = document.createElement("option");
+        var color = document.createElement("option");
 
-        newoption.value = pair[0];
-        newoption.innerHTML = pair[1];
-        s2.options.add(newoption);
+        color.value = pair[0];
+        color.innerHTML = pair[1];
+        s2.options.add(color);
       }
     }
