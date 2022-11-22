@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-user-details'])
             </a>
           </li>
           <li class="nav-link">
-            <a href="#">
+            <!-- <a href="#"> -->
               <i class="fa-solid fa-cart-shopping icon"></i>
               <span class="text nav-text">Vechile Booking</span>
             </a>
@@ -92,7 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-user-details'])
             </a>
           </li>
           <li class="nav-link">
-            <a href="payment_details.php">
+            <!-- <a href="payment_details.php"> -->
               <i class="fa-solid fa-money-bill icon"></i>
               <span class="text nav-text">Payment Details</span>
             </a>

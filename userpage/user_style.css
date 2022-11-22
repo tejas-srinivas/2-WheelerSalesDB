@@ -302,7 +302,7 @@ header .logo-text .sub-heading {
     margin-top: 3px;
   } 
 
-  .act {
+.act {
     color: black;
 	border-radius: 10px;
 	margin-bottom: 15px;
@@ -312,4 +312,25 @@ header .logo-text .sub-heading {
     border-radius:20px;
     width : 1200px;
     margin-left:35px;
+}
+.black-box {
+    background-color: rgb(181 177 177);
+    opacity: 0.2;
+} 
+
+.confirm-message {
+    background: #f2f3f7;
+    box-shadow: 4px 5px 20px #999;
+    padding: 29px 27px 25px 26px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 52rem;
+    height: 22em;
+    margin: auto;
+    margin-top: 9rem;
+}
+.confirm-message .space{
+    margin-left: 30px;
 }

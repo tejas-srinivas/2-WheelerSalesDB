@@ -52,7 +52,7 @@ if (!isset($_SESSION['username'])) {
             </a>
           </li>
           <li class="nav-link">
-            <a href="#">
+            <!-- <a href="#"> -->
               <i class="fa-solid fa-cart-shopping icon"></i>
               <span class="text nav-text">Vechile Booking</span>
             </a>
