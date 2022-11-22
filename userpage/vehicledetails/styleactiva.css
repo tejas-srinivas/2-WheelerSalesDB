@@ -93,3 +93,8 @@
     background-color: #f98e1d;
     color: #ffff;
 }
+.carousel-item{
+    box-shadow: 5px 5px 10px #999;
+	padding: 45px 20px;
+    border-radius:20px;
+}
