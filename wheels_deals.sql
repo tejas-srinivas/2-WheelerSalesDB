@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2022 at 02:54 PM
+-- Generation Time: Nov 22, 2022 at 03:16 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -94,10 +94,10 @@ INSERT INTO `users` (`u_id`, `first_name`, `last_name`, `email`, `username`, `pa
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_details`
+-- Table structure for table `user_verification`
 --
 
-CREATE TABLE `user_details` (
+CREATE TABLE `user_verification` (
   `b_id` int(50) NOT NULL,
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
@@ -106,10 +106,10 @@ CREATE TABLE `user_details` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `user_details`
+-- Dumping data for table `user_verification`
 --
 
-INSERT INTO `user_details` (`b_id`, `firstname`, `lastname`, `aadhar_no`, `driving_license`) VALUES
+INSERT INTO `user_verification` (`b_id`, `firstname`, `lastname`, `aadhar_no`, `driving_license`) VALUES
 (1, 'Tejas', 'Srinivas', '7109-7199-2596', 'KA52-202015494'),
 (20, 'Tejas', 'Srinivas', '123456789012', 'KA52202015497'),
 (21, 'Tejas', 'Srinivas', '123456789013', 'KA52-202015468'),
@@ -164,9 +164,9 @@ ALTER TABLE `users`
   ADD UNIQUE KEY `email` (`email`);
 
 --
--- Indexes for table `user_details`
+-- Indexes for table `user_verification`
 --
-ALTER TABLE `user_details`
+ALTER TABLE `user_verification`
   ADD PRIMARY KEY (`b_id`),
   ADD UNIQUE KEY `license_no` (`driving_license`);
 
@@ -187,9 +187,9 @@ ALTER TABLE `users`
   MODIFY `u_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `user_details`
+-- AUTO_INCREMENT for table `user_verification`
 --
-ALTER TABLE `user_details`
+ALTER TABLE `user_verification`
   MODIFY `b_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
