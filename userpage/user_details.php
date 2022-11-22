@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-user-details'])
   <!-- Bootstrap CSS -->
   <link href="user_details.css" rel="stylesheet" type="text/css">
   <link href="../userpage/user_style.css" rel="stylesheet" type="text/css">
-  <title>User Details</title>
+  <title>User Verification</title>
 </head>
 
 <body>
@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-user-details'])
           <li class="nav-link">
             <a href="user_details.php" style="background-color: #f98e1d; color: white">
               <i class="fa-solid fa-user icon"></i>
-              <span class="text nav-text">User Details</span>
+              <span class="text nav-text">User Verification</span>
             </a>
           </li>
           <li class="nav-link">
@@ -122,7 +122,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-user-details'])
   </nav>
   <section class="home">
     <div class="text">
-      <h1 style="color:#000"><b>User Details</b></h1>
+      <h1 style="color:#000"><b>User Verification</b></h1>
     </div>
     <div class="border"></div>
     <br>

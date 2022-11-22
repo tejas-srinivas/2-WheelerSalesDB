@@ -44,7 +44,7 @@
           <li class="nav-link">
           <a href="user_details.php">
               <i class="fa-solid fa-user icon"></i>
-              <span class="text nav-text">User Details</span>
+              <span class="text nav-text">User Verification</span>
             </a>
           </li>
           <li class="nav-link">
