@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-user-details'])
   $DATABASE_HOST = 'localhost';
   $DATABASE_USER = 'root';
   $DATABASE_PASS = '';
-  $DATABASE_NAME = 'registration_form';
+  $DATABASE_NAME = 'wheels&deals';
   $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
   if (mysqli_connect_error()) {
     exit('Error connecting to the database' . mysqli_connect_errno());
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-user-details'])
     $aadhar_no = $_POST['aadhar_no'];
     $driving_license = $_POST['driving_license'];
     if (isset($_POST['submit-user-details'])) {
-      $stmt = $con->prepare('INSERT INTO user_details(firstname,lastname,aadhar_no,driving_license) VALUES (?,?,?,?)');   //end-to-end password protection
+      $stmt = $con->prepare('INSERT INTO user_verification(firstname,lastname,aadhar_no,driving_license) VALUES (?,?,?,?)');   //end-to-end password protection
       $stmt->bind_param('ssss', $firstname, $lastname, $aadhar_no, $driving_license);  //s=string ,i=integer
       $stmt->execute(); //executes the function
       if ($stmt) {
