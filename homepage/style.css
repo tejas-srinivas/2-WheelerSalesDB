@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
-
-
-
 *{
     font-family: 'Poppins', sans-serif;
 }
@@ -34,7 +31,7 @@
 
 .border {
     position: relative;
-    border: 0.5px solid #f98e1d;
+    border: 0.5px #f98e1d;
     margin-top: -35px;
 }
 
@@ -67,10 +64,6 @@
     min-width:300px;
     margin-left:820px;
     margin-top:-240px;
-}
-carousel
-{
-    position:relative
 }
 .border3 {
     position: relative;
@@ -163,7 +156,7 @@ blockquote::after
 
 .navbar-nav a:hover {
     background-color: #f98e1d;
-    color: #ffff;
+    color: rgb(241, 232, 230);
 }
 
 .slideshow {
