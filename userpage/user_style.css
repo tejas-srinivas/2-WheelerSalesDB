@@ -230,22 +230,6 @@ header .logo-text .sub-heading {
     margin-top:40px;
     justify-content: right;
 }
-.click2
-{
-    margin-left:330px;
-    font-size:18px;
-    font-weight:bold;
-    background:#f98e1d;
-    width:450px;
-    padding:8px;
-    text-align:center;
-    text-decoration:none;
-    text-transform:uppercase;
-    color:#ffff;
-    border-radius:7px;
-    cursor:pointer;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
 .img2
 {
     margin-left: -20px;
@@ -273,22 +257,6 @@ header .logo-text .sub-heading {
     margin-left:330px;
     margin-top:40px;
     justify-content: right;
-}
-.click3
-{
-    margin-left:330px;
-    font-size:18px;
-    font-weight:bold;
-    background:#f98e1d;
-    width:450px;
-    padding:8px;
-    text-align:center;
-    text-decoration:none;
-    text-transform:uppercase;
-    color:#ffff;
-    border-radius:7px;
-    cursor:pointer;
-    box-shadow:0 0 10px rgba(0,0,0,0.1);
 }
 .img3
 {
@@ -333,19 +301,4 @@ header .logo-text .sub-heading {
 }
 .confirm-message .space{
     margin-left: 30px;
-}
-
-.ok{
-    background: #f98e1d;   
-    padding: 10px;
-    text-decoration:none; 
-    color:white; 
-    position:relative;
-    margin-left:200px;
-    font-size:18px;
-    font-weight:bold;
-    text-align:center;
-    text-decoration:none;
-    border-radius:7px;
-    cursor:pointer;
 }

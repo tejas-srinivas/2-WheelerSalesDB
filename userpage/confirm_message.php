@@ -194,11 +194,25 @@
                      Regards,
                      <br>
                      <span style="color:#f98e1d;">Wheels and Deals</span>
+  
+   
+   <button type='button' class="ok" style="
+    background: #f98e1d;   
+    padding: 4px 20px;
+    position:relative;
+    border-radius:7px;
+    border-color:#f98e1d;
+    margin-left:200px;
+    margin-top: -30px;
+    cursor:pointer;">
+      <a href="../userpage/user_details.php" style="text-decoration:none; 
+    color:white;font-size:18px;
+    font-weight:bold;
+    text-align:center;"><b>OK</b></a>
+   </button>
    </h3>
   </div>
-  <button type='button' class="ok">
-      <a href="../userpage/user_details.php"><b>OK</b></a>
-   </button>
+  
   </body>
 </html>
 
