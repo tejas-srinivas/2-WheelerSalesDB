@@ -191,10 +191,14 @@
                      date and time. 
                      <br>
                      <br>
-                     Regards Wheels and Deals,
+                     Regards,
+                     <br>
+                     <span style="color:#f98e1d;">Wheels and Deals</span>
    </h3>
-
- </div>
+  </div>
+  <button type='button' class="ok">
+      <a href="../userpage/user_details.php"><b>OK</b></a>
+   </button>
   </body>
 </html>
 
