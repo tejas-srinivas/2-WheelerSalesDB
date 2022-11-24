@@ -13,7 +13,6 @@ function type(){
     }
     else{
         setTimeout(erase, erasingDelay);
-       
     }
 }
 

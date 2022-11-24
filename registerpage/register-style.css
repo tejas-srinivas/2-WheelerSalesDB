@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
 .body {
 	color: #fff;
 	font-family: 'Roboto', sans-serif;
@@ -89,4 +95,12 @@
 }
 .signup-form a:hover {
 	text-decoration: underline;
+}
+
+.background {
+    background:url(../background_img/background4.jpeg); 
+    width: 1520px;
+    /* margin-top :-280px; */
+    height: 800px;
+    display: flex;
 }
