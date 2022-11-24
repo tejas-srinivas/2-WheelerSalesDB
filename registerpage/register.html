@@ -4,36 +4,39 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
-	<title>Registration Form</title>
+	<title>Register Now!</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 	<link href="register-style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div class="signup-form">
-    <form action='register.php' method="POST">
-		<center><img src="../registerpage/logo.png" style="width: 650px; height: 150px;"></center>
-		<h2>Sign Up</h2>
-		<p class="hint-text">Fill in the details below.</p>
-        <div class="form-group">
-			<div class="row">
-				<div class="col"><input type="text" class="form-control" name="first_name" placeholder="First Name" required="required"></div>
-				<div class="col"><input type="text" class="form-control" name="last_name" placeholder="Last Name" required="required"></div>
-			</div>        	
-        </div>
-        <div class="form-group">
-        	<input type="email" class="form-control" name="email" placeholder="Email" required="required">
-        </div>
-		<div class="form-group">
-            <input type="text" class="form-control" name="username" placeholder="Username" required="required">
-        </div>
-		<div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
-        </div>        
-	    <button type='submit' class="btn btn-primary btn-block	" name="submit" value="Register" id="submit">Sign-UP</button>
-    </form>
-	<div class="text-center">Already have an account? <a href="../loginpage/login.HTML">Sign in</a></div>
+<div class="background">
+	<div class="signup-form">
+		<form action='register.php' method="POST">
+			<center><img src="../registerpage/logo.png" style="width: 650px; height: 150px;"></center>
+			<h2><b>Sign Up</b></h2>
+			<p class="hint-text">Fill in the details below.</p>
+			<div class="form-group">
+				<div class="row">
+					<div class="col"><input type="text" class="form-control" name="first_name" placeholder="First Name" style="border-radius: 8px;" required="required"></div>
+					<div class="col"><input type="text" class="form-control" name="last_name" placeholder="Last Name" style="border-radius: 8px;" required="required"></div>
+				</div>        	
+			</div>
+			<div class="form-group">
+				<input type="email" class="form-control" name="email" placeholder="Email" style="border-radius: 8px;" required="required">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-control" name="username" placeholder="Username" style="border-radius: 8px;" required="required">
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-control" name="password" placeholder="Password" style="border-radius: 8px;" required="required">
+			</div>        
+			<button type='submit' class="btn btn-primary btn-lg" name="submit" value="Register" id="submit" style="border-radius: 8px;margin-left: 250px;"><b>Register</b></button>
+		</form>
+		<div class="text-center" style="color:white ;">Already have an account? <a href="../loginpage/login.HTML" style="color:white ;">Sign in</a></div>
+		<p class="text-center"><a href="../homepage/landing.html" style="color: #f7f7f7;">Back to Home</a></p>
+	</div>
 </div>
 </body>
 </html>
