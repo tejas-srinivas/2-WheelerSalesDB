@@ -94,7 +94,7 @@
       <br>
       <br>
       <div class="container">
-      <form action="vechileBooking.php" method="POST">
+      <form action="confirm_message.php" method="POST">
         <center><img src="../registerpage/logo.png" style="width: 450px; height: 150px; margin-top:-45px"></center>
         <center><h2 style="margin-top:-10px ;">Few Steps From Your Dream Ride ...</h2></center>
           
@@ -182,35 +182,3 @@
   </body>
 </html>
 
-<?php
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-vechile-details'])) {
-    $DATABASE_HOST = 'localhost';
-    $DATABASE_USER = 'root';
-    $DATABASE_PASS = '';
-    $DATABASE_NAME = 'wheels&deals';
-    $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-    if (mysqli_connect_error()) {
-      exit('Error connecting to the database' . mysqli_connect_errno());
-    }
-    if (isset($_POST['email_']) && isset($_POST['ph_no']) && isset($_POST['model']) && isset($_POST['location_']) && isset($_POST['color']) && isset($_POST['varient'])) {
-      $email_ = $_POST['email_'];
-      $ph_no = $_POST['ph_no'];
-      $model = $_POST['model'];
-      $location_ = $_POST['location_'];
-      $color = $_POST['color'];
-      $varient = $_POST['varient'];
-      if (isset($_POST['submit-vechile-details'])) {
-        $sql ="INSERT INTO vechile_booking(email_,ph_no,model,location_,color,varient) VALUES ('$email_','$ph_no','$model','$location_','$color','$varient')";   //end-to-end password protection
-        $result = mysqli_query($con,$sql);  
-        if ($result) {
-          echo "<script>alert('Your Vechile is booked Successfully...');</script>";
-          echo "<script>window.location.href='../userpage/fittings.php'</script>";
-        } 
-      }
-      else {
-          echo 'Error Occured inserting into records';
-        }
-      
-    }
-  }
-?>

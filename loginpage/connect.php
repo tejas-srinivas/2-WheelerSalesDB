@@ -12,7 +12,7 @@
             exit('Error connecting to the database' . mysqli_connect_errno());
         }
 
-        $username = $_POST['username'];
+        $username = $_POSt['username'];
         $password = $_POST['password'];
 
 
