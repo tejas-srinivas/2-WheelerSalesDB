@@ -6,30 +6,32 @@
             <title>Admin-Login</title>
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-            <link href="Login-style.css" rel="stylesheet" type="text/css">
+            <link href="../adminpage/Admin_Login.css" rel="stylesheet" type="text/css">
             <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
         </head>
         <body>
-            
+        <div class="background">   
         <div class="login-form">
                 <form action="a_connect.php" method="post">
                 <center><img src="logo.png" style="width: 650px; height: 150px;"></center>
-                    <h2 class="text-center">----Admin Log in----</h2>       
+                    <h2 class="text-center"><b> Admin Log in </b></h2>       
             <div class="form-group">
-                <input type="text" class="form-control" name="a_username" placeholder="Username" id="username" required="required">
+                <input type="text" class="form-control" name="a_username" placeholder="Username" id="username" style="border-radius: 8px; width: 400px;margin-left: 118px;" required="required">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" name="a_password" placeholder="Password" id="password" required="required">
+                <input type="password" class="form-control" name="a_password" placeholder="Password" id="password" style="border-radius: 8px; width: 400px;margin-left: 118px;" required="required">
             </div>
             <div class="form-group" id="log">
-                <button type="submit" class="btn btn-primary btn-block" name="submit" id="submit">Log in</button>
+                <button type="submit" class="btn btn-primary" name="submit" id="submit" style="border-radius: 8px;margin-left: 280px;">Log in</button>
             </div>
              <br> 
             </form>
-            <p class="text-center"><a href="../homepage/landing.html">Go to HomePage</a></p>
+            <br>
+            <p class="text-center"><a href="../homepage/landing.html" style="text-decoration:none;color:white">Go to Home</a></p>
+            <p class="text-center"><a href="../loginpage/login.html" style="text-decoration:none;color:white">User Login</a></p>
         </div>
-        
+        </div> 
         </body>
 </html>
