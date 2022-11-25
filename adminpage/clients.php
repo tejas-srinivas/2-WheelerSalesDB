@@ -39,7 +39,7 @@
         <ul class="menu-links">
         <li class="nav-link">
             <a href="../adminpage/clients.php">
-            <i class="fa-solid fa-user icon"></i>
+            <i class="fa-solid fa-users icon"></i>
               <span class="text nav-text">Clients</span>
             </a>
           </li>
