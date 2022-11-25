@@ -9,7 +9,7 @@
 
 :root{
     --body-color: #f3e7d5;
-    --sidebar-color: #fff;
+    --sidebar-color: linear-gradient(to bottom, rgba(248, 233, 228, 0.968), #fb8f1c21);
     --primary-color: #f98e1d;
     --primary-color-light: #f7e9db;
     --text-color: rgb(22, 21, 21);
@@ -123,11 +123,12 @@ header .logo-text .sub-heading {
 
 .designer-slider li a:active{
     background-color: var(--primary-color);
+    color: #ffff
 }
 
 
 .designer-slider li a:hover .icon, .designer-slider a:hover .text{
-    color: var(--sidebar-color);
+    color: #ffff
 }
 
 .designer-slider .menu-bar{
@@ -135,7 +136,7 @@ header .logo-text .sub-heading {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    overflow-y: scroll;
+
 }
 
 .home {
@@ -143,8 +144,8 @@ header .logo-text .sub-heading {
     top: 0;
     left: 250px;
     height: 100vh;
-    width: calc(100%-250px);
-    background-color: #784512; 
+    width: calc(100%-250px); 
+    background-color: #f3e7d5;   
 }
 
 .home .text{
@@ -164,4 +165,7 @@ header .logo-text .sub-heading {
   border: 0.5px solid var(--text-color);
   margin-top: 3px;
 }
-
+.btn-primary
+{
+    margin-left:100px;
+}

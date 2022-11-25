@@ -36,7 +36,7 @@
                     echo "<script>alert('Login Successfull');</script>";
                     $_SESSION['a_username'] = $username;
                     $_SESSION['a_name'] = $hash['a_name']; //retrive firstname from users table
-                    echo "<script>window.location.href='../adminpage/a_dashboard.php'</script>";
+                    echo "<script>window.location.href='../adminpage/clients.php'</script>";
                 //} 
                 /*else {
                     echo "<script>alert('Enter Valid password');</script>";
