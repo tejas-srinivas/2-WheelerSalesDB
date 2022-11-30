@@ -56,7 +56,7 @@
           <li class="nav-link">
           <a href="fittings.php">
             <i class="fa-solid fa-bars icon"></i>
-              <span class="text nav-text">Fittings</span>
+              <span class="text nav-text">Accessories</span>
             </a>
           </li>
           <li class="nav-link">

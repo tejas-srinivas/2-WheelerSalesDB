@@ -60,7 +60,7 @@
           <li class="nav-link">
           
             <i class="fa-solid fa-bars icon"></i>
-              <span class="text nav-text" disabled>Fittings</span>
+              <span class="text nav-text" disabled>Accessories</span>
             </a>
           </li>
           <li class="nav-link">
@@ -151,10 +151,11 @@
       $location_ = $_POST['location_'];
       $color = $_POST['color'];
       $varient = $_POST['varient'];
+      $u_id = $_SESSION['u_id'];
       $booking_no = rand(100000,120000);
       $booking_id = "WD-".($booking_no) ;
       if (isset($_POST['submit-vechile-details'])) {
-        $sql ="INSERT INTO vechile_booking(booking_id,email_,ph_no,model,location_,color,varient) VALUES ('$booking_id','$email_','$ph_no','$model','$location_','$color','$varient')";   //end-to-end password protection
+        $sql ="INSERT INTO vechile_booking(booking_id,u_id,email_,ph_no,model,location_,color,varient) VALUES ('$booking_id','$u_id','$email_','$ph_no','$model','$location_','$color','$varient')";   //end-to-end password protection
         $result = mysqli_query($con,$sql);  
         if ($result) {
           $query = "SELECT * FROM vechile_booking WHERE booking_id='$booking_id'";

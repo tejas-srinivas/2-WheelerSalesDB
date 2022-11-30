@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 22, 2022 at 03:16 PM
+-- Generation Time: Nov 30, 2022 at 04:35 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -20,6 +20,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `wheels&deals`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `accessory`
+--
+
+CREATE TABLE `accessory` (
+  `fitting_id` varchar(255) NOT NULL,
+  `booking_id` varchar(255) NOT NULL,
+  `u_id` varchar(255) NOT NULL,
+  `mirror` varchar(255) NOT NULL,
+  `speedometer` varchar(255) NOT NULL,
+  `stand` varchar(255) NOT NULL,
+  `Charger` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `accessory`
+--
+
+INSERT INTO `accessory` (`fitting_id`, `booking_id`, `u_id`, `mirror`, `speedometer`, `stand`, `Charger`) VALUES
+('FWD-10499', 'WD-101678', 'UWD-789', 'Chrome-Mirror', 'Analog', 'W/O-Center-Stand', 'Charger');
 
 -- --------------------------------------------------------
 
@@ -72,7 +95,7 @@ INSERT INTO `test_ride` (`name`, `email`, `mob_no`, `model`, `location_`) VALUES
 --
 
 CREATE TABLE `users` (
-  `u_id` int(50) NOT NULL,
+  `u_id` varchar(255) NOT NULL,
   `first_name` varchar(30) NOT NULL,
   `last_name` varchar(30) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -85,11 +108,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`u_id`, `first_name`, `last_name`, `email`, `username`, `password`) VALUES
-(9, 'Tejas', 'Srinivas', 'stejas2002@gmail.com', 'tejas2002', '$2y$10$pp2h7pCZegqEnSPNFw.jxu6eCyo10NqqmArbxSbXKdO2D/CYQAGhq'),
-(10, 'Yathin', 'BN', 'yathinyoyo@gmail.com', 'yathin2002', '$2y$10$jTCyuW3TSaHfU6ndnuelbuqCDokWLRuJFCFlFgloZTifxWZRaA3/O'),
-(11, 'Suchith', 'R', 'suchith@gmail.com', 'suchith2002', '$2y$10$jPIpQWUpCafQ.U4CqBJJp..dGd2wlzX.RbDJa3O7J92asXtvl5ctq'),
-(12, 'Janhavi', 'S', 'janhavi@gmail.com', 'janhavi1997', '$2y$10$nVHuO2/zSFtMoMtmHxyGnuZGB.iggLFH0dcwnG/ASzJUgEz4YSDoG'),
-(13, 'Akshitha', 'B', 'akshiii599@gmail.com', 'akshitha', '$2y$10$x0XzIj7YWMIlF6bsd6AIluXJtgSV0ojg7yc7TEYgCvURUbZsrIkVC');
+('10', 'Yathin', 'BN', 'yathinyoyo@gmail.com', 'yathin2002', '$2y$10$jTCyuW3TSaHfU6ndnuelbuqCDokWLRuJFCFlFgloZTifxWZRaA3/O'),
+('UWD-789', 'Tejas', 'Srinivas', 'stejas2002@gmail.com', 'tejas2002', '$2y$10$EvED7V8huULM.XKoc9zgcuacuv4TUlv/Q6jCJyNZORmc5fVJGUQWm');
 
 -- --------------------------------------------------------
 
@@ -98,7 +118,6 @@ INSERT INTO `users` (`u_id`, `first_name`, `last_name`, `email`, `username`, `pa
 --
 
 CREATE TABLE `user_verification` (
-  `b_id` int(50) NOT NULL,
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
   `aadhar_no` varchar(50) NOT NULL,
@@ -109,11 +128,8 @@ CREATE TABLE `user_verification` (
 -- Dumping data for table `user_verification`
 --
 
-INSERT INTO `user_verification` (`b_id`, `firstname`, `lastname`, `aadhar_no`, `driving_license`) VALUES
-(1, 'Tejas', 'Srinivas', '7109-7199-2596', 'KA52-202015494'),
-(20, 'Tejas', 'Srinivas', '123456789012', 'KA52202015497'),
-(21, 'Tejas', 'Srinivas', '123456789013', 'KA52-202015468'),
-(23, 'Tejas', 'Srinivas', '7109-7199-2597', 'KA52-202015469');
+INSERT INTO `user_verification` (`firstname`, `lastname`, `aadhar_no`, `driving_license`) VALUES
+('Tejas', 'Srinivas', '7109-7199-2596', 'KA01-123456');
 
 -- --------------------------------------------------------
 
@@ -122,8 +138,10 @@ INSERT INTO `user_verification` (`b_id`, `firstname`, `lastname`, `aadhar_no`, `
 --
 
 CREATE TABLE `vechile_booking` (
+  `booking_id` varchar(255) NOT NULL,
+  `u_id` varchar(255) NOT NULL,
   `email_` varchar(50) NOT NULL,
-  `ph_no` int(50) NOT NULL,
+  `ph_no` varchar(255) NOT NULL,
   `model` varchar(50) NOT NULL,
   `location_` varchar(50) NOT NULL,
   `color` varchar(50) NOT NULL,
@@ -134,12 +152,20 @@ CREATE TABLE `vechile_booking` (
 -- Dumping data for table `vechile_booking`
 --
 
-INSERT INTO `vechile_booking` (`email_`, `ph_no`, `model`, `location_`, `color`, `varient`) VALUES
-('stejas2002@gmail.com', 1234567890, 'Access-125', 'Vijaynagar', 'Silver', 'DISC-BRACK-ALLOY');
+INSERT INTO `vechile_booking` (`booking_id`, `u_id`, `email_`, `ph_no`, `model`, `location_`, `color`, `varient`) VALUES
+('WD-101678', 'UWD-789', 'stejas2002@gmail.com', '+91-9353931335', 'Activa-6G', 'Indranagar', 'Silver', 'DISC-BRACK-W/O-ALLOY');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `accessory`
+--
+ALTER TABLE `accessory`
+  ADD PRIMARY KEY (`fitting_id`),
+  ADD UNIQUE KEY `booking_id` (`booking_id`),
+  ADD UNIQUE KEY `u_id` (`u_id`);
 
 --
 -- Indexes for table `admintable`
@@ -167,8 +193,15 @@ ALTER TABLE `users`
 -- Indexes for table `user_verification`
 --
 ALTER TABLE `user_verification`
-  ADD PRIMARY KEY (`b_id`),
   ADD UNIQUE KEY `license_no` (`driving_license`);
+
+--
+-- Indexes for table `vechile_booking`
+--
+ALTER TABLE `vechile_booking`
+  ADD PRIMARY KEY (`booking_id`),
+  ADD UNIQUE KEY `first_name` (`u_id`),
+  ADD UNIQUE KEY `u_id` (`u_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -179,18 +212,6 @@ ALTER TABLE `user_verification`
 --
 ALTER TABLE `admintable`
   MODIFY `a_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `u_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
---
--- AUTO_INCREMENT for table `user_verification`
---
-ALTER TABLE `user_verification`
-  MODIFY `b_id` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
