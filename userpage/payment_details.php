@@ -80,7 +80,7 @@
           <li class="nav-link">
             <a href="logout.php">
             <i class="fa-solid fa-power-off icon"></i>
-              <span class="text nav-text">Logout</span>
+              <span class="text nav-text">Log out</span>
             </a>
           </li>
         </ul>
