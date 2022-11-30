@@ -12,6 +12,8 @@
         }
 
         if(isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['username']) && isset($_POST['password'])) {
+            $u_no = rand(600,1200);
+            $u_id = "UWD-".($u_no) ;
             $first_name = $_POST['first_name'];
             $last_name = $_POST['last_name'];
             $email = $_POST['email'];
@@ -26,8 +28,8 @@
                     echo "<script>alert('User already exists');</script>";
                 }
                 else {
-                    $stmt= $con->prepare('INSERT INTO users(first_name,last_name,email,username,password) VALUES (?,?,?,?,?)');   //end-to-end password protection
-                    $stmt->bind_param('sssss',$first_name,$last_name,$email,$username,$password);  //s=string ,i=integer
+                    $stmt= $con->prepare('INSERT INTO users(u_id,first_name,last_name,email,username,password) VALUES (?,?,?,?,?,?)');   //end-to-end password protection
+                    $stmt->bind_param('ssssss',$u_id,$first_name,$last_name,$email,$username,$password);  //s=string ,i=integer
                     $stmt->execute(); //executes the function
                     if($stmt) {
                         echo "<script>alert('Registration Sucessfull !');</script>";
