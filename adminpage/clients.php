@@ -20,6 +20,12 @@
     <link href="../adminpage/admin_style.css" rel="stylesheet" type="text/css">
     <title>Clients</title>
   </head>
+  <style>
+    section{
+      background:url(../background_img/client.jpg);
+      width: 1270px;
+    }
+  </style>
   <body>
     <nav class="designer-slider">
     <header>
@@ -75,7 +81,52 @@
       <div class="text"><h1>Clients</h1></div>
       <div class="border"></div>
       <br>
-        
+        <div class="container">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">User ID</th>
+              <th scope="col">First name</th>
+              <th scope="col">Last name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Username</th>
+              <th scope="col">Password</th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+              $DATABASE_HOST = 'localhost';
+              $DATABASE_USER = 'root';
+              $DATABASE_PASS = '';
+              $DATABASE_NAME = 'wheels&deals';
+              $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+              if (mysqli_connect_error()) {
+                exit('Error connecting to the database' . mysqli_connect_errno());
+              }
+              $sql = "SELECT * from users";
+              $resultj = mysqli_query($con,$sql);
+              if($resultj){
+                while($row = mysqli_fetch_array($resultj)){
+                  $u_id = $row['u_id'];
+                  $firstname = $row['first_name'];
+                  $lastname = $row['last_name'];
+                  $email = $row['email'];
+                  $username = $row['username'];
+                  $password = $row['password'];
+                  echo '<tr>
+                  <td scope="row">'.$u_id.'</td>
+                  <td>'.$firstname.'</td>
+                  <td>'.$lastname.'</td>
+                  <td>'.$email.'</td>
+                  <td>'.$username.'</td>
+                  <td>'.$password.'</td>
+                </tr>';
+                }
+              }
+            ?>  
+          </tbody>
+        </table>
+        </div>
    </section>
     
   </body>
