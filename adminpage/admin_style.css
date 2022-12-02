@@ -160,12 +160,43 @@ header .logo-text .sub-heading {
 }
 
 .border {
-  position: relative;
-  left: 60px;
-  border: 0.5px solid var(--text-color);
-  margin-top: 3px;
+    position: relative;
+    left: 37px;
+    border: 0.5px solid var(--text-color);
+    margin-top: -9px;
+    width : 1180px;
 }
 .btn-primary
 {
     margin-left:100px;
 }
+
+.table{
+    color: black;
+	border-radius: 10px;
+	margin-bottom: 15px;
+	
+    /* width : 1200px; */
+    margin-left:35px;  
+}
+table, td, th {
+    border: 1px solid;
+  }
+  
+  table {
+    width : 50%;
+    border-collapse: collapse;
+    text-align: center;
+
+  }
+  .container {
+    background: #f2f3f7;
+    box-shadow: 5px 5px 10px #999;
+    padding: 55px 20px;
+    border-radius: 20px;
+    width: 951px;
+    margin-left: 9rem;
+    align-items: center;
+    font-size: small;
+    
+  }
