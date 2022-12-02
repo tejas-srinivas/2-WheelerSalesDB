@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-user-details'])
           <li class="nav-link">
             <a href="dashboard.php">
               <i class="fa-solid fa-motorcycle icon"></i>
-              <span class="text nav-text">Vechile Enquiry</span>
+              <span class="text nav-text">Vehicle Enquiry</span>
             </a>
           </li>
           <li class="nav-link">
@@ -82,11 +82,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-user-details'])
           <li class="nav-link">
             <!-- <a href="#"> -->
               <i class="fa-solid fa-cart-shopping icon"></i>
-              <span class="text nav-text">Vechile Booking</span>
+              <span class="text nav-text">Vehicle Booking</span>
             </a>
           </li>
           <li class="nav-link">
-            <a href="fittings.php">
+            <!-- <a href="fittings.php"> -->
               <i class="fa-solid fa-bars icon"></i>
               <span class="text nav-text">Fittings</span>
             </a>
@@ -130,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-user-details'])
       <form action="user_details.php" method="post">
         <center><img src="../registerpage/logo.png" style="width: 450px; height: 150px; margin-top:-45px"></center>
         <center>
-          <h2 style="margin-top:-10px ;">Provide Your Details for Booking ...</h2>
+          <h2 style="margin-top:-10px ;">Provide Your Details for User Veriication ...</h2>
         </center>
         <div class="row">
           <div class="col-25">
@@ -165,7 +165,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-user-details'])
           </div>
           <div class="button">
             <button type='submit' class="book-now" name="submit-user-details" value="book-now" id="submit-user-details">
-              <b>BOOK NOW</b>
+              <b>CONFIRM NOW</b>
             </button>
             <button type='button' class="back" name="back">
               <a href="../userpage/dashboard.php" style="text-decoration: none; color:white">
