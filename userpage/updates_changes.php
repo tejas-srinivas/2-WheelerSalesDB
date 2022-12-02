@@ -17,7 +17,7 @@ if (!isset($_SESSION['username'])) {
   <!-- CDN CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="user_style.css" rel="stylesheet" type="text/css">
-  <title>VEHICAL ENQUIRY</title>
+  <title>Updates / Changes</title>
 </head>
 
 <body>
@@ -42,7 +42,7 @@ if (!isset($_SESSION['username'])) {
           <li class="nav-link">
             <a href="dashboard.php">
               <i class="fa-solid fa-motorcycle icon"></i>
-              <span class="text nav-text">Vechile Enquiry</span>
+              <span class="text nav-text">Vehicle Enquiry</span>
             </a>
           </li>
           <li class="nav-link">
@@ -54,7 +54,7 @@ if (!isset($_SESSION['username'])) {
           <li class="nav-link">
             <a href="vechileBooking.php">
               <i class="fa-solid fa-cart-shopping icon"></i>
-              <span class="text nav-text">Vechile Booking</span>
+              <span class="text nav-text">Vehicle Booking</span>
             </a>
           </li>
           <li class="nav-link">

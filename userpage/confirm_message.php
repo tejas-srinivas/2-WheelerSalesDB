@@ -42,7 +42,7 @@
         <li class="nav-link">
             
             <i class="fa-solid fa-motorcycle icon"></i>
-              <span class="text nav-text" disabled>Vechile Enquiry</span>
+              <span class="text nav-text" disabled>Vehicle Enquiry</span>
             </a>
           </li>
           <li class="nav-link">
@@ -54,7 +54,7 @@
           <li class="nav-link">
           
             <i class="fa-solid fa-cart-shopping icon"></i>
-              <span class="text nav-text" disabled>Vechile Booking</span>
+              <span class="text nav-text" disabled>Vehicle Booking</span>
             </a>
           </li>
           <li class="nav-link">

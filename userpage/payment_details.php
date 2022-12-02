@@ -50,7 +50,7 @@
           <li class="nav-link">
           <a href="vechileBooking.php">
             <i class="fa-solid fa-cart-shopping icon"></i>
-              <span class="text nav-text">Vechile Booking</span>
+              <span class="text nav-text">Vehicle Booking</span>
             </a>
           </li>
           <li class="nav-link">
