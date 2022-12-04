@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2022 at 04:35 PM
+-- Generation Time: Dec 04, 2022 at 12:58 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -68,6 +68,27 @@ INSERT INTO `admintable` (`a_id`, `a_username`, `a_password`, `a_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `stock_price`
+--
+
+CREATE TABLE `stock_price` (
+  `vechile_id` int(11) NOT NULL,
+  `available` varchar(255) NOT NULL,
+  `ex_showroom` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `stock_price`
+--
+
+INSERT INTO `stock_price` (`vechile_id`, `available`, `ex_showroom`) VALUES
+(1, 'Available', '70000'),
+(2, 'Not-Available', '75000'),
+(3, 'Available', '80000');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `test_ride`
 --
 
@@ -108,7 +129,6 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`u_id`, `first_name`, `last_name`, `email`, `username`, `password`) VALUES
-('10', 'Yathin', 'BN', 'yathinyoyo@gmail.com', 'yathin2002', '$2y$10$jTCyuW3TSaHfU6ndnuelbuqCDokWLRuJFCFlFgloZTifxWZRaA3/O'),
 ('UWD-789', 'Tejas', 'Srinivas', 'stejas2002@gmail.com', 'tejas2002', '$2y$10$EvED7V8huULM.XKoc9zgcuacuv4TUlv/Q6jCJyNZORmc5fVJGUQWm');
 
 -- --------------------------------------------------------
@@ -175,6 +195,12 @@ ALTER TABLE `admintable`
   ADD UNIQUE KEY `a_username` (`a_username`);
 
 --
+-- Indexes for table `stock_price`
+--
+ALTER TABLE `stock_price`
+  ADD PRIMARY KEY (`vechile_id`);
+
+--
 -- Indexes for table `test_ride`
 --
 ALTER TABLE `test_ride`
@@ -212,6 +238,12 @@ ALTER TABLE `vechile_booking`
 --
 ALTER TABLE `admintable`
   MODIFY `a_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `stock_price`
+--
+ALTER TABLE `stock_price`
+  MODIFY `vechile_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
