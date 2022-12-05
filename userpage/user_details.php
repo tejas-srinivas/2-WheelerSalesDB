@@ -19,11 +19,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-user-details'])
     $lastname = $_POST['lastname'];
     $aadhar_no = $_POST['aadhar_no'];
     $driving_license = $_POST['driving_license'];
+    $u_id = $_SESSION['u_id'];
     if (isset($_POST['submit-user-details'])) {
-      $stmt = $con->prepare('INSERT INTO user_verification(firstname,lastname,aadhar_no,driving_license) VALUES (?,?,?,?)');   //end-to-end password protection
-      $stmt->bind_param('ssss', $firstname, $lastname, $aadhar_no, $driving_license);  //s=string ,i=integer
+      $stmt = $con->prepare('INSERT INTO user_verification(u_id,firstname,lastname,aadhar_no,driving_license) VALUES (?,?,?,?,?)');   //end-to-end password protection
+      $stmt->bind_param('sssss',$u_id, $firstname, $lastname, $aadhar_no, $driving_license);  //s=string ,i=integer
       $stmt->execute(); //executes the function
       if ($stmt) {
+        echo "<script>alert('Verification Successfull...')</script>";
         echo "<script>window.location.href='../userpage/vechileBooking.php'</script>";
       } else {
         echo 'Error Occured inserting into records';
