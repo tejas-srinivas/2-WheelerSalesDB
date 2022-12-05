@@ -18,11 +18,11 @@
     <!-- Bootstrap CSS -->
     
     <link href="../adminpage/admin_style.css" rel="stylesheet" type="text/css">
-    <title>Clients</title>
+    <title>Vehicle Logs</title>
   </head>
   <style>
     section{
-      /* background:url(../background_img/client.jpg); */
+      /* background:url(../background_img/bookings.jpeg); */
       width: 1250px;
     }
   </style>
@@ -50,7 +50,7 @@
             </a>
           </li>
           <li class="nav-link">
-            <a href="../adminpage/logs.php">
+            <a href="#">
               <i class="fa-solid fa-bars icon"></i>
               <span class="text nav-text">Logs</span>
             </a>
@@ -77,20 +77,23 @@
       </div>
     </div> 
   </nav>  
-  <section class="home" style="background:url(../background_img/client.jpg);height:750px;width:1230px;">
-      <div class="text"><h1>Clients</h1></div>
+   <section class="home" style="background:url(../background_img/background4.jpeg);height:750px;width:1230px;">
+      <div class="text"><h1>Manage Bookings</h1></div>
       <div class="border"></div>
       <br>
         <div class="container">
         <table class="table">
           <thead>
             <tr>
+              <th scope="col">Booking ID</th>
               <th scope="col">User ID</th>
-              <th scope="col">First name</th>
-              <th scope="col">Last name</th>
               <th scope="col">Email</th>
-              <th scope="col">Username</th>
-              <th scope="col">Password</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Model</th>
+              <th scope="col">Location</th>
+              <th scope="col">Color</th>
+              <th scope="col">Varient</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -103,23 +106,31 @@
               if (mysqli_connect_error()) {
                 exit('Error connecting to the database' . mysqli_connect_errno());
               }
-              $sql = "SELECT * from users";
+              $sql = "SELECT * from vechile_booking";
               $resultj = mysqli_query($con,$sql);
               if($resultj){
                 while($row = mysqli_fetch_array($resultj)){
+                  $booking_id = $row['booking_id'];
                   $u_id = $row['u_id'];
-                  $firstname = $row['first_name'];
-                  $lastname = $row['last_name'];
-                  $email = $row['email'];
-                  $username = $row['username'];
-                  $password = $row['password'];
+                  $email_ = $row['email_'];
+                  $ph_no = $row['ph_no'];
+                  $model = $row['model'];
+                  $location_ = $row['location_'];
+                  $color = $row['color'];
+                  $varient = $row['varient'];
                   echo '<tr>
-                  <td scope="row">'.$u_id.'</td>
-                  <td>'.$firstname.'</td>
-                  <td>'.$lastname.'</td>
-                  <td>'.$email.'</td>
-                  <td>'.$username.'</td>
-                  <td>'.$password.'</td>
+                  <td scope="row">'.$booking_id.'</td>
+                  <td>'.$u_id.'</td>
+                  <td>'.$email_.'</td>
+                  <td>'.$ph_no.'</td>
+                  <td>'.$model.'</td>
+                  <td>'.$location_.'</td>
+                  <td>'.$color.'</td>
+                  <td>'.$varient.'</td>
+                  <td>
+                    <button><a href="">Update</a></button>
+                    <button><a href="">Delete</a></button>
+                  </td>
                 </tr>';
                 }
               }
