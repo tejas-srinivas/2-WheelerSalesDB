@@ -50,9 +50,21 @@
             </a>
           </li>
           <li class="nav-link">
-            <a href="#">
+            <a href="../adminpage/logs.php">
               <i class="fa-solid fa-bars icon"></i>
               <span class="text nav-text">Logs</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="../adminpage/UserInfo.php">
+              <i class="fa-solid fa-bars icon"></i>
+              <span class="text nav-text">Users Info</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="../adminpage/stock_price.php">
+            <i class="fa-solid fa-bars icon"></i>
+              <span class="text nav-text">Availability/Price</span>
             </a>
           </li>
           <li class="nav-link">

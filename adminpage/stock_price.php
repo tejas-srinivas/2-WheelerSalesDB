@@ -18,11 +18,11 @@
     <!-- Bootstrap CSS -->
     
     <link href="../adminpage/admin_style.css" rel="stylesheet" type="text/css">
-    <title>Clients</title>
+    <title>Availability/Price</title>
   </head>
   <style>
     section{
-      /* background:url(../background_img/client.jpg); */
+      /* background:url(../background_img/bookings.jpeg); */
       width: 1250px;
     }
   </style>
@@ -50,7 +50,7 @@
             </a>
           </li>
           <li class="nav-link">
-            <a href="../adminpage/logs.php">
+            <a href="#">
               <i class="fa-solid fa-bars icon"></i>
               <span class="text nav-text">Logs</span>
             </a>
@@ -89,20 +89,27 @@
       </div>
     </div> 
   </nav>  
-  <section class="home" style="background:url(../background_img/client.jpg);height:750px;width:1230px;">
-      <div class="text"><h1>Clients</h1></div>
+   <section class="home" style="background:url(../background_img/background4.jpeg);height:750px;width:1230px;">
+      <div class="text"><h1>Availability & Ex-Showroom</h1></div>
       <div class="border"></div>
       <br>
-        <div class="container">
+        <div class="container" style="background: #f2f3f7;
+    box-shadow: 5px 5px 10px #999;
+    padding: 41px 43px;
+    border-radius: 20px;
+    width: 601px;
+    margin-left: 19rem;
+    align-items: center;
+    font-size: small;
+">
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">User ID</th>
-              <th scope="col">First name</th>
-              <th scope="col">Last name</th>
-              <th scope="col">Email</th>
-              <th scope="col">Username</th>
-              <th scope="col">Password</th>
+              <th scope="col">Vehicle ID</th>
+              <th scope="col">Vehicle Name</th>
+              <th scope="col">Availability</th>
+              <th scope="col">Ex-Showroom</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -115,23 +122,22 @@
               if (mysqli_connect_error()) {
                 exit('Error connecting to the database' . mysqli_connect_errno());
               }
-              $sql = "SELECT * from users";
+              $sql = "SELECT * from stock_price";
               $resultj = mysqli_query($con,$sql);
               if($resultj){
                 while($row = mysqli_fetch_array($resultj)){
-                  $u_id = $row['u_id'];
-                  $firstname = $row['first_name'];
-                  $lastname = $row['last_name'];
-                  $email = $row['email'];
-                  $username = $row['username'];
-                  $password = $row['password'];
+                  $vehicle_id = $row['vechile_id'];
+                  $vehicle_name = $row['vehicle_name'];
+                  $available = $row['available'];
+                  $ex_showroom = $row['ex_showroom'];
                   echo '<tr>
-                  <td scope="row">'.$u_id.'</td>
-                  <td>'.$firstname.'</td>
-                  <td>'.$lastname.'</td>
-                  <td>'.$email.'</td>
-                  <td>'.$username.'</td>
-                  <td>'.$password.'</td>
+                  <td scope="row">'.$vehicle_id.'</td>
+                  <td>'.$vehicle_name.'</td>
+                  <td>'.$available.'</td>
+                  <td>'.$ex_showroom.'</td>
+                  <td>
+                    <button><a href="">Update</a></button>
+                  </td>
                 </tr>';
                 }
               }
