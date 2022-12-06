@@ -56,6 +56,12 @@
             </a>
           </li>
           <li class="nav-link">
+            <a href="../adminpage/Testride_users.php">
+              <i class="fa-solid fa-bars icon"></i>
+              <span class="text nav-text">Test-Ride Clients</span>
+            </a>
+          </li>
+          <li class="nav-link">
             <a href="../adminpage/UserInfo.php">
               <i class="fa-solid fa-bars icon"></i>
               <span class="text nav-text">Users Info</span>
@@ -89,7 +95,7 @@
       </div>
     </div> 
   </nav>  
-  <section class="home" style="background:url(../background_img/client.jpg);height:750px;width:1230px;">
+  <section class="home" style="background:url(../background_img/client.jpg);height:750px;width:1268px;">
       <div class="text"><h1>Clients</h1></div>
       <div class="border"></div>
       <br>

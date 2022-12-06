@@ -18,10 +18,10 @@
     <!-- Bootstrap CSS -->
     
     <link href="../adminpage/admin_style.css" rel="stylesheet" type="text/css">
-    <title>Clients</title>
+    <title>Admin Profile</title>
   </head>
   <body>
-    <nav class="designer-slider">
+  <nav class="designer-slider">
     <header>
       <div class="logo-section">
         <span class="image">
@@ -39,25 +39,31 @@
         <ul class="menu-links">
         <li class="nav-link">
             <a href="../adminpage/clients.php">
-            <i class="fa-solid fa-user icon"></i>
+            <i class="fa-solid fa-users icon"></i>
               <span class="text nav-text">Clients</span>
             </a>
           </li>
           <li class="nav-link">
-            <a href="#">
+            <a href="../adminpage/logs.php">
               <i class="fa-solid fa-bars icon"></i>
               <span class="text nav-text">Logs</span>
             </a>
           </li>
           <li class="nav-link">
+            <a href="../adminpage/Testride_users.php">
+              <i class="fa-solid fa-bars icon"></i>
+              <span class="text nav-text">Test-Ride Clients</span>
+            </a>
+          </li>
+          <li class="nav-link">
             <a href="../adminpage/UserInfo.php">
-            <i class="fa-solid fa-bars icon"></i>
+              <i class="fa-solid fa-bars icon"></i>
               <span class="text nav-text">Users Info</span>
             </a>
           </li>
           <li class="nav-link">
             <a href="../adminpage/stock_price.php">
-              <i class="fa-solid fa-bars icon"></i>
+            <i class="fa-solid fa-bars icon"></i>
               <span class="text nav-text">Availability/Price</span>
             </a>
           </li>
@@ -82,11 +88,54 @@
         </ul>
       </div>
     </div> 
-  </nav>  
+  </nav>    
    <section class="home">
       <div class="text"><h1>Admin Profile</h1></div>
       <div class="border"></div>
       <br>
+    <br>
+    <div class="container">
+      <form action="profile.php" method="post">
+        <center><img src="../registerpage/logo.png" style="width: 450px; height: 150px; margin-top:-45px"></center>
+        
+          <center><h1 style="margin-top:-10px;font-size:25px;">Edit Admin Profile</h1></center>
+        <br>  
+          <div class="name">
+            <label for="a_name" style="font-size:20px;"><b>Admin Name :<b></label>
+          </div>
+          <div class="input">
+            <input type="text" id="a_name" name="a_name" value="<?php echo $_SESSION['a_name']; ?>" style="border-radius: 6px; width: 400px;height: 40px;px;border:1px solid gray;box-sizing:border-box;padding: 10px 15px;font-size:16px;" required>
+          </div>
+          <br>
+          <div class="name">
+            <label for="a_email" style="font-size:20px;"><b>Email :</b></label>
+          </div>
+          <div class="input">
+            <input type="text" id="a_email" name="a_email" value="<?php echo $_SESSION['a_email']; ?>" style="font-size:16px;border-radius: 6px; width: 400px;height:40px;border:1px solid gray;box-sizing:border-box;padding: 10px 15px;" required>
+          </div>
+          <br>
+          <div class="name">
+            <label for="a_username" style="font-size:20px;"><b>Admin Username :</b></label>
+          </div>
+          <div class="input">
+            <input type="text" id="a_username" name="a_username" value="<?php echo $_SESSION['a_username']; ?>" style="font-size:16px;border-radius: 6px; width: 400px;height:40px;border:1px solid gray;box-sizing:border-box;padding: 10px 15px;" required>
+          </div>
+        
+        <br>    
+          <div class="button">
+            <button type='submit' class="update" name="update" value="book-now" id="update" style="background-color: #f98e1d;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  border-radius:8px;">
+              <b>Update</b>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
         
    </section>
     

@@ -56,6 +56,12 @@
             </a>
           </li>
           <li class="nav-link">
+            <a href="../adminpage/Testride_users.php">
+              <i class="fa-solid fa-bars icon"></i>
+              <span class="text nav-text">Test-Ride Clients</span>
+            </a>
+          </li>
+          <li class="nav-link">
             <a href="../adminpage/UserInfo.php">
               <i class="fa-solid fa-bars icon"></i>
               <span class="text nav-text">Users Info</span>
@@ -89,8 +95,8 @@
       </div>
     </div> 
   </nav>  
-   <section class="home" style="background:url(../background_img/background4.jpeg);height:750px;width:1230px;">
-      <div class="text"><h1>Manage Bookings</h1></div>
+   <section class="home" style="background:url(../background_img/bookings.jpeg);height:750px;width:1270px;">
+      <div class="text"><h1 style="color:#ffff ;">Manage Bookings</h1></div>
       <div class="border"></div>
       <br>
         <div class="container">

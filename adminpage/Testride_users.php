@@ -18,7 +18,7 @@
     <!-- Bootstrap CSS -->
     
     <link href="../adminpage/admin_style.css" rel="stylesheet" type="text/css">
-    <title>Availability/Price</title>
+    <title>Test-Ride Clients</title>
   </head>
   <style>
     section{
@@ -50,14 +50,14 @@
             </a>
           </li>
           <li class="nav-link">
-            <a href="#">
+            <a href="../adminpage/logs.php">
               <i class="fa-solid fa-bars icon"></i>
               <span class="text nav-text">Logs</span>
             </a>
           </li>
           <li class="nav-link">
             <a href="../adminpage/Testride_users.php">
-              <i class="fa-solid fa-bars icon"></i>
+            <i class="fa-solid fa-bars icon"></i>
               <span class="text nav-text">Test-Ride Clients</span>
             </a>
           </li>
@@ -67,6 +67,7 @@
               <span class="text nav-text">Users Info</span>
             </a>
           </li>
+          
           <li class="nav-link">
             <a href="../adminpage/stock_price.php">
             <i class="fa-solid fa-bars icon"></i>
@@ -95,15 +96,15 @@
       </div>
     </div> 
   </nav>  
-   <section class="home" style="background:url(../background_img/background4.jpeg);height:750px;width:1230px;">
-      <div class="text"><h1>Availability & Ex-Showroom</h1></div>
+   <section class="home" style="background:url(../background_img/Comp0.jpg);">
+      <div class="text"><h1>Testride Clients</h1></div>
       <div class="border"></div>
       <br>
         <div class="container" style="background: #f2f3f7;
     box-shadow: 5px 5px 10px #999;
-    padding: 41px 43px;
+    padding: 41px 40px;
     border-radius: 20px;
-    width: 601px;
+    width: 676px;
     margin-left: 19rem;
     align-items: center;
     font-size: small;
@@ -111,10 +112,11 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">Vehicle ID</th>
-              <th scope="col">Vehicle Name</th>
-              <th scope="col">Availability</th>
-              <th scope="col">Ex-Showroom</th>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Mob_No</th>
+              <th scope="col">Model</th>
+              <th scope="col">Location</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -128,21 +130,23 @@
               if (mysqli_connect_error()) {
                 exit('Error connecting to the database' . mysqli_connect_errno());
               }
-              $sql = "SELECT * from stock_price";
-              $resultj = mysqli_query($con,$sql);
-              if($resultj){
-                while($row = mysqli_fetch_array($resultj)){
-                  $vehicle_id = $row['vechile_id'];
-                  $vehicle_name = $row['vehicle_name'];
-                  $available = $row['available'];
-                  $ex_showroom = $row['ex_showroom'];
+              $sql = "SELECT * from test_ride";
+              $result = mysqli_query($con,$sql);
+              if($result){
+                while($row = mysqli_fetch_array($result)){
+                  $name = $row['name'];
+                  $email = $row['email'];
+                  $mob = $row['mob_no'];
+                  $model = $row['model'];
+                  $location_ = $row['location_'];
                   echo '<tr>
-                  <td scope="row">'.$vehicle_id.'</td>
-                  <td>'.$vehicle_name.'</td>
-                  <td>'.$available.'</td>
-                  <td>'.$ex_showroom.'</td>
+                  <td scope="row">'.$name.'</td>
+                  <td>'.$email.'</td>
+                  <td>'.$mob.'</td>
+                  <td>'.$model.'</td>
+                  <td>'.$location_.'</td>
                   <td>
-                    <button><a href="">Update</a></button>
+                    <button><a href="">Delete</a></button>
                   </td>
                 </tr>';
                 }
@@ -152,6 +156,6 @@
         </table>
         </div>
    </section>
-    
+  
   </body>
 </html>
