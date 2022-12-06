@@ -6,6 +6,21 @@
    } 
 ?>
 
+<?php
+$DATABASE_HOST = 'localhost';
+$DATABASE_USER = 'root';
+$DATABASE_PASS = '';
+$DATABASE_NAME = 'wheels&deals';
+$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+$query = "SELECT count(*) AS total from test_ride";
+              $result = mysqli_query($con,$query);
+              if($result) {
+                while($rows = mysqli_fetch_assoc($result)){
+                  $count = $rows['total'];
+                }
+                
+              }
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -96,7 +111,7 @@
       </div>
     </div> 
   </nav>  
-   <section class="home" style="background:url(../background_img/Comp0.jpg);">
+   <section class="home" style="background:url(../background_img/background4.jpeg);width:1268px;">
       <div class="text"><h1>Testride Clients</h1></div>
       <div class="border"></div>
       <br>
@@ -104,11 +119,11 @@
     box-shadow: 5px 5px 10px #999;
     padding: 41px 40px;
     border-radius: 20px;
-    width: 676px;
+    width: 697px;
     margin-left: 19rem;
     align-items: center;
-    font-size: small;
-">
+    font-size: small;">
+        <div class="text"><h4 style="color:#f98e1d;margin-top:-40px;">Test Rides : <?php echo $count; ?></h4></div>
         <table class="table">
           <thead>
             <tr>
@@ -146,7 +161,10 @@
                   <td>'.$model.'</td>
                   <td>'.$location_.'</td>
                   <td>
-                    <button><a href="">Delete</a></button>
+                    <button name="delete" style="background-color: #f98e1d;
+                    color: white;padding: 8px 16px;margin: 8px 0;border: none;cursor: pointer;
+                    border-radius:8px;
+                    text-decoration:none;">Delete</a></button>
                   </td>
                 </tr>';
                 }
