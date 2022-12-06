@@ -94,11 +94,17 @@
       <div class="border"></div>
       <br>
     <br>
-    <div class="container">
-      <form action="profile.php" method="post">
-        <center><img src="../registerpage/logo.png" style="width: 450px; height: 150px; margin-top:-45px"></center>
-        
-          <center><h1 style="margin-top:-10px;font-size:25px;">Edit Admin Profile</h1></center>
+    <div class="container" style="background: #f2f3f7;
+    box-shadow: 5px 5px 10px rgb(28 28 28);
+    padding: 36px 27px;
+    border-radius: 20px;
+    width: 640px;
+    margin-left: 20rem;
+    align-items: center;
+    font-size: small;">
+      <form action="profile.php" method="post" style="margin-left:6rem;">
+        <img src="../registerpage/logo.png" style="width: 450px; height: 150px; margin-top:-45px;margin-left:-2rem;">
+          <h1 style="margin-top:-10px;font-size:25px;">Edit Admin Profile</h1>
         <br>  
           <div class="name">
             <label for="a_name" style="font-size:20px;"><b>Admin Name :<b></label>
@@ -125,7 +131,7 @@
           <div class="button">
             <button type='submit' class="update" name="update" value="book-now" id="update" style="background-color: #f98e1d;
   color: white;
-  padding: 14px 20px;
+  padding: 8px 16px;
   margin: 8px 0;
   border: none;
   cursor: pointer;

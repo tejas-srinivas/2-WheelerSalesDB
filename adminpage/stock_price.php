@@ -142,7 +142,10 @@
                   <td>'.$available.'</td>
                   <td>'.$ex_showroom.'</td>
                   <td>
-                    <button><a href="">Update</a></button>
+                  <button name="update" style="background-color: #f98e1d;
+                  color: white;padding: 8px 16px;margin: 8px 0;border: none;cursor: pointer;
+                  border-radius:8px;
+                  text-decoration:none;">Update</button>
                   </td>
                 </tr>';
                 }

@@ -178,7 +178,7 @@ header .logo-text .sub-heading {
     
 }
 table, td, th {
-    border: 1px solid #000;
+    border: 0.1px solid rgb(87, 86, 86);
     padding: 10px;
   }
 
@@ -195,7 +195,7 @@ td {
     border-collapse: collapse;
     text-align: center;
     table-layout:inherit;
-    border: 1px solid grey;
+    border: 0.1px solid grey;
    
   }
   .container {
@@ -203,8 +203,8 @@ td {
     box-shadow: 5px 5px 10px rgb(28, 28, 28);
     padding: 40px 20px;
     border-radius: 20px;
-    width: 1123px;
-    margin-left: 4rem;
+    width: 1173px;
+    margin-left: 3rem;
     align-items: center;
     font-size: small;
   }

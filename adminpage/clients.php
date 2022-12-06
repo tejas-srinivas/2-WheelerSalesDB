@@ -6,6 +6,25 @@
    } 
 ?>
 
+<?php
+  
+  $DATABASE_HOST = 'localhost';
+  $DATABASE_USER = 'root';
+  $DATABASE_PASS = '';
+  $DATABASE_NAME = 'wheels&deals';
+  $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+  $query = "SELECT count(*) AS total from users";
+                $result = mysqli_query($con,$query);
+                if($result) {
+                  while($rows = mysqli_fetch_assoc($result)){
+                    $count = $rows['total'];
+                  }
+                  
+                }
+  
+
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -99,7 +118,8 @@
       <div class="text"><h1>Clients</h1></div>
       <div class="border"></div>
       <br>
-        <div class="container">
+        <div class="container" style="width:1125px;">
+        <div class="text"><h4 style="color:#f98e1d;margin-top:-40px;">Total Users : <?php echo $count; ?></h4></div>
         <table class="table">
           <thead>
             <tr>

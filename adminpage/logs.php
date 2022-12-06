@@ -6,6 +6,21 @@
    } 
 ?>
 
+<?php
+$DATABASE_HOST = 'localhost';
+$DATABASE_USER = 'root';
+$DATABASE_PASS = '';
+$DATABASE_NAME = 'wheels&deals';
+$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+$query = "SELECT count(*) AS total from vechile_booking";
+              $result = mysqli_query($con,$query);
+              if($result) {
+                while($rows = mysqli_fetch_assoc($result)){
+                  $count = $rows['total'];
+                }
+                
+              }
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -36,7 +51,7 @@
         <div class="text logo-text">
           <span class="heading"><h1>Welcome,</h1></span>
           <span class="sub-heading"><?php echo $_SESSION['a_name']; ?>
-          </<span>
+          </span>
         </div>
       </div>
     </header> 
@@ -100,6 +115,7 @@
       <div class="border"></div>
       <br>
         <div class="container">
+        <div class="text"><h4 style="color:#f98e1d;margin-top:-40px;">Total Bookings : <?php echo $count; ?></h4></div>
         <table class="table">
           <thead>
             <tr>
@@ -124,6 +140,7 @@
               if (mysqli_connect_error()) {
                 exit('Error connecting to the database' . mysqli_connect_errno());
               }
+
               $sql = "SELECT * from vechile_booking";
               $resultj = mysqli_query($con,$sql);
               if($resultj){
@@ -146,8 +163,14 @@
                   <td>'.$color.'</td>
                   <td>'.$varient.'</td>
                   <td>
-                    <button><a href="">Update</a></button>
-                    <button><a href="">Delete</a></button>
+                    <button name="update" style="background-color: #f98e1d;
+                    color: white;padding: 8px 16px;margin: 8px 0;border: none;cursor: pointer;
+                    border-radius:8px;
+                    text-decoration:none;">Update</button>
+                    <button name="delete" style="background-color: #ff0011;
+                    color: white;padding: 8px 16px;margin: 8px 0;border: none;cursor: pointer;
+                    border-radius:8px;
+                    text-decoration:none;">Delete</button>
                   </td>
                 </tr>';
                 }
