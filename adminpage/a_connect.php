@@ -35,7 +35,8 @@
                     session_start();
                     echo "<script>alert('Login Successfull');</script>";
                     $_SESSION['a_username'] = $username;
-                    $_SESSION['a_name'] = $hash['a_name']; //retrive firstname from users table
+                    $_SESSION['a_name'] = $hash['a_name'];
+                    $_SESSION['a_email'] = $hash['a_email'];      //retrive firstname from users table
                     echo "<script>window.location.href='../adminpage/clients.php'</script>";
                 //} 
                 /*else {

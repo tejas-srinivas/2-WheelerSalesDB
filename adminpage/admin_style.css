@@ -178,7 +178,7 @@ header .logo-text .sub-heading {
     
 }
 table, td, th {
-    border: 1px solid grey;
+    border: 1px solid #000;
     padding: 10px;
   }
 
@@ -200,16 +200,18 @@ td {
   }
   .container {
     background: #f2f3f7;
-    box-shadow: 5px 5px 10px #999;
-    padding: 47px 27px;
+    box-shadow: 5px 5px 10px rgb(28, 28, 28);
+    padding: 40px 20px;
     border-radius: 20px;
-    width: 1068px;
-    margin-left: 6rem;
+    width: 1123px;
+    margin-left: 4rem;
     align-items: center;
     font-size: small;
   }
   
   th {
-    background-color: black;
+    background-color: #f98e1d;
     color:white;
   }
+
+  
