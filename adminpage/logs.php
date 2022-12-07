@@ -122,7 +122,7 @@ $query = "SELECT count(*) AS total from vechile_booking";
       <div class="text"><h1 style="color:#ffff ;">Manage Bookings</h1></div>
       <div class="border" style="border: 0.5px solid white;"></div>
       <br>
-        <div class="container">
+        <div class="container" style="margin-left:3rem;">
         <div class="text"><h4 style="color:#f98e1d;margin-top:-40px;">Total Bookings : <?php echo $count; ?></h4></div>
         <table class="table">
           <thead>
