@@ -22,8 +22,10 @@
   </head>
   <style>
     section{
-      /* background:url(../background_img/bookings.jpeg); */
-      width: 1250px;
+      background:url(../background_img/background9.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      width:1268px;
     }
   </style>
   <body>
@@ -44,13 +46,19 @@
       <div class="menu">
         <ul class="menu-links">
         <li class="nav-link">
+            <a href="../adminpage/a_dashboard.php">
+            <i class="fa-solid fa-users icon"></i>
+              <span class="text nav-text">Dashboard</span>
+            </a>
+          </li>
+        <li class="nav-link">
             <a href="../adminpage/clients.php">
             <i class="fa-solid fa-users icon"></i>
               <span class="text nav-text">Clients</span>
             </a>
           </li>
           <li class="nav-link">
-            <a href="#">
+            <a href="../adminpage/logs.php">
               <i class="fa-solid fa-bars icon"></i>
               <span class="text nav-text">Logs</span>
             </a>
@@ -68,7 +76,7 @@
             </a>
           </li>
           <li class="nav-link">
-            <a href="../adminpage/stock_price.php">
+            <a href="../adminpage/stock_price.php" style="background-color: #f98e1d; color: white">
             <i class="fa-solid fa-bars icon"></i>
               <span class="text nav-text">Availability/Price</span>
             </a>
@@ -95,12 +103,12 @@
       </div>
     </div> 
   </nav>  
-   <section class="home" style="background:url(../background_img/background4.jpeg);height:750px;width:1230px;">
-      <div class="text"><h1>Availability & Ex-Showroom</h1></div>
-      <div class="border"></div>
+   <section class="home">
+      <div class="text" style="color:white"><h1>Availability & Ex-Showroom</h1></div>
+      <div class="border" style="border:0.5px solid white"></div>
       <br>
         <div class="container" style="background: #f2f3f7;
-    box-shadow: 5px 5px 10px #999;
+    box-shadow: 5px 5px 10px #000;
     padding: 41px 43px;
     border-radius: 20px;
     width: 601px;

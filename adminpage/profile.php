@@ -38,6 +38,12 @@
       <div class="menu">
         <ul class="menu-links">
         <li class="nav-link">
+            <a href="../adminpage/a_dashboard.php">
+            <i class="fa-solid fa-users icon"></i>
+              <span class="text nav-text">Dashboard</span>
+            </a>
+          </li>
+        <li class="nav-link">
             <a href="../adminpage/clients.php">
             <i class="fa-solid fa-users icon"></i>
               <span class="text nav-text">Clients</span>
@@ -73,7 +79,7 @@
               <span class="text nav-text">Updates/Changes</span>
             </a>
           </li>
-          <li class="nav-link">
+          <li class="nav-link" style="background-color: #f98e1d; color: white">
             <a href="../adminpage/profile.php">
             <i class="fa-solid fa-user icon"></i>
               <span class="text nav-text">Profile</span>
