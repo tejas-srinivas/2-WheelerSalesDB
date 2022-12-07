@@ -37,8 +37,10 @@ $query = "SELECT count(*) AS total from vechile_booking";
   </head>
   <style>
     section{
-      /* background:url(../background_img/bookings.jpeg); */
-      width: 1250px;
+      background:url(../background_img/bookings.jpeg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      width:1268px;
     }
   </style>
   <body>
@@ -59,13 +61,19 @@ $query = "SELECT count(*) AS total from vechile_booking";
       <div class="menu">
         <ul class="menu-links">
         <li class="nav-link">
+            <a href="../adminpage/a_dashboard.php">
+            <i class="fa-solid fa-users icon"></i>
+              <span class="text nav-text">Dashboard</span>
+            </a>
+          </li>
+        <li class="nav-link">
             <a href="../adminpage/clients.php">
             <i class="fa-solid fa-users icon"></i>
               <span class="text nav-text">Clients</span>
             </a>
           </li>
           <li class="nav-link">
-            <a href="../adminpage/logs.php">
+            <a href="../adminpage/logs.php" style="background-color: #f98e1d; color: white">
               <i class="fa-solid fa-bars icon"></i>
               <span class="text nav-text">Logs</span>
             </a>
@@ -110,9 +118,9 @@ $query = "SELECT count(*) AS total from vechile_booking";
       </div>
     </div> 
   </nav>  
-   <section class="home" style="background:url(../background_img/bookings.jpeg);height:750px;width:1270px;">
+   <section class="home">
       <div class="text"><h1 style="color:#ffff ;">Manage Bookings</h1></div>
-      <div class="border"></div>
+      <div class="border" style="border: 0.5px solid white;"></div>
       <br>
         <div class="container">
         <div class="text"><h4 style="color:#f98e1d;margin-top:-40px;">Total Bookings : <?php echo $count; ?></h4></div>

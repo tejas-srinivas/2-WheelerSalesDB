@@ -6,21 +6,6 @@
    } 
 ?>
 
-<?php
-$DATABASE_HOST = 'localhost';
-$DATABASE_USER = 'root';
-$DATABASE_PASS = '';
-$DATABASE_NAME = 'wheels&deals';
-$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-$query = "SELECT count(*) AS total from test_ride";
-              $result = mysqli_query($con,$query);
-              if($result) {
-                while($rows = mysqli_fetch_assoc($result)){
-                  $count = $rows['total'];
-                }
-                
-              }
-?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -33,14 +18,24 @@ $query = "SELECT count(*) AS total from test_ride";
     <!-- Bootstrap CSS -->
     
     <link href="../adminpage/admin_style.css" rel="stylesheet" type="text/css">
-    <title>Test-Ride Clients</title>
+    <title>Dashboard</title>
   </head>
   <style>
     section{
-      background:url(../background_img/background8.jpg);
+      background:url(../background_img/background6.jpg);
       background-repeat: no-repeat;
       background-size: cover;
       width:1268px;
+    }
+    .cont{
+        background: #f2f3f7;
+        box-shadow: 5px 5px 10px rgb(28 28 28);
+        padding: 9px 44px 105px;
+        border-radius: 20px;
+        width: 280px;
+        margin-left: 4rem;
+        align-items: center;
+        font-size: small;
     }
   </style>
   <body>
@@ -61,12 +56,12 @@ $query = "SELECT count(*) AS total from test_ride";
       <div class="menu">
         <ul class="menu-links">
         <li class="nav-link">
-            <a href="../adminpage/a_dashboard.php">
+            <a href="../adminpage/a_dashboard.php" style="background-color: #f98e1d; color: white">
             <i class="fa-solid fa-users icon"></i>
               <span class="text nav-text">Dashboard</span>
             </a>
           </li>
-        <li class="nav-link">
+          <li class="nav-link">
             <a href="../adminpage/clients.php">
             <i class="fa-solid fa-users icon"></i>
               <span class="text nav-text">Clients</span>
@@ -79,8 +74,8 @@ $query = "SELECT count(*) AS total from test_ride";
             </a>
           </li>
           <li class="nav-link">
-            <a href="../adminpage/Testride_users.php" style="background-color: #f98e1d; color: white">
-            <i class="fa-solid fa-bars icon"></i>
+            <a href="../adminpage/Testride_users.php">
+              <i class="fa-solid fa-bars icon"></i>
               <span class="text nav-text">Test-Ride Clients</span>
             </a>
           </li>
@@ -90,7 +85,6 @@ $query = "SELECT count(*) AS total from test_ride";
               <span class="text nav-text">Users Info</span>
             </a>
           </li>
-          
           <li class="nav-link">
             <a href="../adminpage/stock_price.php">
             <i class="fa-solid fa-bars icon"></i>
@@ -119,69 +113,54 @@ $query = "SELECT count(*) AS total from test_ride";
       </div>
     </div> 
   </nav>  
-   <section class="home">
-      <div class="text" style="color: white;"><h1>Testride Clients</h1></div>
-      <div class="border" style="border: 0.5px solid white"></div>
-      <br>
-        <div class="container" style="background: #f2f3f7;
-    box-shadow: 5px 5px 10px #0000;
-    padding: 41px 40px;
-    border-radius: 20px;
-    width: 697px;
-    margin-left: 19rem;
-    align-items: center;
-    font-size: small;">
-        <div class="text"><h4 style="color:#f98e1d;margin-top:-40px;">Test Rides : <?php echo $count; ?></h4></div>
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Email</th>
-              <th scope="col">Mob_No</th>
-              <th scope="col">Model</th>
-              <th scope="col">Location</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php
-              $DATABASE_HOST = 'localhost';
-              $DATABASE_USER = 'root';
-              $DATABASE_PASS = '';
-              $DATABASE_NAME = 'wheels&deals';
-              $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-              if (mysqli_connect_error()) {
-                exit('Error connecting to the database' . mysqli_connect_errno());
-              }
-              $sql = "SELECT * from test_ride";
-              $result = mysqli_query($con,$sql);
-              if($result){
-                while($row = mysqli_fetch_array($result)){
-                  $name = $row['name'];
-                  $email = $row['email'];
-                  $mob = $row['mob_no'];
-                  $model = $row['model'];
-                  $location_ = $row['location_'];
-                  echo '<tr>
-                  <td scope="row">'.$name.'</td>
-                  <td>'.$email.'</td>
-                  <td>'.$mob.'</td>
-                  <td>'.$model.'</td>
-                  <td>'.$location_.'</td>
-                  <td>
-                    <button name="delete" style="background-color: #f98e1d;
-                    color: white;padding: 8px 16px;margin: 8px 0;border: none;cursor: pointer;
-                    border-radius:8px;
-                    text-decoration:none;">Delete</a></button>
-                  </td>
-                </tr>';
-                }
-              }
-            ?>  
-          </tbody>
-        </table>
-        </div>
-   </section>
   
+  <section class="home">
+      <div class="text" style="color:white"><h1>Dashboard</h1></div>
+      <div class="border" style="border: 0.5px solid white ;"></div>
+      <br>
+      <div class="main" style="display: flex;justify-content: center;">
+        <div class="cont">
+            <h1 style="font-size:x-large"> TOTAL USERS </h1>
+        </div>
+        
+        <div class="cont">
+            <h1 style="font-size:x-large"> TOTAL BOOKINGS </h1>
+        </div>
+        
+        <div class="cont">
+            <h1 style="font-size:x-large"> TEST RIDES </h1>
+        </div>
+      </div> 
+      <br>
+      <br>
+      <div class="main" style="display: flex;justify-content: center;">
+        <div class="cont">
+            <h1 style="font-size:x-large"> BILLS GENERATED </h1>
+        </div>
+
+        <div class="cont">
+            <h1 style="font-size:x-large"> TOTAL REVENUE </h1>
+        </div>
+
+        <div class="cont">
+            <h1 style="font-size:x-large"> REVENUE PER BRANCH </h1>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="main" style="display: flex;justify-content: center;">
+        <div class="cont">
+            <h1 style="font-size:x-large"> ACTIVA SALES </h1>
+        </div>
+
+        <div class="cont">
+            <h1 style="font-size:x-large"> ACCESS SALES </h1>
+        </div>
+
+        <div class="cont">
+            <h1 style="font-size:x-large"> JUPITER SALES </h1>
+        </div>
+      </div>
+  </section> 
   </body>
 </html>

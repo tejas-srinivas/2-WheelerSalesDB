@@ -63,7 +63,13 @@
       <div class="menu">
         <ul class="menu-links">
         <li class="nav-link">
-            <a href="../adminpage/clients.php">
+            <a href="../adminpage/a_dashboard.php">
+            <i class="fa-solid fa-users icon"></i>
+              <span class="text nav-text">Dashboard</span>
+            </a>
+          </li>
+        <li class="nav-link">
+            <a href="../adminpage/clients.php" style="background-color: #f98e1d; color: white">
             <i class="fa-solid fa-users icon"></i>
               <span class="text nav-text">Clients</span>
             </a>
