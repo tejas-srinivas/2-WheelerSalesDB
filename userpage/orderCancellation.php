@@ -76,6 +76,12 @@ if (!isset($_SESSION['username'])) {
             </a>
           </li>
           <li class="nav-link">
+            <a href="../userpage/profile.php">
+              <i class="fa-solid fa-user icon"></i>
+              <span class="text nav-text">Profile</span>
+            </a>
+          </li>
+          <li class="nav-link">
             <a href="orderCancellation.php" style="background-color: #f98e1d; color: #ffff">
               <i class="fa-solid fa-ban icon"></i>
               <span class="text nav-text">Order Cancellation</span>
