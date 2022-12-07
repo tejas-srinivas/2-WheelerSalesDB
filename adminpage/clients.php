@@ -21,8 +21,6 @@
                   }
                   
                 }
-  
-
 ?>
 
 <!doctype html>
@@ -39,12 +37,7 @@
     <link href="../adminpage/admin_style.css" rel="stylesheet" type="text/css">
     <title>Clients</title>
   </head>
-  <style>
-    section{
-      /* background:url(../background_img/client.jpg); */
-      width: 1250px;
-    }
-  </style>
+  
   <body>
     <nav class="designer-slider">
     <header>
