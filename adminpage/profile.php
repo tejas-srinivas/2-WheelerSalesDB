@@ -39,7 +39,7 @@
         <ul class="menu-links">
         <li class="nav-link">
             <a href="../adminpage/a_dashboard.php">
-            <i class="fa-solid fa-users icon"></i>
+            <i class="fa-solid fa-chart-line icon"></i>
               <span class="text nav-text">Dashboard</span>
             </a>
           </li>
@@ -51,13 +51,13 @@
           </li>
           <li class="nav-link">
             <a href="../adminpage/logs.php">
-              <i class="fa-solid fa-bars icon"></i>
+              <i class="fa-solid fa-motorcycle icon"></i>
               <span class="text nav-text">Logs</span>
             </a>
           </li>
           <li class="nav-link">
             <a href="../adminpage/Testride_users.php">
-              <i class="fa-solid fa-bars icon"></i>
+              <i class="fa-solid fa-road icon"></i>
               <span class="text nav-text">Test-Ride Clients</span>
             </a>
           </li>
@@ -69,7 +69,7 @@
           </li>
           <li class="nav-link">
             <a href="../adminpage/stock_price.php">
-            <i class="fa-solid fa-bars icon"></i>
+            <i class="fa-solid fa-money-bill icon"></i>
               <span class="text nav-text">Availability/Price</span>
             </a>
           </li>
@@ -80,7 +80,7 @@
             </a>
           </li>
           <li class="nav-link" style="background-color: #f98e1d; color: white">
-            <a href="../adminpage/profile.php">
+            <a href="../adminpage/profile.php" >
             <i class="fa-solid fa-user icon"></i>
               <span class="text nav-text">Profile</span>
             </a>

@@ -79,6 +79,12 @@
             </a>
           </li>
           <li class="nav-link">
+            <a href="../userpage/profile.php">
+              <i class="fa-solid fa-user icon"></i>
+              <span class="text nav-text">Profile</span>
+            </a>
+          </li>
+          <li class="nav-link">
             <a href="logout.php">
             <i class="fa-solid fa-power-off icon"></i>
               <span class="text nav-text">Logout</span>

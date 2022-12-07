@@ -62,7 +62,7 @@ $query = "SELECT count(*) AS total from test_ride";
         <ul class="menu-links">
         <li class="nav-link">
             <a href="../adminpage/a_dashboard.php">
-            <i class="fa-solid fa-users icon"></i>
+            <i class="fa-solid fa-chart-line icon"></i>
               <span class="text nav-text">Dashboard</span>
             </a>
           </li>
@@ -74,13 +74,13 @@ $query = "SELECT count(*) AS total from test_ride";
           </li>
           <li class="nav-link">
             <a href="../adminpage/logs.php">
-              <i class="fa-solid fa-bars icon"></i>
+              <i class="fa-solid fa-motorcycle icon"></i>
               <span class="text nav-text">Logs</span>
             </a>
           </li>
           <li class="nav-link">
             <a href="../adminpage/Testride_users.php" style="background-color: #f98e1d; color: white">
-            <i class="fa-solid fa-bars icon"></i>
+            <i class="fa-solid fa-road icon"></i>
               <span class="text nav-text">Test-Ride Clients</span>
             </a>
           </li>
@@ -93,7 +93,7 @@ $query = "SELECT count(*) AS total from test_ride";
           
           <li class="nav-link">
             <a href="../adminpage/stock_price.php">
-            <i class="fa-solid fa-bars icon"></i>
+            <i class="fa-solid fa-money-bill icon"></i>
               <span class="text nav-text">Availability/Price</span>
             </a>
           </li>

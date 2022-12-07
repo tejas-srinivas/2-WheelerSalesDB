@@ -83,6 +83,12 @@
           </li>
           <li class="nav-link">
             
+              <i class="fa-solid fa-user icon"></i>
+              <span class="text nav-text">Profile</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            
             <i class="fa-solid fa-power-off icon"></i>
               <span class="text nav-text" disabled>Logout</span>
             </a>
