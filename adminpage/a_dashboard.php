@@ -132,7 +132,7 @@
         </div>
       </div> 
       <br>
-      <br>
+      
       <div class="main" style="display: flex;justify-content: center;">
         <div class="cont">
             <h1 style="font-size:x-large"> BILLS GENERATED </h1>
@@ -147,7 +147,7 @@
         </div>
       </div>
       <br>
-      <br>
+      
       <div class="main" style="display: flex;justify-content: center;">
         <div class="cont">
             <h1 style="font-size:x-large"> ACTIVA SALES </h1>

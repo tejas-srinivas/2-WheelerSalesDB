@@ -112,7 +112,7 @@
     padding: 41px 43px;
     border-radius: 20px;
     width: 601px;
-    margin-left: 19rem;
+    margin-left: 22rem;
     align-items: center;
     font-size: small;
 ">
