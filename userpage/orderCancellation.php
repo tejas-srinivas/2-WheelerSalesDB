@@ -6,6 +6,45 @@ if (!isset($_SESSION['username'])) {
 }
 ?>
 
+<?php
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $DATABASE_HOST = 'localhost';
+        $DATABASE_USER = 'root';
+        $DATABASE_PASS = '';
+        $DATABASE_NAME = 'wheels&deals';
+        $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+        if (mysqli_connect_error()) {
+          exit('Error connecting to the database' . mysqli_connect_errno());
+        }
+        $booking_id = $_POST['booking_id'];
+        if(isset($_POST['check-details'])){
+            $booking_id = $_POST['booking_id'];
+            $query = "SELECT * FROM vechile_booking where booking_id='$booking_id'";
+            $result = mysqli_query($con,$query);
+            if($result) {
+                $row = mysqli_fetch_assoc($result);
+                $booking_id = $row['booking_id'];
+                $ph_no = $row['ph_no'];
+                $location_ = $row['location_'];
+                $varient = $row['varient'];
+                $color = $row['color'];
+                $model = $row['model'];
+            }
+            else{
+              echo 'error';
+            }
+          }
+        elseif(isset($_POST['cancel'])){
+            $query = "DELETE FROM vechile_booking WHERE booking_id = '$booking_id'" ;
+            $result = mysqli_query($con,$query);
+            if($result){
+              echo "<script>alert('Your Booking is Cancelled');</script>";
+              echo "<script>window.location.href='../userpage/dashboard.php'</script>";
+              }
+            }
+        }
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -52,7 +91,7 @@ if (!isset($_SESSION['username'])) {
             </a>
           </li>
           <li class="nav-link">
-            <!-- <a href="#"> -->
+            <a href="../userpage/vechileBooking.php">
               <i class="fa-solid fa-cart-shopping icon"></i>
               <span class="text nav-text">Vehicle Booking</span>
             </a>
@@ -76,15 +115,15 @@ if (!isset($_SESSION['username'])) {
             </a>
           </li>
           <li class="nav-link">
-            <a href="../userpage/profile.php">
-              <i class="fa-solid fa-user icon"></i>
-              <span class="text nav-text">Profile</span>
-            </a>
-          </li>
-          <li class="nav-link">
             <a href="orderCancellation.php" style="background-color: #f98e1d; color: #ffff">
               <i class="fa-solid fa-ban icon"></i>
               <span class="text nav-text">Order Cancellation</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a href="../userpage/profile.php">
+              <i class="fa-solid fa-user icon"></i>
+              <span class="text nav-text">Profile</span>
             </a>
           </li>
           <li class="nav-link">
@@ -119,50 +158,31 @@ if (!isset($_SESSION['username'])) {
   margin-left:5rem;">
               <b>Check</b>
             </button>
+            <button name="cancel" style="background-color: #f98e1d;
+        color: white;padding: 10px 20px;margin: 8px 0;border: none;cursor: pointer;border-radius:8px;text-decoration:none;"><b>Cancel Booking</b>
+      </button>
     </div>
     </form>
+    <br>
+    <br> 
+    
+    <div class="display" style="margin-left:6rem;">
+      <h1 style="font-size:10 px;">BOOKING ID: <?php if(isset($booking_id)){ echo $booking_id; } else { echo ' ';} ?> </h1> 
+      <br>
+      <h1 style="font-size:10 px;">MODEL: <?php if(isset($booking_id)){ echo $model; } else { echo ' ';} ?> </h1>
+      <br>
+      <h1 style="font-size:10 px;">COLOR: <?php if(isset($booking_id)){ echo $color; } else { echo ' ';} ?> </h1>
+      <br>
+      <h1 style="font-size:10 px;">VARIENT: <?php if(isset($booking_id)){ echo $varient; } else { echo ' ';} ?> </h1>
+      <br>
+      <h1 style="font-size:10 px;">LOCATION: <?php if(isset($booking_id)){ echo $location_; } else { echo ' ';} ?> </h1>
+      <br>
       
-    </div>
+      
+
+    </div> 
+    
   </section>
 </body>
 </html>
 
-<?php
-    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['check-details'])) {
-        $DATABASE_HOST = 'localhost';
-        $DATABASE_USER = 'root';
-        $DATABASE_PASS = '';
-        $DATABASE_NAME = 'wheels&deals';
-        $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-        if (mysqli_connect_error()) {
-          exit('Error connecting to the database' . mysqli_connect_errno());
-        }
-        if(isset($_POST['check-details'])){
-            $booking_id = $_POST['booking_id'];
-            $query = "SELECT * FROM vechile_booking where booking_id='$booking_id'";
-            $result = mysqli_query($con,$query);
-            if($result) {
-                $row = mysqli_fetch_assoc($result);
-                $_SESSION['booking_id'] = $row['booking_id'];
-                $_SESSION['ph_no'] = $row['ph_no'];
-                $_SESSION['model'] = $row['model'];
-                $_SESSION['location_'] = $row['location_'];
-                $_SESSION['color'] = $row['color'];
-                $_SESSION['varient'] = $row['varient'];
-                // echo '
-                // <ul>
-                //     <li>'.$_SESSION['booking_id'].'</li>
-                //     <li>'.$_SESSION['ph_no'].'</li>
-                //     <li>'.$_SESSION['model'].'</li>
-                //     <li>'.$_SESSION['location'].'</li>
-                //     <li>'.$_SESSION['color'].'</li>
-                //     <li>'.$_SESSION['varient'].'</li>
-                // </ul>';
-                
-            }
-           
-        }
-    }
-
-
-?>
