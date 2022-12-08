@@ -6,6 +6,72 @@
    } 
 ?>
 
+<?php
+  
+  $DATABASE_HOST = 'localhost';
+  $DATABASE_USER = 'root';
+  $DATABASE_PASS = '';
+  $DATABASE_NAME = 'wheels&deals';
+  $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+  $query = "SELECT count(*) AS total from vechile_booking";
+                $result = mysqli_query($con,$query);
+                if($result) {
+                  while($rows = mysqli_fetch_assoc($result)){
+                    $count = $rows['total'];
+                  }
+                  
+                }
+  $query = "SELECT count(*) AS total_users from users";
+  $result = mysqli_query($con,$query);
+  if($result)
+  {
+    while($rows=mysqli_fetch_assoc($result))
+    {
+      $total_users = $rows['total_users'];
+    }
+  }     
+  $query = "SELECT count(*) AS total_rides from test_ride";
+  $result = mysqli_query($con,$query);
+  if($result)
+  {
+    while($rows=mysqli_fetch_assoc($result))
+    {
+      $total_rides = $rows['total_rides'];
+    }
+  }     
+  
+  $query = "SELECT count(model) AS activa_count FROM `vechile_booking` WHERE model LIKE'Act%'";
+  $result = mysqli_query($con,$query);
+  if($result)
+  {
+    while($rows=mysqli_fetch_assoc($result))
+    {
+      $activa_count = $rows['activa_count'];
+    }
+  }  
+  
+  $query = "SELECT count(model) AS access_count FROM `vechile_booking` WHERE model LIKE'Acc%'";
+  $result = mysqli_query($con,$query);
+  if($result)
+  {
+    while($rows=mysqli_fetch_assoc($result))
+    {
+      $access_count = $rows['access_count'];
+    }
+  }  
+
+  $query = "SELECT count(model) AS jupiter_count FROM `vechile_booking` WHERE model LIKE'Jup%'";
+  $result = mysqli_query($con,$query);
+  if($result)
+  {
+    while($rows=mysqli_fetch_assoc($result))
+    {
+      $jup_count = $rows['jupiter_count'];
+    }
+  }  
+  
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -30,7 +96,7 @@
     .cont{
         background: #f2f3f7;
         box-shadow: 5px 5px 10px rgb(28 28 28);
-        padding: 9px 44px 105px;
+        padding: 9px 35px 5px;
         border-radius: 20px;
         width: 280px;
         margin-left: 4rem;
@@ -121,14 +187,17 @@
       <div class="main" style="display: flex;justify-content: center;">
         <div class="cont">
             <h1 style="font-size:x-large"> TOTAL USERS </h1>
+            <h1 style="font-size:100px;text-align:center;"> <?php echo $total_users; ?> </h1>
         </div>
         
         <div class="cont">
             <h1 style="font-size:x-large"> TOTAL BOOKINGS </h1>
+            <h1 style="font-size:100px;text-align:center;"> <?php echo $count; ?> </h1>
         </div>
         
         <div class="cont">
             <h1 style="font-size:x-large"> TEST RIDES </h1>
+            <h1 style="font-size:100px;text-align:center;"> <?php echo $total_rides; ?> </h1> 
         </div>
       </div> 
       <br>
@@ -151,16 +220,25 @@
       <div class="main" style="display: flex;justify-content: center;">
         <div class="cont">
             <h1 style="font-size:x-large"> ACTIVA SALES </h1>
+            <h1 style="font-size:100px;text-align:center;"> <?php echo $activa_count; ?> </h1> 
         </div>
 
         <div class="cont">
             <h1 style="font-size:x-large"> ACCESS SALES </h1>
+            <h1 style="font-size:100px;text-align:center;"> <?php echo $access_count; ?> </h1>
         </div>
 
         <div class="cont">
             <h1 style="font-size:x-large"> JUPITER SALES </h1>
+            <h1 style="font-size:100px;text-align:center;"> <?php echo $jup_count; ?> </h1>
         </div>
       </div>
   </section> 
   </body>
 </html>
+
+<?php 
+
+
+
+?>
