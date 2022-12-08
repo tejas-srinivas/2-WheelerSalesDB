@@ -127,8 +127,8 @@ $query = "SELECT count(*) AS total from test_ride";
     box-shadow: 5px 5px 10px #0000;
     padding: 41px 40px;
     border-radius: 20px;
-    width: 697px;
-    margin-left: 19rem;
+    width: 801px;
+    margin-left: 17rem;
     align-items: center;
     font-size: small;">
         <div class="text"><h4 style="color:#f98e1d;margin-top:-40px;">Test Rides : <?php echo $count; ?></h4></div>
