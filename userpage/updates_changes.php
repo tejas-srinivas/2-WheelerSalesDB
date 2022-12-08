@@ -64,7 +64,7 @@ if (!isset($_SESSION['username'])) {
             </a>
           </li>
           <li class="nav-link">
-            <a href="#">
+            <!-- <a href="#"> -->
               <i class="fa-solid fa-money-bill icon"></i>
               <span class="text nav-text">Payment Details</span>
             </a>

@@ -88,7 +88,8 @@
   </head>
   <style>
     section{
-      background:url(../background_img/background6.jpg);
+      background: rgb(131,58,180);
+      background: linear-gradient(70deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
       background-repeat: no-repeat;
       background-size: cover;
       width:1268px;
@@ -236,9 +237,3 @@
   </section> 
   </body>
 </html>
-
-<?php 
-
-
-
-?>

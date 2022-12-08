@@ -6,6 +6,29 @@
    } 
 ?>
 
+<?php 
+  $DATABASE_HOST = 'localhost';
+  $DATABASE_USER = 'root';
+  $DATABASE_PASS = '';
+  $DATABASE_NAME = 'wheels&deals';
+
+  $con = mysqli_connect($DATABASE_HOST,$DATABASE_USER,$DATABASE_PASS,$DATABASE_NAME);
+
+  if(mysqli_connect_error()) {
+      exit('Error connecting to the database'.mysqli_connect_error());
+  } 
+  
+  $a_id = $_SESSION['a_id'];
+  $query = "SELECT * FROM admintable WHERE a_id='$a_id'";
+  $result = mysqli_query($con,$query);
+  if($result) {
+    $row = mysqli_fetch_assoc($result);
+    $username = $row['a_username'];
+    $name = $row['a_name'];
+    $email = $row['a_email'];
+  }
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -116,26 +139,26 @@
             <label for="a_name" style="font-size:20px;"><b>Admin Name :<b></label>
           </div>
           <div class="input">
-            <input type="text" id="a_name" name="a_name" value="<?php echo $_SESSION['a_name']; ?>" style="border-radius: 6px; width: 400px;height: 40px;px;border:1px solid gray;box-sizing:border-box;padding: 10px 15px;font-size:16px;" required>
+            <input type="text" id="a_name" name="a_name" value="<?php echo $name; ?>" style="border-radius: 6px; width: 400px;height: 40px;px;border:1px solid gray;box-sizing:border-box;padding: 10px 15px;font-size:16px;" required>
           </div>
           <br>
           <div class="name">
             <label for="a_email" style="font-size:20px;"><b>Email :</b></label>
           </div>
           <div class="input">
-            <input type="text" id="a_email" name="a_email" value="<?php echo $_SESSION['a_email']; ?>" style="font-size:16px;border-radius: 6px; width: 400px;height:40px;border:1px solid gray;box-sizing:border-box;padding: 10px 15px;" required>
+            <input type="text" id="a_email" name="a_email" value="<?php echo $email; ?>" style="font-size:16px;border-radius: 6px; width: 400px;height:40px;border:1px solid gray;box-sizing:border-box;padding: 10px 15px;" required>
           </div>
           <br>
           <div class="name">
             <label for="a_username" style="font-size:20px;"><b>Admin Username :</b></label>
           </div>
           <div class="input">
-            <input type="text" id="a_username" name="a_username" value="<?php echo $_SESSION['a_username']; ?>" style="font-size:16px;border-radius: 6px; width: 400px;height:40px;border:1px solid gray;box-sizing:border-box;padding: 10px 15px;" required>
+            <input type="text" id="a_username" name="a_username" value="<?php echo $username; ?>" style="font-size:16px;border-radius: 6px; width: 400px;height:40px;border:1px solid gray;box-sizing:border-box;padding: 10px 15px;" required>
           </div>
         
         <br>    
           <div class="button">
-            <button type='submit' class="update" name="update" value="book-now" id="update" style="background-color: #f98e1d;
+            <button type='submit' class="update" name="update" value="update" id="update" style="background-color: #f98e1d;
   color: white;
   padding: 8px 16px;
   margin: 8px 0;
@@ -153,3 +176,33 @@
     
   </body>
 </html>
+
+<?php
+    if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update'])) {
+        $DATABASE_HOST = 'localhost';
+        $DATABASE_USER = 'root';
+        $DATABASE_PASS = '';
+        $DATABASE_NAME = 'wheels&deals';
+
+        $con = mysqli_connect($DATABASE_HOST,$DATABASE_USER,$DATABASE_PASS,$DATABASE_NAME);
+    
+        if(mysqli_connect_error()) {
+            exit('Error connecting to the database'.mysqli_connect_error());
+        }
+            $a_username = $_POST['a_username'];
+            $a_name = $_POST['a_name'];
+            $a_email = $_POST['a_email'];
+            // $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
+            $a_id = $_SESSION['a_id'];
+
+            $query = "UPDATE `admintable` SET `a_username` = '$a_username', `a_name` = '$a_name', `a_email` = '$a_email' WHERE `a_id` = '$a_id'";
+            $result = mysqli_query($con,$query);
+            if($result){
+              echo "<script>alert('Profile Updated !');</script>";
+              echo "<script>window.location.href='../adminpage/a_dashboard.php'</script>";
+            }
+            else{
+              echo "Error Updating";
+            }
+        }
+?>

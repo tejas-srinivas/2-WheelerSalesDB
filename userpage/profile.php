@@ -6,6 +6,30 @@ if (!isset($_SESSION['username'])) {
 }
 ?>
 
+<?php 
+  $DATABASE_HOST = 'localhost';
+  $DATABASE_USER = 'root';
+  $DATABASE_PASS = '';
+  $DATABASE_NAME = 'wheels&deals';
+
+  $con = mysqli_connect($DATABASE_HOST,$DATABASE_USER,$DATABASE_PASS,$DATABASE_NAME);
+
+  if(mysqli_connect_error()) {
+      exit('Error connecting to the database'.mysqli_connect_error());
+  } 
+  
+  $u_id = $_SESSION['u_id'];
+  $query = "SELECT * FROM users WHERE u_id='$u_id'";
+  $result = mysqli_query($con,$query);
+  if($result) {
+    $row = mysqli_fetch_assoc($result);
+    $first_name = $row['first_name'];
+    $last_name = $row['last_name'];
+    $user_name = $row['username'];
+    $email_ = $row['email'];
+  }
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -65,7 +89,7 @@ if (!isset($_SESSION['username'])) {
             </a>
           </li>
           <li class="nav-link">
-            <a href="#">
+            <!-- <a href="#"> -->
               <i class="fa-solid fa-money-bill icon"></i>
               <span class="text nav-text">Payment Details</span>
             </a>
@@ -113,7 +137,7 @@ if (!isset($_SESSION['username'])) {
     margin-left: 20rem;
     align-items: center;
     font-size: small;">
-      <form action="../userpage/profile.php" method="post" style="margin-left:6rem;">
+      <form action="profile.php" method="post" style="margin-left:6rem;">
         <img src="../registerpage/logo.png" style="width: 450px; height: 150px; margin-top:-45px;margin-left:-2rem;">
           <h1 style="margin-top:-10px;font-size:25px;">Edit User Profile</h1>
         <br>  
@@ -122,14 +146,14 @@ if (!isset($_SESSION['username'])) {
             <label for="fname" style="font-size:20px;"><b>First Name :<b></label>
           </div>
           <div class="input">
-            <input type="text" id="first_name" name="first_name" value="<?php echo $_SESSION['first_name']; ?>" style="border-radius: 6px; width: 400px;height: 40px;px;border:1px solid gray;box-sizing:border-box;padding: 10px 15px;font-size:16px;" required>
+            <input type="text" id="first_name" name="first_name" value="<?php echo $first_name; ?>" style="border-radius: 6px; width: 400px;height: 40px;px;border:1px solid gray;box-sizing:border-box;padding: 10px 15px;font-size:16px;" required>
           </div>
           <br>
           <div class="name">
             <label for="lname" style="font-size:20px;"><b>Last Name :</b></label>
           </div>
           <div class="input">
-            <input type="text" id="last_name" name="last_name" value="<?php echo $_SESSION['last_name']; ?>" style="font-size:16px;border-radius: 6px; width: 400px;height:40px;border:1px solid gray;box-sizing:border-box;padding: 10px 15px;" required>
+            <input type="text" id="last_name" name="last_name" value="<?php echo $last_name; ?>" style="font-size:16px;border-radius: 6px; width: 400px;height:40px;border:1px solid gray;box-sizing:border-box;padding: 10px 15px;" required>
           </div>
           <br>
 </div>
@@ -137,14 +161,14 @@ if (!isset($_SESSION['username'])) {
             <label for="username" style="font-size:20px;"><b>Username :</b></label>
           </div>
           <div class="input">
-            <input type="text" id="username" name="username" value="<?php echo $_SESSION['username']; ?>" style="font-size:16px;border-radius: 6px; width: 400px;height:40px;border:1px solid gray;box-sizing:border-box;padding: 10px 15px;" required>
+            <input type="text" id="username" name="username" value="<?php echo $user_name; ?>" style="font-size:16px;border-radius: 6px; width: 400px;height:40px;border:1px solid gray;box-sizing:border-box;padding: 10px 15px;" required>
           </div>
           <br>
           <div class="name">
             <label for="email" style="font-size:20px;"><b>Email :</b></label>
           </div>
           <div class="input">
-            <input type="text" id="email" name="email" value="<?php echo $_SESSION['email']; ?>" style="font-size:16px;border-radius: 6px; width: 400px;height:40px;border:1px solid gray;box-sizing:border-box;padding: 10px 15px;" required>
+            <input type="text" id="email" name="email" value="<?php echo $email_; ?>" style="font-size:16px;border-radius: 6px; width: 400px;height:40px;border:1px solid gray;box-sizing:border-box;padding: 10px 15px;" required>
           </div>
           <br>
           <!-- <div class="name">
@@ -184,8 +208,6 @@ if (!isset($_SESSION['username'])) {
         if(mysqli_connect_error()) {
             exit('Error connecting to the database'.mysqli_connect_error());
         }
-
-        if(isset($_POST['first_name']) && isset($_POST['last_name']) && isset($_POST['email']) && isset($_POST['username']) && isset($_POST['password'])) {
             $first_name = $_POST['first_name'];
             $last_name = $_POST['last_name'];
             $email = $_POST['email'];
@@ -196,14 +218,11 @@ if (!isset($_SESSION['username'])) {
             $query = "UPDATE `users` SET `first_name` = '$first_name', `last_name` = '$last_name', `email` = '$email' WHERE `u_id` = '$u_id'";
             $result = mysqli_query($con,$query);
             if($result){
-                echo "<script>alert('Profile Updated !');</script>";
-                echo "<script>window.location.href='../userpage/profile.php'</script>";
+              echo "<script>alert('Profile Updated !');</script>";
+              echo "<script>window.location.href='../userpage/dashboard.php'</script>";
             }
             else{
-                echo "Error Updating";
+              echo "Error Updating";
             }
         }
-    }
-
-
 ?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2022 at 06:01 PM
+-- Generation Time: Dec 08, 2022 at 02:30 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -44,8 +44,11 @@ CREATE TABLE `accessory` (
 INSERT INTO `accessory` (`fitting_id`, `booking_id`, `u_id`, `mirror`, `speedometer`, `stand`, `Charger`) VALUES
 ('FWD-10284', 'WD-102531', 'UWD-1037', 'Chrome-Mirror', 'Digital', 'W/O-Center-Stand', 'Charger'),
 ('FWD-10499', 'WD-101678', 'UWD-789', 'Chrome-Mirror', 'Analog', 'W/O-Center-Stand', 'Charger'),
+('FWD-10557', 'WD-103185', 'UWD-1200', 'Chrome-Mirror', 'Analog', 'W-Center-Stand', 'Charger'),
 ('FWD-10586', 'WD-106165', 'UWD-1181', 'Plane-Mirror', 'Analog', 'W/O-Center-Stand', 'Charger'),
-('FWD-10906', 'WD-101099', 'UWD-845', 'Chrome-Mirror', 'Analog', 'W/O-Center-Stand', 'Charger');
+('FWD-10732', 'WD-102643', 'UWD-944', 'Plane-Mirror', 'Digital', 'W-Center-Stand', 'Charger'),
+('FWD-10906', 'WD-101099', 'UWD-845', 'Chrome-Mirror', 'Analog', 'W/O-Center-Stand', 'Charger'),
+('FWD-10931', 'WD-112997', 'UWD-1186', 'Chrome-Mirror', 'Analog', 'W-Center-Stand', 'Charger');
 
 -- --------------------------------------------------------
 
@@ -72,6 +75,33 @@ INSERT INTO `admintable` (`a_id`, `a_username`, `a_password`, `a_name`, `a_email
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `bills`
+--
+
+CREATE TABLE `bills` (
+  `u_id` varchar(255) NOT NULL,
+  `booking_id` varchar(255) NOT NULL,
+  `location_` varchar(255) NOT NULL,
+  `color` varchar(255) NOT NULL,
+  `model` varchar(255) NOT NULL,
+  `varient` varchar(255) NOT NULL,
+  `ex-showroom` int(255) NOT NULL,
+  `accessory_price` int(255) NOT NULL,
+  `road_tax` int(255) NOT NULL,
+  `insurance` int(255) NOT NULL,
+  `total_bill` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `bills`
+--
+
+INSERT INTO `bills` (`u_id`, `booking_id`, `location_`, `color`, `model`, `varient`, `ex-showroom`, `accessory_price`, `road_tax`, `insurance`, `total_bill`) VALUES
+('UWD-1037', 'WD-102531', 'Yelanka', 'Black', 'Access-125', '', 75000, 4000, 10000, 2000, 92000);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `stock_price`
 --
 
@@ -87,7 +117,7 @@ CREATE TABLE `stock_price` (
 --
 
 INSERT INTO `stock_price` (`vechile_id`, `vehicle_name`, `available`, `ex_showroom`) VALUES
-(1, 'Activa 5G', 'Available', '70000'),
+(1, 'Activa 6G', 'Available', '70000'),
 (2, 'Access 125', 'Not-Available', '75000'),
 (3, 'Jupiter 125', 'Available', '80000');
 
@@ -111,6 +141,7 @@ CREATE TABLE `test_ride` (
 
 INSERT INTO `test_ride` (`name`, `email`, `mob_no`, `model`, `location_`) VALUES
 ('Anusha', 'anusha@gmail.com', '123456789', 'Jupiter 12', 'Yelahanka'),
+('Varsha chennur', 'chennurvarshag@gmail.com', '8147191253', 'Jupiter 12', 'Koramangla'),
 ('Tejas', 'stejas2002@gmail.com', '9353931335', 'Activa 6G', 'Vijaynagar'),
 ('Suchith', 'suchith@gmail.com', '9902498765', 'Activa 6G', 'Indranagar');
 
@@ -134,10 +165,12 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`u_id`, `first_name`, `last_name`, `email`, `username`, `password`) VALUES
-('UWD-1037', 'Yathin', 'B N', 'yathinbn123@gmail.com', 'yathin123', '$2y$10$bWe.s/NSKl31M21NPMx4nOnbKqAetnFtMpe1ThPfBOtY2YDEWf5ta'),
 ('UWD-1181', 'Vinay ', 'Kumar', 'vinaykumarbm03@gmail.com', 'vinay03', '$2y$10$AW99HNFoiAx7CoYuhUjpju7vWrEvGJeswLP9WiQZvLIZ468iXXPyu'),
+('UWD-1186', 'Varsha', 'chennur', 'chennurvarshag@gmail.com', 'varshachennur', '$2y$10$s4MbGx9aLe/450cC1Z5meeS.sUObnX57Fxy2tExQHDYHKqu82pyg2'),
+('UWD-1200', 'guru', 'charan', 'guruchiru8147@gmail.com', 'guru10', '$2y$10$SLZWb8L9uzbtPeJWScrqeeHskL2vNQagV1axODaeFxPVc5gxG311y'),
 ('UWD-789', 'Tejas', 'Srinivas', 'stejas2002@gmail.com', 'tejas2002', '$2y$10$EvED7V8huULM.XKoc9zgcuacuv4TUlv/Q6jCJyNZORmc5fVJGUQWm'),
-('UWD-845', 'Pratibha ', 'Javalagi', 'pratibhakj02@gmail.com', 'pratibha_kj', '$2y$10$ghbyOmycS3M/G4Qxh1fdWu8YrVQxhtBeTT8T2r0DIA85Uod/YhrNq');
+('UWD-845', 'Pratibha ', 'Javalagi', 'pratibhakj02@gmail.com', 'pratibha_kj', '$2y$10$ghbyOmycS3M/G4Qxh1fdWu8YrVQxhtBeTT8T2r0DIA85Uod/YhrNq'),
+('UWD-944', 'Chethan ', 'BG', 'cchethangurumurthy@gmail.com', 'chethu', '$2y$10$yRCPnsWA6xPlnx04b5Fnme9/DpHoht80v9PvDXHPRmBldpBDi69Y.');
 
 -- --------------------------------------------------------
 
@@ -159,9 +192,11 @@ CREATE TABLE `user_verification` (
 
 INSERT INTO `user_verification` (`u_id`, `firstname`, `lastname`, `aadhar_no`, `driving_license`) VALUES
 ('UWD-789', 'Tejas', 'Srinivas', '7109-7199-2596', 'KA01-123456'),
+('UWD-1186', 'Varsha', 'chennur', '6243-1234-5678', 'KA01-202027092002'),
+('UWD-1200', 'guru', 'charan', '2829-2029-8587', 'KA01-456789032'),
 ('UWD-1181', 'Vinay ', 'Kumar', '8974-4561-6548', 'KA04-346854678'),
-('UWD-845', 'Pratibha ', 'Javalagi', '8971-6547-1235', 'KA25-9865741236'),
-('UWD-1037', 'Yathin', 'B N', '7894-9859-7483', 'KA76-890375454');
+('UWD-944', 'Chethan ', 'BG', '5644-8547-5251', 'KA04-567854235'),
+('UWD-845', 'Pratibha ', 'Javalagi', '8971-6547-1235', 'KA25-9865741236');
 
 -- --------------------------------------------------------
 
@@ -174,6 +209,7 @@ CREATE TABLE `vechile_booking` (
   `u_id` varchar(255) NOT NULL,
   `email_` varchar(50) NOT NULL,
   `ph_no` varchar(255) NOT NULL,
+  `vechile_id` int(10) NOT NULL,
   `model` varchar(50) NOT NULL,
   `location_` varchar(50) NOT NULL,
   `color` varchar(50) NOT NULL,
@@ -184,11 +220,13 @@ CREATE TABLE `vechile_booking` (
 -- Dumping data for table `vechile_booking`
 --
 
-INSERT INTO `vechile_booking` (`booking_id`, `u_id`, `email_`, `ph_no`, `model`, `location_`, `color`, `varient`) VALUES
-('WD-101099', 'UWD-845', 'pratibhakj02@gmail.com', '+91-6360424399', 'Jupiter-125', 'Vijaynagar', 'Silver', 'DISC-BRACK-ALLOY'),
-('WD-101678', 'UWD-789', 'stejas2002@gmail.com', '+91-9353931335', 'Activa-6G', 'Indranagar', 'Silver', 'DISC-BRACK-W/O-ALLOY'),
-('WD-102531', 'UWD-1037', 'yathinbn123@gmail.com', '+91-5656245521', 'Access-125', 'Yelanka', 'Black', 'DISC-BRACK-W/O-ALLOY'),
-('WD-106165', 'UWD-1181', 'vinaykumarbm03@gmail.com', '+91-8971659604', 'Access-125', 'Vijaynagar', 'White', 'DISC-BRACK-ALLOY');
+INSERT INTO `vechile_booking` (`booking_id`, `u_id`, `email_`, `ph_no`, `vechile_id`, `model`, `location_`, `color`, `varient`) VALUES
+('WD-101099', 'UWD-845', 'pratibhakj02@gmail.com', '+91-6360424399', 3, 'Jupiter-125', 'Vijaynagar', 'Silver', 'DISC-BRACK-ALLOY'),
+('WD-101678', 'UWD-789', 'stejas2002@gmail.com', '+91-9353931335', 1, 'Activa-6G', 'Indranagar', 'Silver', 'DISC-BRACK-W/O-ALLOY'),
+('WD-102643', 'UWD-944', 'cchethangurumurthy@gmail.com', '+91-9591960282', 2, 'Access-125', 'Vijaynagar', 'Black', 'DISC-BRACK-ALLOY'),
+('WD-103185', 'UWD-1200', 'guruchiru8147@gmail.com', '+91-9148054148', 3, 'Jupiter-125', 'Vijaynagar', 'Brown', 'DISC-BRACK-ALLOY'),
+('WD-106165', 'UWD-1181', 'vinaykumarbm03@gmail.com', '+91-8971659604', 2, 'Access-125', 'Vijaynagar', 'White', 'DISC-BRACK-ALLOY'),
+('WD-112997', 'UWD-1186', 'chennurvarshag@gmail.com', '+91-8147191253', 3, 'Jupiter-125', 'Koramangla', 'White', 'DISC-BRACK-ALLOY');
 
 --
 -- Indexes for dumped tables
@@ -208,6 +246,13 @@ ALTER TABLE `accessory`
 ALTER TABLE `admintable`
   ADD PRIMARY KEY (`a_id`),
   ADD UNIQUE KEY `a_username` (`a_username`);
+
+--
+-- Indexes for table `bills`
+--
+ALTER TABLE `bills`
+  ADD UNIQUE KEY `u_id` (`u_id`),
+  ADD UNIQUE KEY `booking_id` (`booking_id`);
 
 --
 -- Indexes for table `stock_price`
