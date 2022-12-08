@@ -160,8 +160,20 @@
       $u_id = $_SESSION['u_id'];
       $booking_no = rand(100000,120000);
       $booking_id = "WD-".($booking_no) ;
+      if(isset($_POST['model']))
+      {
+      if($_POST['model'] == 'Activa-6G'){
+        $vechile_id = 1;
+      }
+      elseif($_POST['model'] == 'Access-125'){
+        $vechile_id = 2;
+      }
+      elseif($_POST['model'] == 'Jupiter-125'){
+        $vechile_id = 3;
+      }
+    }
       if (isset($_POST['submit-vechile-details'])) {
-        $sql ="INSERT INTO vechile_booking(booking_id,u_id,email_,ph_no,model,location_,color,varient) VALUES ('$booking_id','$u_id','$email_','$ph_no','$model','$location_','$color','$varient')";   //end-to-end password protection
+        $sql ="INSERT INTO vechile_booking(booking_id,u_id,email_,ph_no,vechile_id,model,location_,color,varient) VALUES ('$booking_id','$u_id','$email_','$ph_no','$vechile_id','$model','$location_','$color','$varient')";   //end-to-end password protection
         $result = mysqli_query($con,$sql);  
         if ($result) {
           $query = "SELECT * FROM vechile_booking WHERE booking_id='$booking_id'";
