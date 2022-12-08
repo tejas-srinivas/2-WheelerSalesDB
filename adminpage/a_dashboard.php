@@ -69,6 +69,66 @@
       $jup_count = $rows['jupiter_count'];
     }
   }  
+
+  $query = "SELECT SUM(total_price) AS revenue FROM `bills`";
+  $result = mysqli_query($con,$query);
+  if($result)
+  {
+    while($rows=mysqli_fetch_assoc($result))
+    {
+      $revenue = $rows['revenue'];
+    }
+  }  
+  
+  $query = "SELECT SUM(total_price) AS amt FROM `bills` WHERE location_ LIKE'Y%'";
+  $result = mysqli_query($con,$query);
+  if($result)
+  {
+    while($rows=mysqli_fetch_assoc($result))
+    {
+      $amt = $rows['amt'];
+    }
+  }  
+
+  $query = "SELECT SUM(total_price) AS amt_k FROM `bills` WHERE location_ LIKE'K%'";
+  $result = mysqli_query($con,$query);
+  if($result)
+  {
+    while($rows=mysqli_fetch_assoc($result))
+    {
+      $amt_k = $rows['amt_k'];
+    }
+  }  
+  
+  $query = "SELECT SUM(total_price) AS amt_v FROM `bills` WHERE location_ LIKE'V%'";
+  $result = mysqli_query($con,$query);
+  if($result)
+  {
+    while($rows=mysqli_fetch_assoc($result))
+    {
+      $amt_v = $rows['amt_v'];
+    }
+  }  
+
+  $query = "SELECT SUM(total_price) AS amt_i FROM `bills` WHERE location_ LIKE'I%'";
+  $result = mysqli_query($con,$query);
+  if($result)
+  {
+    while($rows=mysqli_fetch_assoc($result))
+    {
+      $amt_i = $rows['amt_i'];
+    }
+  }  
+
+  $query = "SELECT COUNT(*) AS bill FROM `bills`";
+  $result = mysqli_query($con,$query);
+  if($result)
+  {
+    while($rows=mysqli_fetch_assoc($result))
+    {
+      $bill = $rows['bill'];
+    }
+  }  
   
 ?>
 
@@ -88,11 +148,12 @@
   </head>
   <style>
     section{
-      background: rgb(131,58,180);
+      /* background: rgb(131,58,180); */
       background: linear-gradient(70deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-      background-repeat: no-repeat;
-      background-size: cover;
+      
+      
       width:1268px;
+      height: 90vh;
     }
     .cont{
         background: #f2f3f7;
@@ -159,12 +220,6 @@
             </a>
           </li>
           <li class="nav-link">
-            <a href="#">
-            <i class="fa-solid fa-wrench icon"></i>
-              <span class="text nav-text">Updates/Changes</span>
-            </a>
-          </li>
-          <li class="nav-link">
             <a href="../adminpage/profile.php">
             <i class="fa-solid fa-user icon"></i>
               <span class="text nav-text">Profile</span>
@@ -181,13 +236,13 @@
     </div> 
   </nav>  
   
-  <section class="home">
+  <section class="home" style="height:120vh;">
       <div class="text" style="color:white"><h1>Dashboard</h1></div>
       <div class="border" style="border: 0.5px solid white ;"></div>
       <br>
       <div class="main" style="display: flex;justify-content: center;">
         <div class="cont">
-            <h1 style="font-size:x-large"> TOTAL USERS </h1>
+            <h1 style="font-size:x-large;text-align:center;"> TOTAL USERS </h1>
             <h1 style="font-size:100px;text-align:center;"> <?php echo $total_users; ?> </h1>
         </div>
         
@@ -197,7 +252,7 @@
         </div>
         
         <div class="cont">
-            <h1 style="font-size:x-large"> TEST RIDES </h1>
+            <h1 style="font-size:x-large;text-align:center;"> TEST RIDES </h1>
             <h1 style="font-size:100px;text-align:center;"> <?php echo $total_rides; ?> </h1> 
         </div>
       </div> 
@@ -205,32 +260,41 @@
       
       <div class="main" style="display: flex;justify-content: center;">
         <div class="cont">
-            <h1 style="font-size:x-large"> BILLS GENERATED </h1>
+            <h1 style="font-size:x-large;text-align:center;"> BILLS GENERATED </h1>
+            <h1 style="font-size:100px;text-align:center;"> <?php echo $bill; ?> </h1>
         </div>
 
         <div class="cont">
-            <h1 style="font-size:x-large"> TOTAL REVENUE </h1>
+            <h1 style="font-size:x-large;text-align:center;"> TOTAL REVENUE </h1>
+            <br>
+            <br>  
+            <h1 style="font-size:40px;text-align:center;"> ₹ <?php echo $revenue; ?> </h1>
         </div>
 
         <div class="cont">
-            <h1 style="font-size:x-large"> REVENUE PER BRANCH </h1>
+            <h1 style="font-size:20px"> REVENUE PER BRANCH </h1>
+            <br>
+            <h1 style="font-size:20px;text-align:center;">Yelanka: ₹<?php echo $amt; ?> </h1>
+            <h1 style="font-size:20px;text-align:center;">Kormangala: ₹<?php echo $amt_k; ?> </h1>
+            <h1 style="font-size:20px;text-align:center;">Vijaynagar: ₹<?php echo $amt_v; ?> </h1>
+            <h1 style="font-size:20px;text-align:center;">Indranagar: ₹<?php echo $amt_i; ?> </h1>
         </div>
       </div>
       <br>
       
       <div class="main" style="display: flex;justify-content: center;">
         <div class="cont">
-            <h1 style="font-size:x-large"> ACTIVA SALES </h1>
+            <h1 style="font-size:x-large;text-align:center;"> ACTIVA SALES </h1>
             <h1 style="font-size:100px;text-align:center;"> <?php echo $activa_count; ?> </h1> 
         </div>
 
         <div class="cont">
-            <h1 style="font-size:x-large"> ACCESS SALES </h1>
+            <h1 style="font-size:x-large;text-align:center;"> ACCESS SALES </h1>
             <h1 style="font-size:100px;text-align:center;"> <?php echo $access_count; ?> </h1>
         </div>
 
         <div class="cont">
-            <h1 style="font-size:x-large"> JUPITER SALES </h1>
+            <h1 style="font-size:x-large;text-align:center;"> JUPITER SALES </h1>
             <h1 style="font-size:100px;text-align:center;"> <?php echo $jup_count; ?> </h1>
         </div>
       </div>
