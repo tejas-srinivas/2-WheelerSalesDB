@@ -102,12 +102,6 @@
               <span class="text nav-text">Updates/Changes</span>
             </a>
           </li>
-          <li class="nav-link" style="background-color: #f98e1d; color: white">
-            <a href="../adminpage/profile.php" >
-            <i class="fa-solid fa-user icon"></i>
-              <span class="text nav-text">Profile</span>
-            </a>
-          </li>
           <li class="nav-link">
             <a href="../adminpage/logout.php">
             <i class="fa-solid fa-power-off icon"></i>

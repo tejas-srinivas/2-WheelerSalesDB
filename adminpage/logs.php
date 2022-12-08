@@ -42,6 +42,10 @@ $query = "SELECT count(*) AS total from vechile_booking";
       background-size: cover;
       width:1268px;
     }
+    table, td, th {
+    border: 0.1px solid rgb(87, 86, 86);
+    padding: 4px;
+  }
   </style>
   <body>
     <nav class="designer-slider">
@@ -97,12 +101,6 @@ $query = "SELECT count(*) AS total from vechile_booking";
             </a>
           </li>
           <li class="nav-link">
-            <a href="#">
-            <i class="fa-solid fa-wrench icon"></i>
-              <span class="text nav-text">Updates/Changes</span>
-            </a>
-          </li>
-          <li class="nav-link">
             <a href="../adminpage/profile.php">
             <i class="fa-solid fa-user icon"></i>
               <span class="text nav-text">Profile</span>
@@ -118,11 +116,11 @@ $query = "SELECT count(*) AS total from vechile_booking";
       </div>
     </div> 
   </nav>  
-   <section class="home">
+   <section class="home" style="height:120vh;">
       <div class="text"><h1 style="color:#ffff ;">Manage Bookings</h1></div>
       <div class="border" style="border: 0.5px solid white;"></div>
       <br>
-        <div class="container" style="margin-left:2rem;width:1212px;">
+        <div class="container" style="margin-left:2rem;width:1212px;padding:40px 51px;">
         <div class="text"><h4 style="color:#f98e1d;margin-top:-40px;">Total Bookings : <?php echo $count; ?></h4></div>
         <table class="table">
           <thead>
