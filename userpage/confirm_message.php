@@ -162,34 +162,48 @@
       $booking_id = "WD-".($booking_no) ;
       if(isset($_POST['model']))
       {
-      if($_POST['model'] == 'Activa-6G'){
-        $vechile_id = 1;
+        if($_POST['model'] == 'Activa-6G'){
+          $vechile_id = 1;
+        }
+        elseif($_POST['model'] == 'Access-125'){
+          $vechile_id = 2;
+        }
+        elseif($_POST['model'] == 'Jupiter-125'){
+          $vechile_id = 3;
+        }
       }
-      elseif($_POST['model'] == 'Access-125'){
-        $vechile_id = 2;
-      }
-      elseif($_POST['model'] == 'Jupiter-125'){
-        $vechile_id = 3;
-      }
-    }
-      if (isset($_POST['submit-vechile-details'])) {
-        $sql ="INSERT INTO vechile_booking(booking_id,u_id,email_,ph_no,vechile_id,model,location_,color,varient) VALUES ('$booking_id','$u_id','$email_','$ph_no','$vechile_id','$model','$location_','$color','$varient')";   //end-to-end password protection
-        $result = mysqli_query($con,$sql);  
-        if ($result) {
-          $query = "SELECT * FROM vechile_booking WHERE booking_id='$booking_id'";
-          $resulti = mysqli_query($con,$query);
-          if ($resulti) {
-              $value = mysqli_fetch_array($resulti);
-              $_SESSION['booking_id'] = $value['booking_id'];
+      $query = "SELECT available FROM stock_price WHERE vechile_id='$vechile_id'";
+      $result = mysqli_query($con,$query);
+      if($result){
+        $row = mysqli_fetch_assoc($result);
+        $available = $row['available'];
+        if($row['available'] == 'Available'){
+          if (isset($_POST['submit-vechile-details'])) {
+            $sql ="INSERT INTO vechile_booking(booking_id,u_id,email_,ph_no,vechile_id,model,location_,color,varient) VALUES ('$booking_id','$u_id','$email_','$ph_no','$vechile_id','$model','$location_','$color','$varient')";   //end-to-end password protection
+            $result = mysqli_query($con,$sql);  
+            if ($result) {
+              $query = "SELECT * FROM vechile_booking WHERE booking_id='$booking_id'";
+              $resulti = mysqli_query($con,$query);
+              if ($resulti) {
+                  $value = mysqli_fetch_array($resulti);
+                  $_SESSION['booking_id'] = $value['booking_id'];
+              }
+              echo "<script>alert('Your Vechile is booked Successfully...');</script>";
+              echo "<script>window.location.href='../userpage/confirm_message.php'</script>";
+              echo $_SESSION['booking_id'];
+            } 
           }
-          echo "<script>alert('Your Vechile is booked Successfully...');</script>";
-          echo "<script>window.location.href='../userpage/confirm_message.php'</script>";
-          echo $_SESSION['booking_id'];
-        } 
+          else {
+              echo 'Error Occured inserting into records';
+            }  
+        }
+        else {
+          echo "<script>alert('This vehicle is currently not available.');</script>";
+          echo "<script>window.location.href='../userpage/vechileBooking.php'</script>";
+        }
       }
-      else {
-          echo 'Error Occured inserting into records';
-        }  
+
+      
     }
   }    
 ?> 
