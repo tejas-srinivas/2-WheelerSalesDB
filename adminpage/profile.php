@@ -43,7 +43,8 @@
     <link href="../adminpage/admin_style.css" rel="stylesheet" type="text/css">
     <title>Admin Profile</title>
   </head>
-  <body>
+  <title>Admin Profile</title>
+  </head>
   <nav class="designer-slider">
     <header>
       <div class="logo-section">

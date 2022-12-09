@@ -148,7 +148,7 @@
                   <button name="update" style="background-color: #f98e1d;
                   color: white;padding: 8px 16px;margin: 8px 0;border: none;cursor: pointer;
                   border-radius:8px;
-                  text-decoration:none;">Update</button>
+                  text-decoration:none;"><a href="Stock_update.php?vec_id='.$vehicle_id.'" style="color:white;text-decoration:none;">Update</a></button>
                   </td>
                 </tr>';
                 }
