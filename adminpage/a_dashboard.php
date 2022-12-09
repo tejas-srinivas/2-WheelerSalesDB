@@ -274,7 +274,7 @@
         <div class="cont">
             <h1 style="font-size:20px"> REVENUE PER BRANCH </h1>
             <br>
-            <h1 style="font-size:20px;text-align:center;">Yelanka: ₹<?php echo $amt; ?> </h1>
+            <h1 style="font-size:20px;text-align:center;">Yelahanka: ₹<?php echo $amt; ?> </h1>
             <h1 style="font-size:20px;text-align:center;">Kormangala: ₹<?php echo $amt_k; ?> </h1>
             <h1 style="font-size:20px;text-align:center;">Vijaynagar: ₹<?php echo $amt_v; ?> </h1>
             <h1 style="font-size:20px;text-align:center;">Indranagar: ₹<?php echo $amt_i; ?> </h1>

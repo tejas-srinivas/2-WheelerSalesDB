@@ -13,13 +13,12 @@ $DATABASE_PASS = '';
 $DATABASE_NAME = 'wheels&deals';
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 $query = "SELECT count(*) AS total from vechile_booking";
-              $result = mysqli_query($con,$query);
-              if($result) {
-                while($rows = mysqli_fetch_assoc($result)){
-                  $count = $rows['total'];
-                }
-                
-              }
+$result = mysqli_query($con,$query);
+if($result) {
+  while($rows = mysqli_fetch_assoc($result)){
+  $count = $rows['total'];
+  }
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -120,9 +119,9 @@ $query = "SELECT count(*) AS total from vechile_booking";
       <div class="text"><h1 style="color:#ffff ;">Manage Bookings</h1></div>
       <div class="border" style="border: 0.5px solid white;"></div>
       <br>
-        <div class="container" style="margin-left:2rem;width:1212px;padding:40px 51px;">
+        <div class="container" style="margin-left:3rem;width:1170px;padding:40px 51px;">
         <div class="text"><h4 style="color:#f98e1d;margin-top:-40px;">Total Bookings : <?php echo $count; ?></h4></div>
-        <table class="table">
+        <table class="table" style="margin-left:0rem;">
           <thead>
             <tr>
               <th scope="col">Booking ID</th>
