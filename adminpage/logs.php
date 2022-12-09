@@ -158,6 +158,7 @@ if($result) {
                   $location_ = $row['location_'];
                   $color = $row['color'];
                   $varient = $row['varient'];
+                  $vechile_id = $row['vechile_id'];
                   echo '<tr>
                   <td scope="row">'.$booking_id.'</td>
                   <td>'.$u_id.'</td>
@@ -171,11 +172,11 @@ if($result) {
                     <button name="update" style="background-color: #f98e1d;
                     color: white;padding: 8px 16px;margin: 8px 0;border: none;cursor: pointer;
                     border-radius:8px;
-                    text-decoration:none;">Update</button>
+                    text-decoration:none;"><a href="logs_update.php?up_id='.$booking_id.'&vec_id='.$vechile_id.'" style="color:white;text-decoration:none;">Update</a></button>
                     <button name="delete" style="background-color: #ff0011;
                     color: white;padding: 8px 16px;margin: 8px 0;border: none;cursor: pointer;
                     border-radius:8px;
-                    text-decoration:none;">Delete</button>
+                    text-decoration:none;"><a href="logs_delete.php?del_id='.$booking_id.'" style="color:white;text-decoration:none;">Delete</a></button>
                   </td>
                 </tr>';
                 }
