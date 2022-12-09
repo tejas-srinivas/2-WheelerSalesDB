@@ -5,7 +5,6 @@ if (!isset($_SESSION['username'])) {
   header('location:../loginpage/login.html');
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-user-details'])) {
   $DATABASE_HOST = 'localhost';
   $DATABASE_USER = 'root';
   $DATABASE_PASS = '';
@@ -14,6 +13,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-user-details'])
   if (mysqli_connect_error()) {
     exit('Error connecting to the database' . mysqli_connect_errno());
   }
+  
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-user-details'])) {
+  
   if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['aadhar_no']) && isset($_POST['driving_license'])) {
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];

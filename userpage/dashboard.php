@@ -78,7 +78,7 @@ if (!isset($_SESSION['username'])) {
             </a>
           </li>
           <li class="nav-link">
-            <a href="user_details.php">
+            <!-- <a href="user_details.php"> -->
               <i class="fa-solid fa-user icon"></i>
               <span class="text nav-text">User Verification</span>
             </a>
@@ -162,7 +162,7 @@ if (!isset($_SESSION['username'])) {
         <h1 style="margin-top: -50px;margin-left:-100px;">Vechile Availability :<?php echo $available1; ?></h1>
         <br>
 
-        <a href="../userpage/accessdetails/access.html" class="click1">click here for further details</a>
+        <a href="../userpage/accessdetails/access.php" class="click1">click here for further details</a>
 
 
       </div>

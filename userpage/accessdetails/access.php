@@ -1,3 +1,10 @@
+<?php 
+include('../../loginpage/connect.php');
+session_start();
+if (!isset($_SESSION['username'])) {
+  header('location: login.html');
+}
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -58,7 +65,12 @@
 </br>
     
     <div >
-        <h1 class="heading2" style="color:#f98e1d"><u>360 DEGREE VIEW</u></h1>
+        <h1 class="heading2" style="color:#f98e1d"><u>360 DEGREE VIEW</u></h1> 
+        <form action="access.php" method="post">
+        <button type="submit" name="book-now">
+            BOOK NOW
+        </button>  
+        </form>
     </div>
     </br>
     </br>
@@ -540,3 +552,30 @@
 
   </body>
 </html>
+
+
+<?php
+  $DATABASE_HOST = 'localhost';
+  $DATABASE_USER = 'root';
+  $DATABASE_PASS = '';
+  $DATABASE_NAME = 'wheels&deals';
+  $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+  if (mysqli_connect_error()) {
+    exit('Error connecting to the database' . mysqli_connect_errno());
+  }
+  $u_id = $_SESSION['u_id'];
+if(isset($_POST['book-now'])){ 
+    
+    $sql = "SELECT * from users_verification WHERE u_id='$u_id'";
+    $result = mysqli_query($con, $sql);
+    if($result){
+        $row = mysqli_num_rows($result);
+        if($row == 1){
+            echo "<script>window.location.href='../userpage/vechileBooking.php'</script>";
+        }
+    }
+    else {
+        echo "<script>window.location.href='../userpage/userdetails.php'</script>";
+    }
+}    
+?>

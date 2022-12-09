@@ -163,7 +163,7 @@ $query = "SELECT count(*) AS total from test_ride";
                   <td>'.$model.'</td>
                   <td>'.$location_.'</td>
                   <td>
-                    <button name="delete" style="background-color: #f98e1d;
+                    <button name="delete" style="background-color: #ff0011;
                     color: white;padding: 8px 16px;margin: 8px 0;border: none;cursor: pointer;
                     border-radius:8px;
                     text-decoration:none;">Delete</a></button>
