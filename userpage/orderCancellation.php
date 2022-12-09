@@ -17,6 +17,7 @@ if (!isset($_SESSION['username'])) {
           exit('Error connecting to the database' . mysqli_connect_errno());
         }
         $booking_id = $_POST['booking_id'];
+        $u_id = $_SESSION['u_id'];
         if(isset($_POST['check-details'])){
             $booking_id = $_POST['booking_id'];
             $query = "SELECT * FROM vechile_booking where booking_id='$booking_id'";
@@ -35,9 +36,16 @@ if (!isset($_SESSION['username'])) {
             }
           }
         elseif(isset($_POST['cancel'])){
-            $query = "DELETE FROM vechile_booking WHERE booking_id = '$booking_id'" ;
-            $result = mysqli_query($con,$query);
-            if($result){
+            $query1 = "DELETE FROM vechile_booking WHERE booking_id = '$booking_id'" ;
+            $result1 = mysqli_query($con,$query1);
+            $query2 = "DELETE FROM accessory WHERE booking_id = '$booking_id'" ;
+            $result2 = mysqli_query($con,$query2);
+            $query3 = "DELETE FROM bills WHERE booking_id = '$booking_id'" ;
+            $result3 = mysqli_query($con,$query3);
+            $query4 = "DELETE FROM user_verification WHERE u_id= '$u_id'";
+            $result4= mysqli_query($con,$query4);
+
+            if($result1){
               echo "<script>alert('Your Booking is Cancelled');</script>";
               echo "<script>window.location.href='../userpage/dashboard.php'</script>";
               }
