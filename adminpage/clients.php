@@ -38,7 +38,10 @@
     <title>Clients</title>
   </head>
   <style>
-    
+    .content th, .table td {
+    padding: 5px 14px;
+    min-width: 98px;
+}
   </style>
   <body>
     <nav class="designer-slider">
@@ -113,9 +116,9 @@
       <div class="text"><h1>Clients</h1></div>
       <div class="border"></div>
       <br>
-        <div class="container" style="width:1150px;margin-left:3rem;padding:40px 24px;">
-        <div class="text"><h4 style="color:#f98e1d;margin-top:-40px;">Total Users : <?php echo $count; ?></h4></div>
-        <table class="content" style="font-size:small">
+        <div class="container" style="width:1210px;margin-left:2rem;padding:40px 24px;">
+        <div class="text"><h4 style="color:#f98e1d;margin-top:-40px;margin-left:-3.5rem;">Total Users : <?php echo $count; ?></h4></div>
+        <table class="content" style="font-size:small;margin-top:-0.4rem;">
           <thead>
             <tr>
               <th scope="col">User ID</th>
