@@ -153,9 +153,9 @@ if($result) {
       <div class="border" style="border: 0.5px solid white;"></div>
       <br>
       <br>
-        <div class="container">
+        <div class="container" style="padding: 45px 23px;">
         <div class="text"><h4 style="color:#f98e1d;margin-top:-40px;margin-left:-3.5rem;">Total Bookings : <?php echo $count; ?></h4></div>
-        <table class="content" style="font-size:small;margin-top:-0.4rem;">
+        <table class="content" style="font-size:12px;margin-top:-0.4rem;">
           <thead>
             <tr>
               <th scope="col">Booking ID</th>
@@ -166,6 +166,7 @@ if($result) {
               <th scope="col">Location</th>
               <th scope="col">Color</th>
               <th scope="col">Varient</th>
+              <th scope="col">Status</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -193,6 +194,7 @@ if($result) {
                   $color = $row['color'];
                   $varient = $row['varient'];
                   $vechile_id = $row['vechile_id'];
+                  $status = $row['status'];
                   echo '<tr>
                   <td scope="row">'.$booking_id.'</td>
                   <td>'.$u_id.'</td>
@@ -202,6 +204,7 @@ if($result) {
                   <td>'.$location_.'</td>
                   <td>'.$color.'</td>
                   <td>'.$varient.'</td>
+                  <td>'.$status.'</td>
                   <td>
                     <button name="update" style="background-color: #f98e1d;
                     color: white;padding: 8px 16px;margin: 8px 0;border: none;cursor: pointer;
