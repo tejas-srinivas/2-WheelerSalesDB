@@ -157,12 +157,12 @@ if($result) {
         <div class="container" style="padding: 45px 23px;width: 1200px;
     margin-left: 2rem;">
         <div class="text"><h4 style="color:#f98e1d;margin-top:-40px;margin-left:-3.5rem;">Total Bookings : <?php echo $count; ?></h4></div>
-        <table class="content" style="font-size:12px;margin-top:-0.4rem;">
+        <table class="content" style="font-size:12.9px;margin-top:-0.4rem;">
           <thead>
             <tr>
               <th scope="col">Booking ID</th>
               <th scope="col">User ID</th>
-              <th scope="col">Email</th>
+              <th scope="col">Booking Date</th>
               <th scope="col">Phone</th>
               <th scope="col">Model</th>
               <th scope="col">Location</th>
@@ -189,7 +189,7 @@ if($result) {
                 while($row = mysqli_fetch_array($resultj)){
                   $booking_id = $row['booking_id'];
                   $u_id = $row['u_id'];
-                  $email_ = $row['email_'];
+                  $book_date = $row['book_date'];
                   $ph_no = $row['ph_no'];
                   $model = $row['model'];
                   $location_ = $row['location_'];
@@ -200,7 +200,7 @@ if($result) {
                   echo '<tr>
                   <td scope="row">'.$booking_id.'</td>
                   <td>'.$u_id.'</td>
-                  <td>'.$email_.'</td>
+                  <td>'.$book_date.'</td>
                   <td>'.$ph_no.'</td>
                   <td>'.$model.'</td>
                   <td>'.$location_.'</td>

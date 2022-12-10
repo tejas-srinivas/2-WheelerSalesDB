@@ -50,9 +50,11 @@ if($result) {
   }
   
 }
+$d=strtotime("+1 Week");
+$delv_date = date("d-m-Y", $d) ;
 $total_bill = $road_tax + $insurance + $accessory_price + $ex_showroom."/-";
 if(isset($_POST['pay'])){
-  $query = "INSERT INTO bills(booking_id,location_,color,model,varient,ex_showroom,accessory_price,road_tax,insurance,total_price) VALUES ('$booking_id','$location','$color','$model','$varient','$ex_showroom','$accessory_price','$road_tax','$insurance','$total_bill')";
+  $query = "INSERT INTO bills(booking_id,delv_date,location_,color,model,varient,ex_showroom,accessory_price,road_tax,insurance,total_price) VALUES ('$booking_id','$delv_date','$location','$color','$model','$varient','$ex_showroom','$accessory_price','$road_tax','$insurance','$total_bill')";
   $result = mysqli_query($con,$query);
   if($result){
     echo "<script>alert('Payment recieved Successfully...');</script>";
@@ -162,7 +164,8 @@ if(isset($_POST['pay'])){
   <div class="container" style="border-radius: 15px;
     background-color: #f2f3f7;
     padding: 10px 77px 10px ;
-    box-shadow: 5px 5px 10px black;margin-left:15rem;margin-top:4rem;">
+    box-shadow: 5px 5px 10px black;margin-left:15rem;margin-top:2.5rem;">
+    <img src="../homepage/logo.png" style="width:240px; margin-top: -5px; height:80px;margin-left:11rem;">
   <table>
   <tr>
     <th>Details</th>
@@ -185,6 +188,10 @@ if(isset($_POST['pay'])){
     <td>Insurance</td>
     <td><b>₹ <?php echo $insurance; ?></b></td>
   </tr>
+  <tr>
+    <td>Delivery Date</td>
+    <td><b style="font-size:28px"><?php echo $delv_date; ?></b></td>
+  </tr>
   </table>
       <br>
     <div class="total-bill" style="margin-left:20rem;">
@@ -193,7 +200,6 @@ if(isset($_POST['pay'])){
       <div class="bord" style="border:0.5px solid black;width:15rem;"></div>
     </div>
   </div>
-  <br>
   <br>
   <form action="payment_details.php" method="post">
     <button type='submit' class="button" name="pay" value="pay" id="pay" style="border-radius: 8px;margin-left: 250px;background-color:#f98e1d;color:#f2f3f7;border:0.5px solid #f98e1d;width:100px;height:40px;margin-left:35rem;"><b>Pay Now</b></button>
