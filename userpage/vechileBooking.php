@@ -169,7 +169,7 @@
               <select id="location" name="location_" required>
                 <option value="">Select Location</option>
                 <option value="Vijaynagar">Vijaynagar</option>
-                <option value="Yelanka">Yelanka</option>
+                <option value="Yelahanka">Yelahanka</option>
                 <option value="Indranagar">Indranagar</option>
                 <option value="Koramangla">Koramangla</option>
               </select>

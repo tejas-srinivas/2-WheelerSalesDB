@@ -76,6 +76,7 @@ if($result) {
 
     .content td{
       padding-left: 15px ;
+      height: 15px;
     }
     
   </style>
@@ -153,7 +154,8 @@ if($result) {
       <div class="border" style="border: 0.5px solid white;"></div>
       <br>
       <br>
-        <div class="container" style="padding: 45px 23px;">
+        <div class="container" style="padding: 45px 23px;width: 1200px;
+    margin-left: 2rem;">
         <div class="text"><h4 style="color:#f98e1d;margin-top:-40px;margin-left:-3.5rem;">Total Bookings : <?php echo $count; ?></h4></div>
         <table class="content" style="font-size:12px;margin-top:-0.4rem;">
           <thead>
