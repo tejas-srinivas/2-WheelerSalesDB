@@ -76,7 +76,7 @@ if (!isset($_SESSION['username'])) {
             </a>
           </li>
           <li class="nav-link">
-            <a href="#">
+            <a href="../userpage/orderCancellation.php">
               <i class="fa-solid fa-ban icon"></i>
               <span class="text nav-text">Order Cancellation</span>
             </a>
@@ -96,4 +96,13 @@ if (!isset($_SESSION['username'])) {
         </ul>
       </div>
     </div>
-  </nav>
+    </nav>
+    <section class="home">
+    <div class="text">
+      <h1 style="color:#000"><b>Make Booking Changes</b></h1>
+    </div>
+    <div class="border"></div>
+    <br>
+    </section>
+  </body>
+</html>

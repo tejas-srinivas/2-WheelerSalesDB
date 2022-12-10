@@ -58,7 +58,7 @@
             </a>
           </li>
           <li class="nav-link">
-            <a href="#">
+            <a href="../adminpage/logs.php">
               <i class="fa-solid fa-motorcycle icon"></i>
               <span class="text nav-text">Logs</span>
             </a>
@@ -101,16 +101,17 @@
       <div class="text" style="color:white;"><h1>Users Info</h1></div>
       <div class="border" style="border: 0.5px solid white"></div>
       <br>
+      <br>
         <div class="container" style="background: #f2f3f7;
     box-shadow: 5px 5px 10px #999;
     padding: 41px 43px;
     border-radius: 20px;
-    width: 601px;
-    margin-left: 22rem;
+    width: 699px;
+    margin-left: 18rem;
     align-items: center;
     font-size: small;
 ">
-        <table class="table">
+        <table class="content">
           <thead>
             <tr>
               <th scope="col">User ID</th>
