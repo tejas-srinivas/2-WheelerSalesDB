@@ -51,7 +51,7 @@ if($result) {
   
 }
 $d=strtotime("+1 Week");
-$delv_date = date("d-m-Y", $d) ;
+$delv_date = date("Y-m-d", $d) ;
 $total_bill = $road_tax + $insurance + $accessory_price + $ex_showroom."/-";
 if(isset($_POST['pay'])){
   $query = "INSERT INTO bills(booking_id,delv_date,location_,color,model,varient,ex_showroom,accessory_price,road_tax,insurance,total_price) VALUES ('$booking_id','$delv_date','$location','$color','$model','$varient','$ex_showroom','$accessory_price','$road_tax','$insurance','$total_bill')";
