@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2022 at 03:24 PM
+-- Generation Time: Dec 10, 2022 at 06:47 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -60,9 +60,11 @@ INSERT INTO `accessory` (`fitting_id`, `booking_id`, `u_id`, `mirror`, `speedome
 ('FWD-10557', 'WD-103185', 'UWD-1200', 'Chrome-Mirror', 'Analog', 'W-Center-Stand', 'Charger'),
 ('FWD-10586', 'WD-106165', 'UWD-1181', 'Plane-Mirror', 'Analog', 'W/O-Center-Stand', 'Charger'),
 ('FWD-10655', 'WD-107427', 'UWD-967', 'Chrome-Mirror', 'Digital', 'W-Center-Stand', 'Charger'),
+('FWD-10779', 'WD-104383', 'UWD-1123', 'Plane-Mirror', 'Digital', 'W-Center-Stand', 'Charger'),
 ('FWD-10906', 'WD-101099', 'UWD-845', 'Chrome-Mirror', 'Analog', 'W/O-Center-Stand', 'Charger'),
 ('FWD-10931', 'WD-112997', 'UWD-1186', 'Chrome-Mirror', 'Analog', 'W-Center-Stand', 'Charger'),
 ('FWD-10952', 'WD-112078', 'UWD-766', 'Plane-Mirror', 'Digital', 'W-Center-Stand', 'Charger'),
+('FWD-10994', 'WD-116805', 'UWD-980', 'Chrome-Mirror', 'Analog', 'W/O-Center-Stand', 'Charger'),
 ('FWD-11451', 'WD-113295', 'UWD-883', 'Chrome-Mirror', 'Analog', 'W-Center-Stand', 'Charger'),
 ('FWD-11641', 'WD-112936', 'UWD-995', 'Chrome-Mirror', 'Analog', 'W-Center-Stand', 'Charger'),
 ('FWD-11658', 'WD-114565', 'UWD-789', 'Chrome-Mirror', 'Digital', 'W-Center-Stand', 'Charger'),
@@ -98,6 +100,7 @@ INSERT INTO `admintable` (`a_id`, `a_username`, `a_password`, `a_name`, `a_email
 
 CREATE TABLE `bills` (
   `booking_id` varchar(255) NOT NULL,
+  `delv_date` varchar(20) NOT NULL,
   `model` varchar(255) NOT NULL,
   `color` varchar(255) NOT NULL,
   `varient` varchar(255) NOT NULL,
@@ -113,10 +116,12 @@ CREATE TABLE `bills` (
 -- Dumping data for table `bills`
 --
 
-INSERT INTO `bills` (`booking_id`, `model`, `color`, `varient`, `location_`, `ex_showroom`, `accessory_price`, `road_tax`, `insurance`, `total_price`) VALUES
-('WD-101099', 'Activa-6G', 'White', 'DISC-BRACK-ALLOY', 'Vijaynagar', 80000, 4325, 10500, 2500, 97325),
-('WD-114565', 'Access-125', 'White', 'DRUM-BRAKE', 'Koramangla', 75000, 4325, 10500, 2500, 92325),
-('WD-118420', 'Jupiter-125', 'Aqua_Green', 'DISC-BRACK-ALLOY', 'Indranagar', 80000, 4325, 10500, 2500, 97325);
+INSERT INTO `bills` (`booking_id`, `delv_date`, `model`, `color`, `varient`, `location_`, `ex_showroom`, `accessory_price`, `road_tax`, `insurance`, `total_price`) VALUES
+('WD-101099', '2022-12-16', 'Activa-6G', 'White', 'DISC-BRACK-ALLOY', 'Vijaynagar', 80000, 4325, 10500, 2500, 97325),
+('WD-104383', '2022-12-17', 'Activa-6G', 'Black', 'DISC-BRACK-ALLOY', 'Yelahanka', 75000, 4325, 10500, 2500, 92325),
+('WD-114565', '2022-12-19', 'Access-125', 'White', 'DRUM-BRAKE', 'Koramangla', 75000, 4325, 10500, 2500, 92325),
+('WD-116805', '2022-11-18', 'Access-125', 'Aqua_Green', 'DISC-BRACK-W/O-ALLOY', 'Yelahanka', 75000, 4325, 10500, 2500, 92325),
+('WD-118420', '2022-11-8', 'Jupiter-125', 'Aqua_Green', 'DISC-BRACK-ALLOY', 'Indranagar', 80000, 4325, 10500, 2500, 97325);
 
 -- --------------------------------------------------------
 
@@ -183,6 +188,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`u_id`, `first_name`, `last_name`, `email`, `username`, `password`) VALUES
+('UWD-1123', 'Janhavi', 'Srinivas', 'reachjanhavi@gmail.com', 'janhavi1997', '$2y$10$MPa1iYotaBsSyqZ0Peg.O.N015dvE4qCakzqHubyrPh/1lx7CYci.'),
 ('UWD-1137', 'Shashank', 's', 'shashankshashu2672002@gmail.com', 'shashank', '$2y$10$kKbJJ3ped4INasrmKJbG3uxxZTXRvolhYVBLOnmM2mvhryjUf0dba'),
 ('UWD-1181', 'Vinay ', 'Kumar', 'vinaykumarbm03@gmail.com', 'vinay03', '$2y$10$AW99HNFoiAx7CoYuhUjpju7vWrEvGJeswLP9WiQZvLIZ468iXXPyu'),
 ('UWD-1186', 'Varsha', 'chennur', 'chennurvarshag@gmail.com', 'varshachennur', '$2y$10$s4MbGx9aLe/450cC1Z5meeS.sUObnX57Fxy2tExQHDYHKqu82pyg2'),
@@ -216,6 +222,7 @@ CREATE TABLE `user_verification` (
 
 INSERT INTO `user_verification` (`u_id`, `firstname`, `lastname`, `aadhar_no`, `driving_license`) VALUES
 ('UWD-1186', 'Varsha', 'chennur', '6243-1234-5678', 'KA01-202027092002'),
+('UWD-1123', 'Janhavi', 'Srinivas', '8264-1034-9625', 'KA01-202075315'),
 ('UWD-789', 'Tejas', 'Srinivas', '7109-7199-2596', 'KA01-202075315989'),
 ('UWD-944', 'Chethan ', 'BG', '7109-7199-9625', 'KA01-2020753160'),
 ('UWD-1200', 'guru', 'charan', '2829-2029-8587', 'KA01-456789032'),
@@ -244,17 +251,20 @@ CREATE TABLE `vechile_booking` (
   `location_` varchar(50) NOT NULL,
   `color` varchar(50) NOT NULL,
   `varient` varchar(50) NOT NULL,
-  `status` varchar(255) NOT NULL
+  `status` varchar(255) NOT NULL,
+  `book_date` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `vechile_booking`
 --
 
-INSERT INTO `vechile_booking` (`booking_id`, `u_id`, `email_`, `ph_no`, `vechile_id`, `model`, `location_`, `color`, `varient`, `status`) VALUES
-('WD-101099', 'UWD-845', 'pratibhakj02@gmail.com', '+91-6360424399', 1, 'Activa-6G', 'Vijaynagar', 'White', 'DISC-BRACK-ALLOY', 'Processing'),
-('WD-114565', 'UWD-789', 'stejas2002@gmail.com', '+91-9353931335', 2, 'Access-125', 'Koramangla', 'White', 'DRUM-BRAKE', 'Delivered'),
-('WD-118420', 'UWD-944', 'cchethanmurthy@gmail.com', '+91-9591960282', 3, 'Jupiter-125', 'Indranagar', 'Aqua_Green', 'DISC-BRACK-ALLOY', 'Processing');
+INSERT INTO `vechile_booking` (`booking_id`, `u_id`, `email_`, `ph_no`, `vechile_id`, `model`, `location_`, `color`, `varient`, `status`, `book_date`) VALUES
+('WD-101099', 'UWD-845', 'pratibhakj02@gmail.com', '+91-6360424399', 1, 'Activa-6G', 'Vijaynagar', 'White', 'DISC-BRACK-ALLOY', 'Processing', '2022-12-09 08:13:04'),
+('WD-104383', 'UWD-1123', 'reachjanhavi@gmail.com', '+91-7760549445', 1, 'Activa-6G', 'Yelahanka', 'Black', 'DISC-BRACK-ALLOY', 'Processing', '2022-12-10 22:41:37'),
+('WD-114565', 'UWD-789', '', '+91-9353931335', 2, 'Access-125', 'Koramangla', 'White', 'DRUM-BRAKE', 'Processing', '2022-12-10 23:11:04'),
+('WD-116805', 'UWD-980', 'yathinyoyo@gmail.com', '+91-9620581947', 2, 'Access-125', 'Yelahanka', 'Aqua_Green', 'DISC-BRACK-W/O-ALLOY', 'Delivered', '2022-11-11 06:46:04'),
+('WD-118420', 'UWD-944', 'chethanmurthy@gmail.com', '+91-9591960282', 3, 'Jupiter-125', 'Indranagar', 'Aqua_Green', 'DISC-BRACK-ALLOY', 'Processing', '2022-12-01 16:29:42');
 
 --
 -- Indexes for dumped tables
