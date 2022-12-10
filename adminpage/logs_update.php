@@ -24,6 +24,12 @@
       $color = $row['color'];
       $varient = $row['varient'];
       $location = $row['location_'];
+      $query2 = "SELECT delv_date FROM bills WHERE booking_id = '$book_id'";
+      $result2 = mysqli_query($con,$query2);
+      if($result2){
+        $row = mysqli_fetch_assoc($result2);
+        $delv_date = $row['delv_date']; 
+      }
     }
   }
 ?>
@@ -52,8 +58,8 @@
             <input type="hidden" name="vechile_id" value="<?php echo $book_id; ?>">
           </div>
           <div class="form-group" style="width:30rem;">
-              <label for="fname">Email</label>
-              <input type="text" class="form-control" id="fname" name="email_" value="<?php echo $email; ?>" required>
+              <label for="ddate">Delivery Date</label>
+              <input type="date" class="form-control" id="fname" name="delv_date" value="<?php echo $delv_date; ?>" required>
           </div>
           <br>
           <div class="form-group" style="width:30rem;">
@@ -146,6 +152,7 @@
     $email_ = $_POST['email_'];
     $location_ = $_POST['location_'];
     $status_ = $_POST['status'];
+    $delv_date_ = $_POST['delv_date'];
 
     if(isset($_POST['model']))
       {
@@ -162,7 +169,7 @@
     $query = "UPDATE `vechile_booking` SET  `email_` = '$email_', `ph_no` = '$ph_no_',`vechile_id` = '$vechile_id',`model`='$model_', `location_` = '$location_' , `color`='$color_' , `varient`='$varient_',`status`='$status_' WHERE `booking_id` = '$booking'";
     $result = mysqli_query($con,$query);
     if($result){
-      $query1 = "UPDATE `bills` SET `model`='$model_',`color`='$color_', `varient`='$varient_',`location_` = '$location_' WHERE `booking_id` = '$booking'";
+      $query1 = "UPDATE `bills` SET `delv_date`='$delv_date_',`model`='$model_',`color`='$color_', `varient`='$varient_',`location_` = '$location_' WHERE `booking_id` = '$booking'";
       $result1 = mysqli_query($con,$query1);
       if ($result1 == TRUE) {
         echo "<script>alert('Updated Sucessfully');</script>";
