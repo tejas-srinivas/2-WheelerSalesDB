@@ -117,16 +117,17 @@ $query = "SELECT count(*) AS total from test_ride";
       <div class="text" style="color: white;"><h1>Testride Clients</h1></div>
       <div class="border" style="border: 0.5px solid white"></div>
       <br>
+      <br>
         <div class="container" style="background: #f2f3f7;
     box-shadow: 5px 5px 10px #0000;
     padding: 41px 40px;
     border-radius: 20px;
-    width: 801px;
+    width: 770px;
     margin-left: 17rem;
     align-items: center;
     font-size: small;">
         <div class="text"><h4 style="color:#f98e1d;margin-top:-40px;">Test Rides : <?php echo $count; ?></h4></div>
-        <table class="table">
+        <table class="content">
           <thead>
             <tr>
               <th scope="col">Name</th>
@@ -166,7 +167,7 @@ $query = "SELECT count(*) AS total from test_ride";
                     <button name="delete" style="background-color: #ff0011;
                     color: white;padding: 8px 16px;margin: 8px 0;border: none;cursor: pointer;
                     border-radius:8px;
-                    text-decoration:none;">Delete</a></button>
+                    text-decoration:none;"><a href="testride_delete.php?name='.$name.'" style="color:white;text-decoration:none;">Delete</a></button>
                   </td>
                 </tr>';
                 }

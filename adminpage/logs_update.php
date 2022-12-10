@@ -48,8 +48,8 @@
         <center><img src="../registerpage/logo.png" style="width: 450px; height: 150px; margin-top:-45px"></center>
         <center><h2 style="margin-top:-10px ;">Update Vehicle Booking ...</h2></center>
           <div class="form-group">
-            <input type="hidden" value="<?php echo $_GET['up_id']; ?>" name="booking_id">
-            <input type="hidden" value="<?php echo intval($_GET['vec_id']); ?>" name="vechile_id">
+            <input type="text" name="booking_id" value="<?php echo $id; ?>" >
+            <input type="text" name="vechile_id" value="<?php echo $book_id; ?>">
           </div>
           <div class="form-group" style="width:30rem;">
               <label for="fname">Email</label>
@@ -101,7 +101,7 @@
                 <option value="<?php echo $location ?>"><?php echo $location ?></option>
                 <option value="">------</option>
                 <option value="Vijaynagar">Vijaynagar</option>
-                <option value="Yelanka">Yelanka</option>
+                <option value="Yelahanka">Yelahanka</option>
                 <option value="Indranagar">Indranagar</option>
                 <option value="Koramangla">Koramangla</option>
               </select>
@@ -111,6 +111,7 @@
     </div>
   </form>
   </div>
+
 </body>
 
 </html>
@@ -127,24 +128,24 @@
     exit('Error connecting to the database' . mysqli_connect_error());
   }
   if (isset($_POST['update'])) {
-    $booking_id = $_POST['booking_id'];
+    $booking = $_POST['booking_id'];
     $vechile_id = $_POST['vechile_id'];
-    $ph_no = $_POST['ph_no'];
-    $model = $_POST['model'];
-    $color = $_POST['color'];
-    $varient = $_POST['varient'];
-    $email_ = $_POST['email_'];
-    $location_ = $_POST['location_'];
+    $ph_no_ = $_POST['ph_no'];
+    $model_ = $_POST['model'];
+    $color_ = $_POST['color'];
+    $varient_ = $_POST['varient'];
+    $email = $_POST['email_'];
+    $location = $_POST['location_'];
     
-    $query = "UPDATE `vechile_booking` SET  `email_` = '$email_', `ph_no` = '$ph_no','vechile_id' = '$vechile_id','model'='$model','location_' = '$location_','color'='$color', 'varient'='$varient' WHERE `booking_id` = '$booking_id'";
-    $result = mysqli_query($con, $query);
+    $query = "UPDATE `vechile_booking` SET  `email_` = '$email', `ph_no` = '$ph_no_',`vechile_id` = '$vechile_id',`model`='$model_', `location_` = '$location' , `color`='$color_' , `varient`='$varient_' WHERE `booking_id` = '$booking'";
+    $result = mysqli_query($con,$query);
 
-    $query1 = "UPDATE `bills` SET 'model'='$model','color'='$color', 'varient'='$varient','location_' = '$location_' WHERE `booking_id` = '$booking_id'";
+    $query1 = "UPDATE `bills` SET `model`='$model_',`color`='$color_', `varient`='$varient_',`location_` = '$location' WHERE `booking_id` = '$booking'";
     $result1 = mysqli_query($con,$query1);
 
     if ($result == TRUE && $result1 == TRUE) {
       echo "<script>alert('Updated Sucessfully');</script>";
-      echo "<script>window.location.href='../adminpage/logs.php'</script>";
+      //echo "<script>window.location.href='../adminpage/logs.php'</script>";
     }
   }
 ?>

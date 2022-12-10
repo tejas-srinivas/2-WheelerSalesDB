@@ -105,13 +105,13 @@
     box-shadow: 5px 5px 10px #000;
     padding: 41px 43px;
     border-radius: 20px;
-    width: 601px;
+    width: 699px;
     margin-left: 19rem;
     align-items: center;
     font-size: small;
     margin-top:6rem;
 ">
-        <table class="table">
+        <table class="content">
           <thead>
             <tr>
               <th scope="col">Vehicle ID</th>

@@ -41,10 +41,43 @@ if($result) {
       background-size: cover;
       width:1268px;
     }
-    table, td, th {
-    border: 0.1px solid rgb(87, 86, 86);
-    padding: 4px;
-  }
+    .content {
+      border-collapse: collapse;
+      margin : 25px 2px;
+      font-size: 0.9rem;
+      min-width: 600px;
+    }
+
+    .content thead tr{
+      background-color: #f98e1d;
+      color: #ffffff;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    .content th, .table td {
+      padding: 13px 14px ;
+      height: 48px;
+      min-width: 60px;
+    }
+
+    .content tbody tr{
+      border-bottom: 1px solid #f98e1d;
+      
+    }
+
+    .content tbody tr:nth-of-type(even){
+      background-color: lightgray;
+    }
+
+    .content tbody tr:last-of-type {
+      border-bottom: 2px solid #f98e1d;
+    }
+
+    .content td{
+      padding-left: 15px ;
+    }
+    
   </style>
   <body>
     <nav class="designer-slider">
@@ -119,9 +152,10 @@ if($result) {
       <div class="text"><h1 style="color:#ffff ;">Manage Bookings</h1></div>
       <div class="border" style="border: 0.5px solid white;"></div>
       <br>
-        <div class="container" style="margin-left:3rem;width:1170px;padding:40px 51px;">
-        <div class="text"><h4 style="color:#f98e1d;margin-top:-40px;">Total Bookings : <?php echo $count; ?></h4></div>
-        <table class="table" style="margin-left:0rem;">
+      <br>
+        <div class="container">
+        <div class="text"><h4 style="color:#f98e1d;margin-top:-40px;margin-left:-3.5rem;">Total Bookings : <?php echo $count; ?></h4></div>
+        <table class="content" style="font-size:small;margin-top:-0.4rem;">
           <thead>
             <tr>
               <th scope="col">Booking ID</th>
@@ -185,6 +219,7 @@ if($result) {
           </tbody>
         </table>
         </div>
+      </div>
    </section>
     
   </body>

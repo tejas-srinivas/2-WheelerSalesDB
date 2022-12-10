@@ -170,48 +170,52 @@ header .logo-text .sub-heading {
 {
     margin-left:100px;
 }
-
-.table{
-   
-	border-radius: 10px;
-	margin-bottom: 15px;
-    
-}
-table, td, th {
-    border: 0.1px solid rgb(87, 86, 86);
-    padding: 10px;
-  }
-
-td {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    background-color: #e1e0df;
-    color: black;
-}
   
-  table {
-    /* width : 50%; */
-    border-collapse: collapse;
-    text-align: center;
-    table-layout:inherit;
-    border: 0.1px solid grey;
-   
-  }
   .container {
     background: #f2f3f7;
     box-shadow: 5px 5px 10px rgb(28, 28, 28);
     padding: 40px 20px;
     border-radius: 20px;
-    width: 1173px;
-    margin-left: 3rem;
-    align-items: center;
-    font-size: small;
-  }
-  
-  th {
-    background-color: #f98e1d;
-    color:white;
+    width: 1172px;
+    margin-left: 2rem;
   }
 
+  .content {
+    border-collapse: collapse;
+    margin : 25px 2px;
+    font-size: 0.9rem;
+    min-width: 600px;
+  }
+
+  .content thead tr{
+    background-color: #f98e1d;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .content th, .table td {
+    padding: 13px 14px ;
+    height: 48px;
+    min-width: 60px;
+  }
+
+  .content tbody tr{
+    border-bottom: 1px solid #f98e1d;
+    
+  }
+
+  .content tbody tr:nth-of-type(even){
+    background-color: lightgray;
+  }
+
+  .content tbody tr:last-of-type {
+    border-bottom: 2px solid #f98e1d;
+  }
+
+  .content td{
+    padding-left: 15px ;
+  }
+  
+ 
   

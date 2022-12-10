@@ -37,7 +37,9 @@
     <link href="../adminpage/admin_style.css" rel="stylesheet" type="text/css">
     <title>Clients</title>
   </head>
-  
+  <style>
+    
+  </style>
   <body>
     <nav class="designer-slider">
     <header>
@@ -111,9 +113,9 @@
       <div class="text"><h1>Clients</h1></div>
       <div class="border"></div>
       <br>
-        <div class="container" style="width:1180px;margin-left:3rem;padding:40px 24px;">
+        <div class="container" style="width:1150px;margin-left:3rem;padding:40px 24px;">
         <div class="text"><h4 style="color:#f98e1d;margin-top:-40px;">Total Users : <?php echo $count; ?></h4></div>
-        <table class="table">
+        <table class="content" style="font-size:small">
           <thead>
             <tr>
               <th scope="col">User ID</th>

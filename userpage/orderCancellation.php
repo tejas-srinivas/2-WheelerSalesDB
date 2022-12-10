@@ -156,7 +156,7 @@ if (!isset($_SESSION['username'])) {
         <label for="booking_id" style="font-size:20px;"><b>Enter Booking No :<b></label>
     </div>
     <div class="input">
-        <input type="text" id="booking_id" name="booking_id" placeholder="Booking No :" style="border-radius: 6px; width: 400px;height: 40px;border:1px solid gray;box-sizing:border-box;padding: 10px 15px;font-size:16px;" required>
+        <input type="text" id="booking_id" name="booking_id" placeholder="Enter Booking_ID" style="border-radius: 6px; width: 400px;height: 40px;border:1px solid gray;box-sizing:border-box;padding: 10px 15px;font-size:16px;" required>
     </div>
     </div>
     <div class="button">
@@ -175,6 +175,10 @@ if (!isset($_SESSION['username'])) {
     <br> 
     
     <div class="display" style="margin-left:6rem;">
+      <h1 style="font-size:10 px;">FIRST NAME: <?php if(isset($booking_id)){ echo $_SESSION['first_name'];} else { echo ' ';}  ?> </h1>
+      <br>
+      <h1 style="font-size:10 px;">LAST NAME: <?php if(isset($booking_id)){ echo $_SESSION['last_name'];} else { echo ' ';}  ?> </h1>
+      <br>
       <h1 style="font-size:10 px;">BOOKING ID: <?php if(isset($booking_id)){ echo $booking_id; } else { echo ' ';} ?> </h1> 
       <br>
       <h1 style="font-size:10 px;">MODEL: <?php if(isset($booking_id)){ echo $model; } else { echo ' ';} ?> </h1>
