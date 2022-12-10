@@ -48,8 +48,8 @@
         <center><img src="../registerpage/logo.png" style="width: 450px; height: 150px; margin-top:-45px"></center>
         <center><h2 style="margin-top:-10px ;">Update Vehicle Booking ...</h2></center>
           <div class="form-group">
-            <input type="text" name="booking_id" value="<?php echo $id; ?>" >
-            <input type="text" name="vechile_id" value="<?php echo $book_id; ?>">
+            <input type="hidden" name="booking_id" value="<?php echo $id; ?>" >
+            <input type="hidden" name="vechile_id" value="<?php echo $book_id; ?>">
           </div>
           <div class="form-group" style="width:30rem;">
               <label for="fname">Email</label>
@@ -58,14 +58,14 @@
           <br>
           <div class="form-group" style="width:30rem;">
               <label for="fname">Phone Number</label>
-              <input type="text" class="form-control" id="fname" name="ph_no" value="<?php echo $ph_no ?>" required>
+              <input type="text" class="form-control" id="fname" name="ph_no" value="<?php echo $ph_no; ?>" required>
           </div>
           <br>
           <div class="form-group" style="width:30rem;">
               <label for="model">Model</label>
               <br>
               <select id="model" name="model" onchange="dropdownChange(this.id,'color');" required>
-                <option value="<?php echo $model ?>"><?php echo $model ?></option>
+                <option value="<?php echo $model; ?>"><?php echo $model; ?></option>
                 <option value="">------</option>
                 <option name="activa" value="Activa-6G">Activa 6G</option>
                 <option name="access" value="Access-125">Access 125</option>
@@ -77,16 +77,25 @@
               <label for="color">Color</label>
               <br>
               <select id="color" name="color" required> 
-                <option value="<?php echo $color ?>"><?php echo $color ?></option>
+                <option value="<?php echo $color ?>"><?php echo $color; ?></option>
                 <option value="">------</option>
               </select>
           </div>  
+
+          <div class="form-group" style="width:30rem;margin-top:0.5rem;">
+              <label for="color">Status</label>
+              <br>
+              <select id="status" name="status" required> 
+                <option value="Processing">Processing</option>
+                <option value="Delivered">Delivered</option>
+              </select>
+          </div>
             
           <div class="form-group" style="width:30rem;margin-top:0.5rem;">
               <label for="model">Varient</label>
               <br>
               <select id="varient" name="varient" required>
-                <option value="<?php echo $varient ?>"><?php echo $varient ?></option>
+                <option value="<?php echo $varient ?>"><?php echo $varient; ?></option>
                 <option value="">------</option>
                 <option value="DRUM-BRAKE">DRUM BRAKE VARIENT</option>
                 <option value="DISC-BRACK-ALLOY">DISC BRAKE VARIENT(ALLOY WHEELS)</option>
@@ -98,7 +107,7 @@
               <label for="location">Select Delivery Location</label>
               <br>  
               <select id="location" name="location_" required>
-                <option value="<?php echo $location ?>"><?php echo $location ?></option>
+                <option value="<?php echo $location ?>"><?php echo $location; ?></option>
                 <option value="">------</option>
                 <option value="Vijaynagar">Vijaynagar</option>
                 <option value="Yelahanka">Yelahanka</option>
@@ -127,25 +136,38 @@
   if (mysqli_connect_error()) {
     exit('Error connecting to the database' . mysqli_connect_error());
   }
+
   if (isset($_POST['update'])) {
-    $booking = $_POST['booking_id'];
-    $vechile_id = $_POST['vechile_id'];
+    $booking = $_POST['vechile_id'];
     $ph_no_ = $_POST['ph_no'];
     $model_ = $_POST['model'];
     $color_ = $_POST['color'];
     $varient_ = $_POST['varient'];
-    $email = $_POST['email_'];
-    $location = $_POST['location_'];
-    
-    $query = "UPDATE `vechile_booking` SET  `email_` = '$email', `ph_no` = '$ph_no_',`vechile_id` = '$vechile_id',`model`='$model_', `location_` = '$location' , `color`='$color_' , `varient`='$varient_' WHERE `booking_id` = '$booking'";
+    $email_ = $_POST['email_'];
+    $location_ = $_POST['location_'];
+    $status_ = $_POST['status'];
+
+    if(isset($_POST['model']))
+      {
+        if($_POST['model'] == 'Activa-6G'){
+          $vechile_id = 1;
+        }
+        elseif($_POST['model'] == 'Access-125'){
+          $vechile_id = 2;
+        }
+        elseif($_POST['model'] == 'Jupiter-125'){
+          $vechile_id = 3;
+        }
+      }
+    $query = "UPDATE `vechile_booking` SET  `email_` = '$email_', `ph_no` = '$ph_no_',`vechile_id` = '$vechile_id',`model`='$model_', `location_` = '$location_' , `color`='$color_' , `varient`='$varient_',`status`='$status_' WHERE `booking_id` = '$booking'";
     $result = mysqli_query($con,$query);
-
-    $query1 = "UPDATE `bills` SET `model`='$model_',`color`='$color_', `varient`='$varient_',`location_` = '$location' WHERE `booking_id` = '$booking'";
-    $result1 = mysqli_query($con,$query1);
-
-    if ($result == TRUE && $result1 == TRUE) {
-      echo "<script>alert('Updated Sucessfully');</script>";
-      //echo "<script>window.location.href='../adminpage/logs.php'</script>";
+    if($result){
+      $query1 = "UPDATE `bills` SET `model`='$model_',`color`='$color_', `varient`='$varient_',`location_` = '$location_' WHERE `booking_id` = '$booking'";
+      $result1 = mysqli_query($con,$query1);
+      if ($result1 == TRUE) {
+        echo "<script>alert('Updated Sucessfully');</script>";
+        echo "<script>window.location.href='../adminpage/logs.php'</script>";
+      }
     }
   }
 ?>
