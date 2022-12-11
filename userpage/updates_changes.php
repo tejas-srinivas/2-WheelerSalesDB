@@ -15,13 +15,14 @@ if (mysqli_connect_error()) {
 exit('Error connecting to the database' . mysqli_connect_error());
 }
 
-if (isset($_GET['vec_id'])) {
-$id = intval($_GET['vec_id']);
-$book_id = $_GET['up_id'];
-$query1 = "SELECT * FROM vechile_booking WHERE booking_id = '$book_id'";
+if (isset($_SESSION['u_id'])) {
+
+$u_id = $_SESSION['u_id'];
+$query1 = "SELECT * FROM vechile_booking WHERE u_id = '$u_id'";
 $result1 = mysqli_query($con, $query1);
 if ($result1) {
   $row = mysqli_fetch_array($result1);
+  $book_id = $row['booking_id'];
   $vec = $row['vechile_id'];
   $model = $row['model'];
   $color = $row['color'];
@@ -48,6 +49,7 @@ if ($result1) {
   <!-- CDN CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="user_style.css" rel="stylesheet" type="text/css">
+  <script src="dropdownChange.js"></script>
   <title>Updates / Changes</title>
 </head>
 
@@ -138,7 +140,7 @@ if ($result1) {
       <form action="user_details.php" method="post">
         <center><img src="../registerpage/logo.png" style="width: 450px; height: 150px; margin-top:-45px"></center>
         <center>
-          <h2 style="margin-top:-10px ;">Provide Your Details for User Veriication ...</h2>
+          <h2 style="margin-top:-10px ;">Booking Changes</h2>
         </center>
         <div class="row1">
           <div class="col-25">
@@ -178,9 +180,14 @@ if ($result1) {
                 <option value="DISC-BRACK-W/O-ALLOY">DISC BRAKE VARIENT(W/O ALLOY WHEELS)</option>
               </select>        
         </div>
-        <div>
-          
-        </div>
+        
+        <div class="row1">
+        
+            <label for="ddate" style="margin-left:1.5rem;">Delivery Date</label>
+            <input type="date" class="form-control" id="fname" name="delv_date" value="<?php echo $delv_date; ?>" required>
+        </div>  
+          <br>
+        <button type="submit" name="update" class="btn btn-primary" style="margin-left:9rem;width:8rem;background-color:#f98e1d;border:0.5px solid #f98e1d;height:30px;border-radius:6px;">Update</button>
       </form>
     </div>
     </section>
