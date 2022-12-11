@@ -26,8 +26,21 @@
             </div>
             
             <div class="clearfix">
-                <label class="float-left form-check-label" style="margin-left:120px ;"><input type="checkbox"> Remember me</label>
+                <label class="float-left form-check-label" style="margin-left:120px ;"><input type="checkbox" onclick="myfunction()"> Show password</label>
             </div> <br> 
+            <script type="text/javascript">
+                function myfunction()
+                {
+                    var show =document.getElementById('password')
+                  if(show.type=='password')
+                  {
+                       show.type='text';
+                  }
+                  else{
+                    show.type='password';
+                  }
+                }
+            </script>
             <div class="form-group" id="log">
                 <button type="submit" class="btn btn-primary btn-lg" name="submit" id="submit" style="border-radius: 8px;margin-left: 280px;">Log in</button>
             </div>
