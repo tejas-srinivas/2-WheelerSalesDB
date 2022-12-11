@@ -4,6 +4,37 @@ session_start();
 if (!isset($_SESSION['username'])) {
   header('location: login.html');
 }
+$DATABASE_HOST = 'localhost';
+$DATABASE_USER = 'root';
+$DATABASE_PASS = '';
+$DATABASE_NAME = 'wheels&deals';
+
+$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+
+if (mysqli_connect_error()) {
+exit('Error connecting to the database' . mysqli_connect_error());
+}
+
+if (isset($_GET['vec_id'])) {
+$id = intval($_GET['vec_id']);
+$book_id = $_GET['up_id'];
+$query1 = "SELECT * FROM vechile_booking WHERE booking_id = '$book_id'";
+$result1 = mysqli_query($con, $query1);
+if ($result1) {
+  $row = mysqli_fetch_array($result1);
+  $vec = $row['vechile_id'];
+  $model = $row['model'];
+  $color = $row['color'];
+  $varient = $row['varient'];
+  $location = $row['location_'];
+  $query2 = "SELECT delv_date FROM bills WHERE booking_id = '$book_id'";
+  $result2 = mysqli_query($con,$query2);
+  if($result2){
+    $row = mysqli_fetch_assoc($result2);
+    $delv_date = $row['delv_date']; 
+  }
+}
+}
 ?>
 
 <!doctype html>
@@ -103,7 +134,131 @@ if (!isset($_SESSION['username'])) {
     </div>
     <div class="border"></div>
     <br>
+    <div class="container1">
+      <form action="user_details.php" method="post">
+        <center><img src="../registerpage/logo.png" style="width: 450px; height: 150px; margin-top:-45px"></center>
+        <center>
+          <h2 style="margin-top:-10px ;">Provide Your Details for User Veriication ...</h2>
+        </center>
+        <div class="row1">
+          <div class="col-25">
+            <label for="fname">MODEL</label>
+          </div>
+          <div class="col-75">
+          <select id="model" name="model" onchange="dropdownChange(this.id,'color');" required>
+                <option value="<?php echo $model; ?>"><?php echo $model; ?></option>
+                <option value="">------</option>
+                <option name="activa" value="Activa-6G">Activa 6G</option>
+                <option name="access" value="Access-125">Access 125</option>
+                <option name="jupiter" value="Jupiter-125">Jupiter 125</option>
+              </select>
+          </div>
+        </div>
+        <div class="row1">
+          <div class="col-25">
+            <label for="fname">COLOUR</label>
+          </div>
+          <div class="col-75">
+          <select id="color" name="color" required> 
+                <option value="<?php echo $color ?>"><?php echo $color; ?></option>
+                <option value="">------</option>
+              </select>
+          </div>
+        </div>
+        <div class="row1">
+          <div class="col-25">
+            <label for="lname">VARIENT</label>
+          </div>
+          <div class="col-75">
+          <select id="varient" name="varient" required>
+                <option value="<?php echo $varient ?>"><?php echo $varient; ?></option>
+                <option value="">------</option>
+                <option value="DRUM-BRAKE">DRUM BRAKE VARIENT</option>
+                <option value="DISC-BRACK-ALLOY">DISC BRAKE VARIENT(ALLOY WHEELS)</option>
+                <option value="DISC-BRACK-W/O-ALLOY">DISC BRAKE VARIENT(W/O ALLOY WHEELS)</option>
+              </select>        
+        </div>
+        <div>
+          
+        </div>
+      </form>
+    </div>
     </section>
-    
+     
   </body>
 </html>
+<style>
+   input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    resize: vertical;
+    margin-left: 20px;
+  }
+  
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    margin-left: -40px;
+  }
+  
+  .book-now {
+    background-color: #f98e1d;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    float: right;
+    margin-top :10px;
+    margin-left: 20px;
+    font-size: 18px;
+  }
+  .back {
+    background-color: #f98e1d;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top :10px;
+    margin-left: 40px;
+    font-size: 18px;
+  }
+  
+  .book-now:hover {
+    background-color: #a85a0c;
+  }
+
+  .back:hover {
+    background-color: #a85a0c;
+  }
+  
+  .container1 {
+    border-radius: 10px;
+    background-color: #f2f3f7;
+    padding: 40px 90px ;
+    box-shadow: 5px 5px 10px #999;
+    margin-left: 17rem;
+  }
+  
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row1:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+</style>

@@ -45,3 +45,11 @@
     height: 800px;
     display: flex;
 }
+.eye
+{
+	position :absolute;
+}
+#hide1
+{
+  display:none;
+}

@@ -30,13 +30,43 @@
 				<input type="text" class="form-control" name="username" placeholder="Username" style="border-radius: 8px;" required="required">
 			</div>
 			<div class="form-group">
-				<input type="password" class="form-control" name="password" placeholder="Password" style="border-radius: 8px;" required="required">
-			</div>        
+				
+				<input type="password" class="form-control" id="password" name="password" placeholder="Password" style="border-radius: 8px;" required="required">
+				<br>
+				<span class="eye" onclick=" myfunction()">
+				<i id="hide1" class="fa fa-eye" aria-hidden="true" style="margin-left:10px">  SHOW PASSWORD</i>
+				<i  id="hide2" class="fa fa-eye-slash" aria-hidden="true" style="margin-left:10px">  SHOW PASSWORD</i>
+				</span>
+			</div> 
+			
+			<br>       
+			<br>
 			<button type='submit' class="btn btn-primary btn-lg" name="submit" value="Register" id="submit" style="border-radius: 8px;margin-left: 250px;"><b>Register</b></button>
 		</form>
 		<div class="text-center" style="color:white ;">Already have an account? <a href="../loginpage/login.HTML" style="color:white ;">Sign in</a></div>
 		<p class="text-center"><a href="../homepage/landing.html" style="color: #f7f7f7;">Back to Home</a></p>
 	</div>
 </div>
+<script type="text/javascript">
+	function myfunction()
+	{
+		var x =document.getElementById('password');
+		var y =document.getElementById('hide1');    
+		var z =document.getElementById('hide2');
+
+        
+	  if(x.type === 'password')
+	  {
+		   x.type="text";
+		   y.style.display= "block";
+		   z.style.display= "none";
+	  }
+	  else{
+		x.type="password";
+		   y.style.display= "none";
+		   z.style.display= "block";
+	  }
+	}
+</script>
 </body>
 </html>
