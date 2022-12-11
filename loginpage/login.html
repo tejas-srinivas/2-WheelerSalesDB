@@ -26,8 +26,33 @@
             </div>
             
             <div class="clearfix">
-                <label class="float-left form-check-label" style="margin-left:120px ;"><input type="checkbox"> Remember me</label>
-            </div> <br> 
+                <span class="eye" onclick=" myfunction()" style="margin-left:7rem">
+                    <i id="hide1" class="fa fa-eye" aria-hidden="true" style="margin-left:10px">  SHOW PASSWORD</i>
+                    <i  id="hide2" class="fa fa-eye-slash" aria-hidden="true" style="margin-left:10px">  SHOW PASSWORD</i>
+                    </span>
+                </div> 
+                <script type="text/javascript">
+                    function myfunction()
+                    {
+                        var x =document.getElementById('password');
+                        var y =document.getElementById('hide1');    
+                        var z =document.getElementById('hide2');
+                
+                        
+                      if(x.type === 'password')
+                      {
+                           x.type="text";
+                           y.style.display= "block";
+                           z.style.display= "none";
+                      }
+                      else{
+                        x.type="password";
+                           y.style.display= "none";
+                           z.style.display= "block";
+                      }
+                    }
+                </script>
+                <br>
             <div class="form-group" id="log">
                 <button type="submit" class="btn btn-primary btn-lg" name="submit" id="submit" style="border-radius: 8px;margin-left: 280px;">Log in</button>
             </div>
