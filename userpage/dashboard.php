@@ -15,6 +15,7 @@ if (!isset($_SESSION['username'])) {
   if (mysqli_connect_error()) {
     exit('Error connecting to the database' . mysqli_connect_errno());
   }
+  
   $query = $query = "SELECT available,ex_showroom FROM stock_price where vechile_id=1";
   $resulti = mysqli_query($con,$query);
   if($resulti){

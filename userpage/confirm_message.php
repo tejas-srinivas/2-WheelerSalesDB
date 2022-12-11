@@ -1,20 +1,17 @@
-<!-- <?php
+<?php
   include ('../loginpage/connect.php');
   session_start();
   if(!isset($_SESSION['username'])) {
     header('location: login.html');
    } 
-?>   -->
+?>   
 
 
 <!doctype html>
 <html lang="en">
   <head>
-     
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="user_details.css" rel="stylesheet" type="text/css">
     <link href="user_style.css" rel="stylesheet" type="text/css">
@@ -203,9 +200,7 @@
           echo "<script>alert('This vehicle is currently not available.');</script>";
           echo "<script>window.location.href='../userpage/vechileBooking.php'</script>";
         }
-      }
-
-      
+      } 
     }
   }    
 ?> 
