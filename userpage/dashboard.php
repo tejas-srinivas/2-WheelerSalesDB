@@ -85,7 +85,7 @@ if (!isset($_SESSION['username'])) {
             </a>
           </li>
           <li class="nav-link">
-            <!-- <a href="#"> -->
+            <a href="vechileBooking.php">
               <i class="fa-solid fa-cart-shopping icon"></i>
               <span class="text nav-text">Vehicle Booking</span>
             </a>
@@ -137,7 +137,7 @@ if (!isset($_SESSION['username'])) {
     <div class="border"></div>
     <br>
     <div class="act">
-      <img class="img1" src="activa6g.png" href="#" width="300px" height="250px ">
+      <img class="img1" src="../userpage/Activa-6G.png" href="#" width="300px" height="250px ">
       </img>
       <div class="activadetails">
         <h1 class="axtiva" style="color:#f98e1d" style="margin-top: -10px;">ACTIVA 6G :</h1>
@@ -153,7 +153,7 @@ if (!isset($_SESSION['username'])) {
     <!-- <div class="border1"></div> -->
     </br>
     <div class="act">
-      <img class="img2" src="access (2).png" href="#" width="500px" height="300px ">
+      <img class="img2" src="Access-125.png" href="#" width="500px" height="300px ">
       </img>
       <div class="accessdetails">
         <h1 class="access" style="color:#f98e1d;margin-top:-40px;">ACCESS 125 :</h1>
@@ -173,7 +173,7 @@ if (!isset($_SESSION['username'])) {
     <!-- <div class="border2"></div> -->
     </br>
     <div class="act">
-      <img class="img3" src="jupiter125.png" href="#" width="500px" height="300px ">
+      <img class="img3" src="Jupiter-125.png" href="#" width="500px" height="300px ">
       </img>
       <div class="jupiterdetails">
 
