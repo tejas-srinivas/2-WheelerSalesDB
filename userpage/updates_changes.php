@@ -85,13 +85,13 @@ if ($result1) {
             </a>
           </li>
           <li class="nav-link">
-            <a href="vechileBooking.php">
+            <!-- <a href="vechileBooking.php"> -->
               <i class="fa-solid fa-cart-shopping icon"></i>
               <span class="text nav-text">Vehicle Booking</span>
             </a>
           </li>
           <li class="nav-link">
-            <a href="fittings.php">
+            <!-- <a href="fittings.php"> -->
               <i class="fa-solid fa-bars icon"></i>
               <span class="text nav-text">Accessories</span>
             </a>
@@ -147,6 +147,7 @@ if ($result1) {
             <label for="fname">MODEL</label>
           </div>
           <div class="col-75">
+          <img class="img" src="../userpage/Access-125.png" id="img" width="350px" height="250px ">
           <select id="model" name="model" onchange="dropdownChange(this.id,'color');" required>
                 <option value="<?php echo $model; ?>"><?php echo $model; ?></option>
                 <option value="">------</option>

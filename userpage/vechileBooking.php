@@ -55,25 +55,25 @@
             </a>
           </li>
           <li class="nav-link">
-          <a href="fittings.php">
+          <!-- <a href="fittings.php"> -->
             <i class="fa-solid fa-bars icon"></i>
               <span class="text nav-text">Accessories</span>
             </a>
           </li>
           <li class="nav-link">
-            <a href="#">
+            <!-- <a href="#"> -->
             <i class="fa-solid fa-money-bill icon"></i>
               <span class="text nav-text">Payment Details</span>
             </a>
           </li>
           <li class="nav-link">
-            <a href="#">
+            <a href="updates_changes.php">
             <i class="fa-solid fa-wrench icon"></i>
               <span class="text nav-text">Updates/Changes</span>
             </a>
           </li>
           <li class="nav-link">
-            <a href="#">
+            <a href="orderCancellation.php">
             <i class="fa-solid fa-ban icon"></i>
               <span class="text nav-text">Order Cancellation</span>
             </a>
