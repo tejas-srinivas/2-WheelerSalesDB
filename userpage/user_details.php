@@ -14,27 +14,35 @@ if (!isset($_SESSION['username'])) {
     exit('Error connecting to the database' . mysqli_connect_errno());
   }
   
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-user-details'])) {
-  
-  if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['aadhar_no']) && isset($_POST['driving_license'])) {
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $aadhar_no = $_POST['aadhar_no'];
-    $driving_license = $_POST['driving_license'];
-    $u_id = $_SESSION['u_id'];
-    if (isset($_POST['submit-user-details'])) {
-      $stmt = $con->prepare('INSERT INTO user_verification(u_id,firstname,lastname,aadhar_no,driving_license) VALUES (?,?,?,?,?)');   //end-to-end password protection
-      $stmt->bind_param('sssss',$u_id, $firstname, $lastname, $aadhar_no, $driving_license);  //s=string ,i=integer
-      $stmt->execute(); //executes the function
-      if ($stmt) {
-        echo "<script>alert('Verification Successfull...')</script>";
-        echo "<script>window.location.href='../userpage/vechileBooking.php'</script>";
-      } else {
-        echo 'Error Occured inserting into records';
-      }
+  $u_id = $_SESSION['u_id'];
+  $query = "SELECT u_id FROM user_verification WHERE u_id='$u_id'";
+  $result = mysqli_query($con,$query);
+  if($result){
+    $num = mysqli_num_rows($result);
+    if($num > 0){
+      echo "<script>alert('Dear User, Your Verification is already completed !!')</script>";
+      echo "<script>window.location.href='../userpage/vechileBooking.php'</script>";
     }
-  }
-}
+    else{
+      if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-user-details'])) {
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
+        $aadhar_no = $_POST['aadhar_no'];
+        $driving_license = $_POST['driving_license'];
+        $u_id = $_SESSION['u_id'];
+          $stmt = $con->prepare('INSERT INTO user_verification(u_id,firstname,lastname,aadhar_no,driving_license) VALUES (?,?,?,?,?)');   //end-to-end password protection
+          $stmt->bind_param('sssss',$u_id, $firstname, $lastname, $aadhar_no, $driving_license);  //s=string ,i=integer
+          $stmt->execute(); //executes the function
+          if ($stmt) {
+            echo "<script>alert('Verification Successfull...')</script>";
+            echo "<script>window.location.href='../userpage/vechileBooking.php'</script>";
+          } 
+          else {
+            echo 'Error Occured inserting into records';
+          }   
+        }
+    }
+  }  
 ?>
 
 <!doctype html>

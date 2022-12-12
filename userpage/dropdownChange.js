@@ -7,20 +7,22 @@ function dropdownChange(s1,s2)
       if(s1.value == "Access-125")
       {
         var array = ['White|White','Silver|Silver','Black|Black','Wine_Red|Wine Red','Aqua_Green|Aqua Green '];
+        document.getElementById('img').src="../userpage/Access-125.png";
       }
       else if(s1.value == "Activa-6G")
       {
-        var array = ['White|White','Silver|Silver','Black|Black','Red|Red','Yellow|Yellow'];
+        var array = ['Black|Black','Red|Red','Yellow|Yellow','White|White','Silver|Silver'];
+        document.getElementById('img').src="../userpage/Activa-6G.png";
       }
       else if(s1.value == "Jupiter-125")
       {
-        var array = ['White|White','Silver|Silver','Brown|Brown','Blue|Blue','Aqua_Green|Aqua Green'];
+        var array = ['Blue|Blue','Aqua_Green|Aqua Green','White|White','Silver|Silver','Brown|Brown'];
+        document.getElementById('img').src="../userpage/Jupiter-125.png";
       }
       for(var option in array)
       {
         var pair = array[option].split("|");
         var color = document.createElement("option");
-
         color.value = pair[0];
         color.innerHTML = pair[1];
         s2.options.add(color);

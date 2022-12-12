@@ -45,7 +45,7 @@
           <li class="nav-link">
           <a href="user_details.php">
               <i class="fa-solid fa-user icon"></i>
-              <span class="text nav-text">User Details</span>
+              <span class="text nav-text">User Verification</span>
             </a>
           </li>
           <li class="nav-link">
@@ -123,10 +123,13 @@
           </div>
           
           <div class="row">
+          <!-- <img class="img1" src="activa6g.png" href="#" width="300px" height="250px "> -->
             <div class="col-25">
-              <label for="model">Model</label>
+            
+              <label for="model" style="margin-top:16rem;">Model</label>
             </div>
             <div class="col-75">
+            <img class="img" src="../userpage/Access-125.png" id="img" width="350px" height="250px ">
               <select id="model" name="model" onchange="dropdownChange(this.id,'color');" required>
                 <option value="">Select Model</option>
                 <option name="activa" value="Activa-6G">Activa 6G</option>
