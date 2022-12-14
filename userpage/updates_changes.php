@@ -35,7 +35,23 @@ if ($result1) {
     $delv_date = $row['delv_date']; 
   }
 }
+if(isset($_POST['update-book']))
+{
+$query3 = "UPDATE `vechile_booking` SET `model`='$model',`color`='$color',`varient`='$varient' WHERE `u_id`='$u_id' ";
+$result3= mysqli_query($con,$query3);
+if($result3)
+{
+  $query4 = "UPDATE `bills` SET `delv_date`='$delv_date' WHERE `vechile_id`='$vechile_id'";
+  $result4= mysqli_query($con,$query4);
+  if($result4)
+  {
+  echo "<script>alert('Updated Sucessfully');</script>";
+  echo "<script>window.location.href='../userpage/dashboard.php'</script>";
 }
+}
+}
+}
+
 ?>
 
 <!doctype html>

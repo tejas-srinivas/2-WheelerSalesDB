@@ -135,7 +135,7 @@ if (!isset($_SESSION['username'])) {
           </li>
         </ul>
       </div>
-    </div>
+    </di v>
   </nav>
   <section class="home">
     <div class="text">
