@@ -98,9 +98,9 @@
             </a>
           </li>
           <li class="nav-link">
-            <a href="#">
-            <i class="fa-solid fa-wrench icon"></i>
-              <span class="text nav-text">Updates/Changes</span>
+            <a href="../adminpage/profile.php" style="background-color: #f98e1d; color: white">
+            <i class="fa-solid fa-user icon"></i>
+              <span class="text nav-text">Profile</span>
             </a>
           </li>
           <li class="nav-link">
