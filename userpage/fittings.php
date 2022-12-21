@@ -155,7 +155,7 @@
           </div>
           
           <div class="button">
-            <button type="submit" class="book-now" name="submit-fitting-details" value="submit-fitting-details" id="submit-fitting-details"><b>BUY NOW</b></button>
+            <button type="submit" class="book-now" name="submit-fitting-details" value="submit-fitting-details" id="submit-fitting-details"><b>CONFIRM NOW</b></button>
             <button type='button' class="back" name="back" id="back" style="margin-left: 170px;">
               <a href="../userpage/user_details.php" style="text-decoration: none; color:white;"><b>BACK</b></a></button>
           </div> 

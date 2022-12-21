@@ -28,6 +28,7 @@ if ($result1) {
   $color = $row['color'];
   $varient = $row['varient'];
   $location = $row['location_'];
+  $status = $row['status'];
   $query2 = "SELECT delv_date FROM bills WHERE booking_id = '$book_id'";
   $result2 = mysqli_query($con,$query2);
   if($result2){

@@ -30,26 +30,32 @@ if (!isset($_SESSION['username'])) {
                 $varient = $row['varient'];
                 $color = $row['color'];
                 $model = $row['model'];
+                $status = $row['status'];
             }
             else{
               echo 'error';
             }
           }
         elseif(isset($_POST['cancel'])){
-            $query1 = "DELETE FROM vechile_booking WHERE booking_id = '$booking_id'" ;
-            $result1 = mysqli_query($con,$query1);
-            $query2 = "DELETE FROM accessory WHERE booking_id = '$booking_id'" ;
-            $result2 = mysqli_query($con,$query2);
-            $query3 = "DELETE FROM bills WHERE booking_id = '$booking_id'" ;
-            $result3 = mysqli_query($con,$query3);
-            $query4 = "DELETE FROM user_verification WHERE u_id= '$u_id'";
-            $result4= mysqli_query($con,$query4);
-
-            if($result1){
-              echo "<script>alert('Your Booking is Cancelled');</script>";
-              echo "<script>window.location.href='../userpage/dashboard.php'</script>";
-              }
+            if($row['status'] == 'Delivered'){
+              echo "<script>alert('Your Vechile is already delivered...');</script>";
             }
+            else{
+              $query1 = "DELETE FROM vechile_booking WHERE booking_id = '$booking_id'" ;
+              $result1 = mysqli_query($con,$query1);
+              $query2 = "DELETE FROM accessory WHERE booking_id = '$booking_id'" ;
+              $result2 = mysqli_query($con,$query2);
+              $query3 = "DELETE FROM bills WHERE booking_id = '$booking_id'" ;
+              $result3 = mysqli_query($con,$query3);
+              $query4 = "DELETE FROM user_verification WHERE u_id= '$u_id'";
+              $result4= mysqli_query($con,$query4);
+
+              if($result1){
+                echo "<script>alert('Your Booking is Cancelled');</script>";
+                echo "<script>window.location.href='../userpage/dashboard.php'</script>";
+                }
+            }
+          }
         }
 ?>
 
@@ -172,25 +178,24 @@ if (!isset($_SESSION['username'])) {
     </div>
     </form>
     <br>
-    <br> 
     
+    <h1 style="font-size:30px;margin-left:35rem;"> <?php if(isset($booking_id)){ echo 'STATUS : ',$status; } else { echo ' ';} ?> </h1>
     <div class="display" style="margin-left:6rem;">
-      <h1 style="font-size:10 px;"> <?php if(isset($booking_id)){ echo 'FIRST NAME:', $_SESSION['first_name'];} else { echo ' ';}  ?> </h1>
+      <h1 style="font-size:10 px;"> <?php if(isset($booking_id)){ echo 'FIRST NAME : ', $_SESSION['first_name'];} else { echo ' ';}  ?> </h1>
       <br>
-      <h1 style="font-size:10 px;"> <?php if(isset($booking_id)){ echo 'LAST NAME:',$_SESSION['last_name'];} else { echo ' ';}  ?> </h1>
+      <h1 style="font-size:10 px;"> <?php if(isset($booking_id)){ echo 'LAST NAME : ',$_SESSION['last_name'];} else { echo ' ';}  ?> </h1>
       <br>
-      <h1 style="font-size:10 px;"> <?php if(isset($booking_id)){ echo 'BOOKING ID:', $booking_id; } else { echo ' ';} ?> </h1> 
+      <h1 style="font-size:10 px;"> <?php if(isset($booking_id)){ echo 'BOOKING ID : ', $booking_id; } else { echo ' ';} ?> </h1> 
       <br>
-      <h1 style="font-size:10 px;"> <?php if(isset($booking_id)){ echo 'MODEL:', $model; } else { echo ' ';} ?> </h1>
+      <h1 style="font-size:10 px;"> <?php if(isset($booking_id)){ echo 'MODEL : ', $model; } else { echo ' ';} ?> </h1>
       <br>
-      <h1 style="font-size:10 px;"> <?php if(isset($booking_id)){ echo 'COLOR:',$color; } else { echo ' ';} ?> </h1>
+      <h1 style="font-size:10 px;"> <?php if(isset($booking_id)){ echo 'COLOR : ',$color; } else { echo ' ';} ?> </h1>
       <br>
-      <h1 style="font-size:10 px;"> <?php if(isset($booking_id)){ echo 'VARIENT:',$varient; } else { echo ' ';} ?> </h1>
+      <h1 style="font-size:10 px;"> <?php if(isset($booking_id)){ echo 'VARIENT : ',$varient; } else { echo ' ';} ?> </h1>
       <br>
-      <h1 style="font-size:10 px;"> <?php if(isset($booking_id)){ echo 'LOCATION:',$location_; } else { echo ' ';} ?> </h1>
+      <h1 style="font-size:10 px;"> <?php if(isset($booking_id)){ echo 'LOCATION : ',$location_; } else { echo ' ';} ?> </h1>
       <br>
-    </div> 
-    
+    </div>
   </section>
 </body>
 </html>
