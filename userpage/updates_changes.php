@@ -52,7 +52,81 @@ if ($result1) {
   <script src="dropdownChange.js"></script>
   <title>Updates / Changes</title>
 </head>
+<style>
+   input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    resize: vertical;
+    margin-left: 20px;
+  }
+  
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    margin-left: -40px;
+  }
+  
+  .book-now {
+    background-color: #f98e1d;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    float: right;
+    margin-top :10px;
+    margin-left: 20px;
+    font-size: 18px;
+  }
+  .back {
+    background-color: #f98e1d;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top :10px;
+    margin-left: 40px;
+    font-size: 18px;
+  }
+  
+  .book-now:hover {
+    background-color: #a85a0c;
+  }
 
+  .back:hover {
+    background-color: #a85a0c;
+  }
+  
+  .container1 {
+    border-radius: 10px;
+    background-color: #f2f3f7;
+    padding: 40px 90px ;
+    box-shadow: 5px 5px 10px #999;
+    margin-left: 17rem;
+  }
+  
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row1:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+</style>
 <body>
   <nav class="designer-slider">
     <header>
@@ -137,10 +211,10 @@ if ($result1) {
     <div class="border"></div>
     <br>
     <div class="container1">
-      <form action="user_details.php" method="post">
+      <form action="updates_changes.php" method="post">
         <center><img src="../registerpage/logo.png" style="width: 450px; height: 150px; margin-top:-45px"></center>
         <center>
-          <h2 style="margin-top:-10px ;">Booking Changes</h2>
+          <h2 style="margin-top:-10px ;">Booking Changes : <?php echo $book_id; ?></h2>
         </center>
         <div class="row1">
           <div class="col-25">
@@ -188,85 +262,43 @@ if ($result1) {
             <input type="date" class="form-control" id="fname" name="delv_date" value="<?php echo $delv_date; ?>" required>
         </div>  
           <br>
-        <button type="submit" name="update" class="btn btn-primary" style="margin-left:9rem;width:8rem;background-color:#f98e1d;border:0.5px solid #f98e1d;height:30px;border-radius:6px;">Update</button>
+        <button type="submit" name="update-changes" class="btn btn-primary" style="margin-left:9rem;width:8rem;background-color:#f98e1d;border:0.5px solid #f98e1d;height:30px;border-radius:6px;">Update</button>
       </form>
     </div>
     </section>
      
   </body>
 </html>
-<style>
-   input[type=text], select, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    resize: vertical;
-    margin-left: 20px;
-  }
+
+<?php 
   
-  label {
-    padding: 12px 12px 12px 0;
-    display: inline-block;
-    margin-left: -40px;
-  }
+  $DATABASE_HOST = 'localhost';
+  $DATABASE_USER = 'root';
+  $DATABASE_PASS = '';
+  $DATABASE_NAME = 'wheels&deals';
   
-  .book-now {
-    background-color: #f98e1d;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    float: right;
-    margin-top :10px;
-    margin-left: 20px;
-    font-size: 18px;
-  }
-  .back {
-    background-color: #f98e1d;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-top :10px;
-    margin-left: 40px;
-    font-size: 18px;
-  }
+  $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
   
-  .book-now:hover {
-    background-color: #a85a0c;
+  if (mysqli_connect_error()) {
+  exit('Error connecting to the database' . mysqli_connect_error());
   }
 
-  .back:hover {
-    background-color: #a85a0c;
+  if(isset($_POST['update-changes'])) {
+    $model = $_POST['model'];
+    $color = $_POST['color'];
+    $varient = $_POST['varient'];
+    $delv_date = $_POST['delv_date'];
+
+    $sql = "UPDATE `vechile_booking` SET `model`='$model',`color`='$color',`varient`='$varient' WHERE booking_id = '$book_id'";
+    $result = mysqli_query($con,$sql);
+    if($result) {
+      $inner_sql = "UPDATE `bills` SET `delv_date`='$delv_date' WHERE booking_id = '$book_id'";
+      $inner_result = mysqli_query($con,$inner_sql);
+      if($inner_result){
+        echo "<script>alert('Updated Successfully');</script>";
+        echo "<script>window.location.href='../userpage/updates_changes.php'</script>";
+      }
+    }
   }
-  
-  .container1 {
-    border-radius: 10px;
-    background-color: #f2f3f7;
-    padding: 40px 90px ;
-    box-shadow: 5px 5px 10px #999;
-    margin-left: 17rem;
-  }
-  
-  .col-25 {
-    float: left;
-    width: 25%;
-    margin-top: 6px;
-  }
-  
-  .col-75 {
-    float: left;
-    width: 75%;
-    margin-top: 6px;
-  }
-  
-  /* Clear floats after the columns */
-  .row1:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-</style>
+
+?>
