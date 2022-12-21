@@ -175,23 +175,20 @@ if (!isset($_SESSION['username'])) {
     <br> 
     
     <div class="display" style="margin-left:6rem;">
-      <h1 style="font-size:10 px;">FIRST NAME: <?php if(isset($booking_id)){ echo $_SESSION['first_name'];} else { echo ' ';}  ?> </h1>
+      <h1 style="font-size:10 px;"> <?php if(isset($booking_id)){ echo 'FIRST NAME:', $_SESSION['first_name'];} else { echo ' ';}  ?> </h1>
       <br>
-      <h1 style="font-size:10 px;">LAST NAME: <?php if(isset($booking_id)){ echo $_SESSION['last_name'];} else { echo ' ';}  ?> </h1>
+      <h1 style="font-size:10 px;"> <?php if(isset($booking_id)){ echo 'LAST NAME:',$_SESSION['last_name'];} else { echo ' ';}  ?> </h1>
       <br>
-      <h1 style="font-size:10 px;">BOOKING ID: <?php if(isset($booking_id)){ echo $booking_id; } else { echo ' ';} ?> </h1> 
+      <h1 style="font-size:10 px;"> <?php if(isset($booking_id)){ echo 'BOOKING ID:', $booking_id; } else { echo ' ';} ?> </h1> 
       <br>
-      <h1 style="font-size:10 px;">MODEL: <?php if(isset($booking_id)){ echo $model; } else { echo ' ';} ?> </h1>
+      <h1 style="font-size:10 px;"> <?php if(isset($booking_id)){ echo 'MODEL:', $model; } else { echo ' ';} ?> </h1>
       <br>
-      <h1 style="font-size:10 px;">COLOR: <?php if(isset($booking_id)){ echo $color; } else { echo ' ';} ?> </h1>
+      <h1 style="font-size:10 px;"> <?php if(isset($booking_id)){ echo 'COLOR:',$color; } else { echo ' ';} ?> </h1>
       <br>
-      <h1 style="font-size:10 px;">VARIENT: <?php if(isset($booking_id)){ echo $varient; } else { echo ' ';} ?> </h1>
+      <h1 style="font-size:10 px;"> <?php if(isset($booking_id)){ echo 'VARIENT:',$varient; } else { echo ' ';} ?> </h1>
       <br>
-      <h1 style="font-size:10 px;">LOCATION: <?php if(isset($booking_id)){ echo $location_; } else { echo ' ';} ?> </h1>
+      <h1 style="font-size:10 px;"> <?php if(isset($booking_id)){ echo 'LOCATION:',$location_; } else { echo ' ';} ?> </h1>
       <br>
-      
-      
-
     </div> 
     
   </section>
