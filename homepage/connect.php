@@ -23,7 +23,7 @@ if(isset($_POST['submit']))  {
     if($stmt) {
         echo "<script>alert('Your test ride has been booked Successfully! and
         Our Person will contact you shortly...');</script>";
-        echo "<script>window.location.href='../loginpage/login.html'</script>";
+        echo "<script>window.location.href='../homepage/landing.html'</script>";
     }
     else {
         echo 'Error Occured inserting into records';

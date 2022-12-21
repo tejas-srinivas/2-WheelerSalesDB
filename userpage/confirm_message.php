@@ -158,7 +158,7 @@
       $booking_no = rand(100000,120000);
       $booking_id = "WD-".($booking_no) ;
       $status = 'Processing';
-      $book_date = date("d-m-Y h:i:s") ;
+      $book_date = date("Y-m-d h:i:s") ;
       if(isset($_POST['model']))
       {
         if($_POST['model'] == 'Activa-6G'){

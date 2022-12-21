@@ -110,19 +110,19 @@ if(isset($_POST['pay'])){
             </a>
           </li>
           <li class="nav-link">
-          <a href="user_details.php">
+          <!-- <a href="user_details.php"> -->
               <i class="fa-solid fa-user icon"></i>
               <span class="text nav-text">User Verification</span>
             </a>
           </li>
           <li class="nav-link">
-          <a href="vechileBooking.php">
+          <!-- <a href="vechileBooking.php"> -->
             <i class="fa-solid fa-cart-shopping icon"></i>
               <span class="text nav-text">Vehicle Booking</span>
             </a>
           </li>
           <li class="nav-link">
-          <a href="fittings.php">
+          <!-- <a href="fittings.php"> -->
             <i class="fa-solid fa-bars icon"></i>
               <span class="text nav-text">Accessories</span>
             </a>
@@ -134,7 +134,7 @@ if(isset($_POST['pay'])){
             </a>
           </li>
           <li class="nav-link">
-            <a href="updates_changes.php">
+            <!-- <a href="updates_changes.php"> -->
             <i class="fa-solid fa-wrench icon"></i>
               <span class="text nav-text">Updates/Changes</span>
             </a>
