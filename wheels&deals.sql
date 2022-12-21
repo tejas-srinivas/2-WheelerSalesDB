@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2022 at 02:30 PM
+-- Generation Time: Dec 21, 2022 at 06:07 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -69,9 +69,9 @@ INSERT INTO `accessory` (`fitting_id`, `booking_id`, `u_id`, `mirror`, `speedome
 ('FWD-10931', 'WD-112997', 'UWD-1186', 'Chrome-Mirror', 'Analog', 'W-Center-Stand', 'Charger'),
 ('FWD-10952', 'WD-112078', 'UWD-766', 'Plane-Mirror', 'Digital', 'W-Center-Stand', 'Charger'),
 ('FWD-10994', 'WD-116805', 'UWD-980', 'Chrome-Mirror', 'Analog', 'W/O-Center-Stand', 'Charger'),
+('FWD-11075', 'WD-112640', 'UWD-789', 'Chrome-Mirror', 'Analog', 'W-Center-Stand', 'Charger'),
 ('FWD-11451', 'WD-113295', 'UWD-883', 'Chrome-Mirror', 'Analog', 'W-Center-Stand', 'Charger'),
 ('FWD-11641', 'WD-112936', 'UWD-995', 'Chrome-Mirror', 'Analog', 'W-Center-Stand', 'Charger'),
-('FWD-11658', 'WD-114565', 'UWD-789', 'Chrome-Mirror', 'Digital', 'W-Center-Stand', 'Charger'),
 ('FWD-11873', 'WD-118420', 'UWD-944', 'Chrome-Mirror', 'Analog', 'W-Center-Stand', 'Charger');
 
 -- --------------------------------------------------------
@@ -123,7 +123,7 @@ CREATE TABLE `bills` (
 INSERT INTO `bills` (`booking_id`, `delv_date`, `model`, `color`, `varient`, `location_`, `ex_showroom`, `accessory_price`, `road_tax`, `insurance`, `total_price`) VALUES
 ('WD-101099', '2022-12-16', 'Activa-6G', 'White', 'DISC-BRACK-ALLOY', 'Vijaynagar', 80000, 4325, 10500, 2500, 97325),
 ('WD-104383', '2022-12-17', 'Activa-6G', 'Black', 'DISC-BRACK-ALLOY', 'Yelahanka', 75000, 4325, 10500, 2500, 92325),
-('WD-114565', '2022-12-19', 'Access-125', 'White', 'DRUM-BRAKE', 'Koramangla', 75000, 4325, 10500, 2500, 92325),
+('WD-112640', '2022-12-28', 'Access-125', 'Wine_Red', 'DISC-BRACK-ALLOY', 'Indranagar', 75000, 4325, 10500, 2500, 92325),
 ('WD-116805', '2022-11-18', 'Access-125', 'Aqua_Green', 'DISC-BRACK-W/O-ALLOY', 'Yelahanka', 75000, 4325, 10500, 2500, 92325),
 ('WD-118420', '2022-11-8', 'Jupiter-125', 'Aqua_Green', 'DISC-BRACK-ALLOY', 'Indranagar', 80000, 4325, 10500, 2500, 97325);
 
@@ -168,7 +168,10 @@ CREATE TABLE `test_ride` (
 --
 
 INSERT INTO `test_ride` (`name`, `email`, `mob_no`, `model`, `location_`) VALUES
+('Akshitha', 'akshiii599@gmail.com', '8147191252', 'Access 125', 'Indranagar'),
+('Anusha', 'anusha@gmail.com', '8660993690', 'Jupiter 12', 'Yelahanka'),
 ('Varsha', 'chennurvarshag@gmail.com', '8147191253', 'Jupiter 12', 'Koramangla'),
+('Pratibha', 'pratibhakj02@gmail.com', '6360424399', 'Activa 6G', 'Koramangla'),
 ('Tejas', 'stejas2002@gmail.com', '9353931335', 'Activa 6G', 'Vijaynagar'),
 ('Suchith', 'suchith@gmail.com', '9902498765', 'Activa 6G', 'Indranagar');
 
@@ -223,7 +226,7 @@ INSERT INTO `user_verification` (`u_id`, `firstname`, `lastname`, `aadhar_no`, `
 ('UWD-789', 'Tejas', 'Srinivas', '7109-7199-2596', 'KA01-202075315'),
 ('UWD-944', 'Chethan ', 'BG', '7109-7199-9625', 'KA01-202075316'),
 ('UWD-980', 'Yathin', 'B N', '9017-9917-6952', 'KA03-202076589'),
-('UWD-845', 'Pratibha ', 'Javalagi', '8971-6547-1235', 'KA25-986574123'),
+('UWD-845', 'Pratibha ', 'Javalagi', '8971-6547-1235 ', 'KA25-986574123'),
 ('UWD-967', 'SUMANTH', 'M', '8189-3142-2221', 'KA41-202015644'),
 ('UWD-995', 'Vikas ', 'S', '7956-5679-9867', 'KA52-202055467');
 
@@ -244,7 +247,7 @@ CREATE TABLE `vechile_booking` (
   `color` varchar(10) NOT NULL,
   `varient` varchar(20) NOT NULL,
   `status` varchar(255) NOT NULL,
-  `book_date` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  `book_date` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -254,7 +257,7 @@ CREATE TABLE `vechile_booking` (
 INSERT INTO `vechile_booking` (`booking_id`, `u_id`, `email_`, `ph_no`, `vechile_id`, `model`, `location_`, `color`, `varient`, `status`, `book_date`) VALUES
 ('WD-101099', 'UWD-845', 'pratibhakj02@gmail.com', '+91-6360424399', 1, 'Activa-6G', 'Vijaynagar', 'White', 'DISC-BRACK-ALLOY', 'Processing', '2022-12-09 08:13:04'),
 ('WD-104383', 'UWD-1123', 'reachjanhavi@gmail.com', '+91-7760549445', 1, 'Activa-6G', 'Yelahanka', 'Black', 'DISC-BRACK-ALLOY', 'Processing', '2022-12-10 22:41:37'),
-('WD-114565', 'UWD-789', 'stejas2002@gmail.com', '+91-9353931335', 2, 'Access-125', 'Koramangla', 'White', 'DRUM-BRAKE', 'Delivered', '2022-12-21 18:59:23'),
+('WD-112640', 'UWD-789', 'stejas2002@gmail.com', '+91-9353931335', 2, 'Access-125', 'Indranagar', 'Wine_Red', 'DISC-BRACK-ALLOY', 'Processing', '21-12-2022 06:03:54'),
 ('WD-116805', 'UWD-980', 'yathinyoyo@gmail.com', '+91-9620581947', 2, 'Access-125', 'Yelahanka', 'Aqua_Green', 'DISC-BRACK-W/O-ALLOY', 'Delivered', '2022-11-11 06:46:04'),
 ('WD-118420', 'UWD-944', 'chethanmurthy@gmail.com', '+91-9591960282', 3, 'Jupiter-12', 'Indranagar', 'Aqua_Green', 'DISC-BRACK-ALLOY', 'Processing', '2022-12-01 16:29:42');
 
