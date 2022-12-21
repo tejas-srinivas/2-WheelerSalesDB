@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2022 at 06:47 PM
+-- Generation Time: Dec 21, 2022 at 02:30 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 8.1.10
 
@@ -25,10 +25,14 @@ DELIMITER $$
 --
 -- Procedures
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_logs` (IN `$email` VARCHAR(255), IN `$ph_no` VARCHAR(255), IN `$vechile_id` VARCHAR(255), IN `$model` VARCHAR(255), IN `$location` VARCHAR(255), IN `$color` VARCHAR(255), IN `$varient` VARCHAR(255), IN `$booking_id` VARCHAR(255))   BEGIN
-UPDATE `vechile_booking` SET  `email_` = '$email_', `ph_no` = '$ph_no',`vechile_id` = '$vechile_id',`model`='$model', `location_` = '$location_' , `color`='$color' , `varient`='$varient' WHERE `booking_id` = '$booking';
+CREATE DEFINER=`root`@`localhost` PROCEDURE `count_users` ()   BEGIN
+	SELECT COUNT(*) AS Total_users FROM users;
+END$$
 
-UPDATE `bills` SET `model`='$model',`color`='$color', `varient`='$varient',`location_` = '$location_' WHERE `booking_id` = '$booking';
+CREATE DEFINER=`root`@`localhost` PROCEDURE `update_logs` (IN `email` VARCHAR(255), IN `ph_no` VARCHAR(255), IN `vechile_id` VARCHAR(255), IN `model` VARCHAR(255), IN `location` VARCHAR(255), IN `color` VARCHAR(255), IN `varient` VARCHAR(255), IN `booking_id` VARCHAR(255))   BEGIN
+UPDATE `vechile_booking` SET `email_` = 'email', `ph_no` = 'ph_no',`vechile_id` = 'vechile_id',`model`='model',`location_` = 'location' , `color`='color' , `varient`='varient' WHERE `bills`.`booking_id` = 'booking_id';
+
+UPDATE `bills` SET `model`='model',`color`='color', `varient`='varient',`location_` = 'location' WHERE `bills`.`booking_id` = 'booking_id';
 
 END$$
 
@@ -131,9 +135,9 @@ INSERT INTO `bills` (`booking_id`, `delv_date`, `model`, `color`, `varient`, `lo
 
 CREATE TABLE `stock_price` (
   `vechile_id` int(11) NOT NULL,
-  `vehicle_name` varchar(255) NOT NULL,
-  `available` varchar(255) NOT NULL,
-  `ex_showroom` varchar(255) NOT NULL
+  `vehicle_name` varchar(20) NOT NULL,
+  `available` varchar(20) NOT NULL,
+  `ex_showroom` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -175,12 +179,12 @@ INSERT INTO `test_ride` (`name`, `email`, `mob_no`, `model`, `location_`) VALUES
 --
 
 CREATE TABLE `users` (
-  `u_id` varchar(255) NOT NULL,
+  `u_id` varchar(10) NOT NULL,
   `first_name` varchar(30) NOT NULL,
   `last_name` varchar(30) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `username` varchar(30) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `email` varchar(40) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(70) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -189,14 +193,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`u_id`, `first_name`, `last_name`, `email`, `username`, `password`) VALUES
 ('UWD-1123', 'Janhavi', 'Srinivas', 'reachjanhavi@gmail.com', 'janhavi1997', '$2y$10$MPa1iYotaBsSyqZ0Peg.O.N015dvE4qCakzqHubyrPh/1lx7CYci.'),
-('UWD-1137', 'Shashank', 's', 'shashankshashu2672002@gmail.com', 'shashank', '$2y$10$kKbJJ3ped4INasrmKJbG3uxxZTXRvolhYVBLOnmM2mvhryjUf0dba'),
-('UWD-1181', 'Vinay ', 'Kumar', 'vinaykumarbm03@gmail.com', 'vinay03', '$2y$10$AW99HNFoiAx7CoYuhUjpju7vWrEvGJeswLP9WiQZvLIZ468iXXPyu'),
-('UWD-1186', 'Varsha', 'chennur', 'chennurvarshag@gmail.com', 'varshachennur', '$2y$10$s4MbGx9aLe/450cC1Z5meeS.sUObnX57Fxy2tExQHDYHKqu82pyg2'),
-('UWD-1200', 'guru', 'charan', 'guruchiru8147@gmail.com', 'guru10', '$2y$10$SLZWb8L9uzbtPeJWScrqeeHskL2vNQagV1axODaeFxPVc5gxG311y'),
-('UWD-766', 'Ujwal ', 'Kumar R', 'ujwallll16@gmail.com', 'uj06', '$2y$10$kGT3LGMRn5HS58yKleIlS.vvmMwCkNJB0l.fonCWcCRobm/Fotnru'),
 ('UWD-789', 'Tejas', 'Srinivas', 'stejas2002@gmail.com', 'tejas2002', '$2y$10$EvED7V8huULM.XKoc9zgcuacuv4TUlv/Q6jCJyNZORmc5fVJGUQWm'),
 ('UWD-845', 'Pratibha ', 'Javalagi', 'pratibhakj02@gmail.com', 'pratibha_kj', '$2y$10$ghbyOmycS3M/G4Qxh1fdWu8YrVQxhtBeTT8T2r0DIA85Uod/YhrNq'),
-('UWD-883', 'Param', 'gupta', 'paramgupta@gmail.com', 'Param', '$2y$10$Klpgsxp.IBWyNUETH.qevu7AngfMUwenk.SmK96PJvtK22lqBPmiS'),
 ('UWD-944', 'Chethan ', 'BG', 'cchethangurumurthy@gmail.com', 'chethu', '$2y$10$yRCPnsWA6xPlnx04b5Fnme9/DpHoht80v9PvDXHPRmBldpBDi69Y.'),
 ('UWD-967', 'SUMANTH', 'M', 'sumanthjamadagni2002@gmail.com', 'SUMANTH', '$2y$10$QCnZoKR8i0bnwvn.cAupGuXdctujNSzep3sol1XzrPbsTtVgY1egu'),
 ('UWD-980', 'Yathin', 'B N', 'yathinyoyo.6055@gmail.com', 'yathin123', '$2y$10$nPg7sIHnp6le37EyFefp8erz7zsJ3Kl88vE5inCZyBknU1/k8QrnG'),
@@ -209,11 +207,11 @@ INSERT INTO `users` (`u_id`, `first_name`, `last_name`, `email`, `username`, `pa
 --
 
 CREATE TABLE `user_verification` (
-  `u_id` varchar(255) NOT NULL,
+  `u_id` varchar(10) NOT NULL,
   `firstname` varchar(50) NOT NULL,
   `lastname` varchar(50) NOT NULL,
-  `aadhar_no` varchar(50) NOT NULL,
-  `driving_license` varchar(50) NOT NULL
+  `aadhar_no` varchar(15) NOT NULL,
+  `driving_license` varchar(14) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -221,18 +219,12 @@ CREATE TABLE `user_verification` (
 --
 
 INSERT INTO `user_verification` (`u_id`, `firstname`, `lastname`, `aadhar_no`, `driving_license`) VALUES
-('UWD-1186', 'Varsha', 'chennur', '6243-1234-5678', 'KA01-202027092002'),
-('UWD-1123', 'Janhavi', 'Srinivas', '8264-1034-9625', 'KA01-202075315'),
-('UWD-789', 'Tejas', 'Srinivas', '7109-7199-2596', 'KA01-202075315989'),
-('UWD-944', 'Chethan ', 'BG', '7109-7199-9625', 'KA01-2020753160'),
-('UWD-1200', 'guru', 'charan', '2829-2029-8587', 'KA01-456789032'),
-('UWD-980', 'Yathin', 'B N', '9017-9917-6952', 'KA03-2020765891'),
-('UWD-1181', 'Vinay ', 'Kumar', '8974-4561-6548', 'KA04-346854678'),
-('UWD-845', 'Pratibha ', 'Javalagi', '8971-6547-1235', 'KA25-9865741236'),
+('UWD-1123', 'Janhavi', 'Srinivas', '8264-1034-9625', 'KA01-202065215'),
+('UWD-789', 'Tejas', 'Srinivas', '7109-7199-2596', 'KA01-202075315'),
+('UWD-944', 'Chethan ', 'BG', '7109-7199-9625', 'KA01-202075316'),
+('UWD-980', 'Yathin', 'B N', '9017-9917-6952', 'KA03-202076589'),
+('UWD-845', 'Pratibha ', 'Javalagi', '8971-6547-1235', 'KA25-986574123'),
 ('UWD-967', 'SUMANTH', 'M', '8189-3142-2221', 'KA41-202015644'),
-('UWD-766', 'Ujwal ', 'Kumar R', '3212-4356-1744', 'KA42-202015496'),
-('UWD-883', 'Param', 'gupta', '7109-7199-2598', 'KA52-202015444'),
-('UWD-1137', 'Shashank', 's', '8095-9361-1234', 'KA52-202015462'),
 ('UWD-995', 'Vikas ', 'S', '7956-5679-9867', 'KA52-202055467');
 
 -- --------------------------------------------------------
@@ -242,15 +234,15 @@ INSERT INTO `user_verification` (`u_id`, `firstname`, `lastname`, `aadhar_no`, `
 --
 
 CREATE TABLE `vechile_booking` (
-  `booking_id` varchar(255) NOT NULL,
-  `u_id` varchar(255) NOT NULL,
+  `booking_id` varchar(10) NOT NULL,
+  `u_id` varchar(10) NOT NULL,
   `email_` varchar(50) NOT NULL,
-  `ph_no` varchar(255) NOT NULL,
+  `ph_no` varchar(15) NOT NULL,
   `vechile_id` int(10) NOT NULL,
-  `model` varchar(50) NOT NULL,
-  `location_` varchar(50) NOT NULL,
-  `color` varchar(50) NOT NULL,
-  `varient` varchar(50) NOT NULL,
+  `model` varchar(10) NOT NULL,
+  `location_` varchar(20) NOT NULL,
+  `color` varchar(10) NOT NULL,
+  `varient` varchar(20) NOT NULL,
   `status` varchar(255) NOT NULL,
   `book_date` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -262,9 +254,9 @@ CREATE TABLE `vechile_booking` (
 INSERT INTO `vechile_booking` (`booking_id`, `u_id`, `email_`, `ph_no`, `vechile_id`, `model`, `location_`, `color`, `varient`, `status`, `book_date`) VALUES
 ('WD-101099', 'UWD-845', 'pratibhakj02@gmail.com', '+91-6360424399', 1, 'Activa-6G', 'Vijaynagar', 'White', 'DISC-BRACK-ALLOY', 'Processing', '2022-12-09 08:13:04'),
 ('WD-104383', 'UWD-1123', 'reachjanhavi@gmail.com', '+91-7760549445', 1, 'Activa-6G', 'Yelahanka', 'Black', 'DISC-BRACK-ALLOY', 'Processing', '2022-12-10 22:41:37'),
-('WD-114565', 'UWD-789', '', '+91-9353931335', 2, 'Access-125', 'Koramangla', 'White', 'DRUM-BRAKE', 'Processing', '2022-12-10 23:11:04'),
+('WD-114565', 'UWD-789', 'stejas2002@gmail.com', '+91-9353931335', 2, 'Access-125', 'Koramangla', 'White', 'DRUM-BRAKE', 'Delivered', '2022-12-21 18:59:23'),
 ('WD-116805', 'UWD-980', 'yathinyoyo@gmail.com', '+91-9620581947', 2, 'Access-125', 'Yelahanka', 'Aqua_Green', 'DISC-BRACK-W/O-ALLOY', 'Delivered', '2022-11-11 06:46:04'),
-('WD-118420', 'UWD-944', 'chethanmurthy@gmail.com', '+91-9591960282', 3, 'Jupiter-125', 'Indranagar', 'Aqua_Green', 'DISC-BRACK-ALLOY', 'Processing', '2022-12-01 16:29:42');
+('WD-118420', 'UWD-944', 'chethanmurthy@gmail.com', '+91-9591960282', 3, 'Jupiter-12', 'Indranagar', 'Aqua_Green', 'DISC-BRACK-ALLOY', 'Processing', '2022-12-01 16:29:42');
 
 --
 -- Indexes for dumped tables
