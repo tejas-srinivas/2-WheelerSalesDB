@@ -117,7 +117,7 @@
               <th scope="col">Vehicle ID</th>
               <th scope="col">Vehicle Name</th>
               <th scope="col">Availability</th>
-              <th scope="col">Ex-Showroom</th>
+              <th scope="col">Ex- Showroom</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
