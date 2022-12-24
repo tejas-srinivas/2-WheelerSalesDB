@@ -37,6 +37,27 @@ if (!isset($_SESSION['username'])) {
     $available2 = $rows['available'];
     $ex_showrrom2 = $rows['ex_showroom'];
   }
+  $query = $query = "SELECT available,ex_showroom FROM stock_price where vechile_id=4";
+  $resulti = mysqli_query($con,$query);
+  if($resulti){
+    $rows = mysqli_fetch_array($resulti);
+    $available3 = $rows['available'];
+    $ex_showrrom3 = $rows['ex_showroom'];
+  }
+  $query = $query = "SELECT available,ex_showroom FROM stock_price where vechile_id=5";
+  $resulti = mysqli_query($con,$query);
+  if($resulti){
+    $rows = mysqli_fetch_array($resulti);
+    $available4 = $rows['available'];
+    $ex_showrrom4 = $rows['ex_showroom'];
+  }
+  $query = $query = "SELECT available,ex_showroom FROM stock_price where vechile_id=6";
+  $resulti = mysqli_query($con,$query);
+  if($resulti){
+    $rows = mysqli_fetch_array($resulti);
+    $available5= $rows['available'];
+    $ex_showrrom5 = $rows['ex_showroom'];
+  }
 ?>
 
 <!doctype html>
@@ -188,6 +209,61 @@ if (!isset($_SESSION['username'])) {
     </div>
     </br>
     </br>
+    </br>
+    <!-- <div class="border2"></div> -->
+    </br>
+    <div class="act">
+      <img class="img4" src="aprila-.png" href="#" width="400px" height="300px ">
+      </img>
+      <div class="jupiterdetails">
+
+        <h1 class="jupiter" style="color:#f98e1d">Aprila:</h1>
+        <h3 class="paragraph3">Aprilia is an Italian motorcycle manufacturer founded immediately after World War II in Noale, Italy, by Alberto Beggio. ... The company started as a manufacturer ...Aprilia is an Italian motorcycle manufacturer founded immediately after World War II in Noale, Italy, by Alberto Beggio. ... The company started as a manufacturer ...</h3>
+        <h1 class="paragraph1" style="color:black">Ex-showroom : ₹<?php echo $ex_showrrom3; ?></h1>  
+      </br>
+        <h1 style="margin-top: -50px;margin-left:-100px;">Vechile Availability :<?php echo $available3; ?></h1>
+        <br>
+        <a href="../userpage/jupiterdetails/jupiter.html" class="click1">click here for further details</a>
+      </div>
+    </div>
+    </br>
+</br>
+</br>
+    <div class="act">
+      <img class="img4" src="notrque.png" href="#" width="500px" height="300px ">
+      </img>
+      <div class="jupiterdetails">
+
+        <h1 class="jupiter" style="color:#f98e1d">Ntorq:</h1>
+        <h3 class="paragraph3">TVS NTORQ 125 Scooter, India's first Bluetooth connected scooter with the best mileage & performance. Experience the racing inspired performance in NTORQ ...TVS NTORQ 125 Features. The TVS NTorq 125 is easily the most feature-loaded ICE scooter on sale in the country. The base trims get a multifunction LCD ...</h3>
+        <h1 class="paragraph1" style="color:black">Ex-showroom : ₹<?php echo $ex_showrrom4; ?></h1>  
+      </br>
+        <h1 style="margin-top: -50px;margin-left:-100px;">Vechile Availability :<?php echo $available4; ?></h1>
+        <br>
+        <a href="../userpage/jupiterdetails/jupiter.html" class="click1">click here for further details</a>
+      </div>
+    </div>
+    </br>
+</br>
+</br>
+</br>
+    <div class="act">
+      <img class="img4" src="dio.png" href="#" width="550px" height="300px ">
+      </img>
+      <div class="jupiterdetails">
+
+        <h1 class="jupiter" style="color:#f98e1d">Dio:</h1>
+        <h3 class="paragraph3">TVS NTORQ 125 Scooter, India's first Bluetooth connected scooter with the best mileage & performance. Experience the racing inspired performance in NTORQ ...TVS NTORQ 125 Features. The TVS NTorq 125 is easily the most feature-loaded ICE scooter on sale in the country. The base trims get a multifunction LCD ...</h3>
+        <h1 class="paragraph1" style="color:black">Ex-showroom : ₹<?php echo $ex_showrrom5; ?></h1>  
+      </br>
+        <h1 style="margin-top: -50px;margin-left:-100px;">Vechile Availability :<?php echo $available5; ?></h1>
+        <br>
+        <a href="../userpage/jupiterdetails/jupiter.html" class="click1">click here for further details</a>
+      </div>
+    </div>
+    </br>
+
+
     <!-- <div class="border3"></div> -->
   </section>
 </body>

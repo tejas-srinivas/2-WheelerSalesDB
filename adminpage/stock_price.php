@@ -109,7 +109,7 @@
     margin-left: 19rem;
     align-items: center;
     font-size: small;
-    margin-top:6rem;
+    margin-top:2rem;
 ">
         <table class="content">
           <thead>
