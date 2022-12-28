@@ -132,9 +132,12 @@
             <img class="img" src="../userpage/Access-125.png" id="img" width="350px" height="250px ">
               <select id="model" name="model" onchange="dropdownChange(this.id,'color');" required>
                 <option value="">Select Model</option>
-                <option name="activa" value="Activa-6G">Activa 6G</option>
-                <option name="access" value="Access-125">Access 125</option>
-                <option name="jupiter" value="Jupiter-125">Jupiter 125</option>
+                <option name="activa" value="Activa-6G">Activa-6G</option>
+                <option name="access" value="Access-125">Access-125</option>
+                <option name="jupiter" value="Jupiter-125">Jupiter-125</option>
+                <option name="aprila" value="Aprila">Aprila</option>
+                <option name="ntorq" value="Ntorq">Ntorq</option>
+                <option name="dio" value="Dio">Dio</option>
               </select>
             </div>
           </div>

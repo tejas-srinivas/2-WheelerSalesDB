@@ -19,6 +19,21 @@ function dropdownChange(s1,s2)
         var array = ['Blue|Blue','Aqua_Green|Aqua Green','White|White','Silver|Silver','Brown|Brown'];
         document.getElementById('img').src="../userpage/Jupiter-125.png";
       }
+      else if(s1.value == "Aprila")
+      {
+        var array = ['Blue|Blue','Aqua_Green|Aqua Green','White|White','Silver|Silver','Brown|Brown'];
+        document.getElementById('img').src="../userpage/aprila-.png";
+      }
+      else if(s1.value == "Ntorq")
+      {
+        var array = ['Blue|Blue','Aqua_Green|Aqua Green','White|White','Silver|Silver','Brown|Brown'];
+        document.getElementById('img').src="../userpage/ntorq.png";
+      }
+      else if(s1.value == "Dio")
+      {
+        var array = ['Blue|Blue','Aqua_Green|Aqua Green','White|White','Silver|Silver','Brown|Brown'];
+        document.getElementById('img').src="../userpage/dio.png";
+      }
       for(var option in array)
       {
         var pair = array[option].split("|");
