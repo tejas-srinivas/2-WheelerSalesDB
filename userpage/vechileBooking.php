@@ -129,7 +129,7 @@
               <label for="model" style="margin-top:16rem;">Model</label>
             </div>
             <div class="col-75">
-            <img class="img" src="../userpage/Access-125.png" id="img" width="350px" height="250px ">
+            <img class="img" src="../userpage/Select.png" id="img" width="350px" height="250px ">
               <select id="model" name="model" onchange="dropdownChange(this.id,'color');" required>
                 <option value="">Select Model</option>
                 <option name="activa" value="Activa-6G">Activa-6G</option>
