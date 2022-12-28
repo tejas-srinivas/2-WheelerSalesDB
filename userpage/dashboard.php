@@ -165,6 +165,7 @@ if (!isset($_SESSION['username'])) {
         <h3 class="paragraph1">The Honda Activa is a motor scooter made by Honda Motorcycle and Scooter India (HMSI). It was launched in India in May 2000. Production in Mexico began in 2004.</h3>
         <h1 class="paragraph1" style="color:black">Ex-showroom : ₹<?php echo $ex_showrrom; ?></h1>  
       </br>
+</br>
         <h1 style="margin-top: -20px;margin-left:-150px;">Vechile Availability :<?php echo $available; ?></h1>
         <a href="../userpage/vehicledetails/activa.html" class="click1">click here for further details</a>
       </div>
@@ -181,6 +182,7 @@ if (!isset($_SESSION['username'])) {
         <h3 class="paragraph2">The Suzuki Access 125 is a scooter produced by the Japanese motorcycle company Suzuki through its Indian subsidiary. It was introduced on September 18, 2007.</h3>
         <h1 class="paragraph1" style="color:black">Ex-showroom : ₹<?php echo $ex_showrrom1; ?></h1>  
       </br>
+</br>
         <h1 style="margin-top: -50px;margin-left:-100px;">Vechile Availability :<?php echo $available1; ?></h1>
         <br>
 
@@ -202,6 +204,7 @@ if (!isset($_SESSION['username'])) {
         <h3 class="paragraph3">TVS Jupiter is a variomatic scooter launched in September 2013 by India's TVS Motor Company. ... On 7th October 2021, TVS Launched the 125cc Variant of Jupiter in order to compete TVS Ntorq, Honda Activa 125 and Suzuki Access 125. and uses an all new 124.8 cc engine.</h3>
         <h1 class="paragraph1" style="color:black">Ex-showroom : ₹<?php echo $ex_showrrom2; ?></h1>  
       </br>
+</br>
         <h1 style="margin-top: -50px;margin-left:-100px;">Vechile Availability :<?php echo $available2; ?></h1>
         <br>
         <a href="../userpage/jupiterdetails/jupiter.html" class="click1">click here for further details</a>
@@ -221,9 +224,10 @@ if (!isset($_SESSION['username'])) {
         <h3 class="paragraph3">Aprilia is an Italian motorcycle manufacturer founded immediately after World War II in Noale, Italy, by Alberto Beggio. ... The company started as a manufacturer ...Aprilia is an Italian motorcycle manufacturer founded immediately after World War II in Noale, Italy, by Alberto Beggio. ... The company started as a manufacturer ...</h3>
         <h1 class="paragraph1" style="color:black">Ex-showroom : ₹<?php echo $ex_showrrom3; ?></h1>  
       </br>
+</br>
         <h1 style="margin-top: -50px;margin-left:-100px;">Vechile Availability :<?php echo $available3; ?></h1>
         <br>
-        <a href="../userpage/jupiterdetails/jupiter.html" class="click1">click here for further details</a>
+        <a href="../userpage/apriladetails/aprila.php" class="click1">click here for further details</a>
       </div>
     </div>
     </br>
@@ -238,9 +242,10 @@ if (!isset($_SESSION['username'])) {
         <h3 class="paragraph3">TVS NTORQ 125 Scooter, India's first Bluetooth connected scooter with the best mileage & performance. Experience the racing inspired performance in NTORQ ...TVS NTORQ 125 Features. The TVS NTorq 125 is easily the most feature-loaded ICE scooter on sale in the country. The base trims get a multifunction LCD ...</h3>
         <h1 class="paragraph1" style="color:black">Ex-showroom : ₹<?php echo $ex_showrrom4; ?></h1>  
       </br>
+</br>
         <h1 style="margin-top: -50px;margin-left:-100px;">Vechile Availability :<?php echo $available4; ?></h1>
         <br>
-        <a href="../userpage/jupiterdetails/jupiter.html" class="click1">click here for further details</a>
+        <a href="../userpage/ntorq details/ntorq.php" class="click1">click here for further details</a>
       </div>
     </div>
     </br>
@@ -256,9 +261,10 @@ if (!isset($_SESSION['username'])) {
         <h3 class="paragraph3">TVS NTORQ 125 Scooter, India's first Bluetooth connected scooter with the best mileage & performance. Experience the racing inspired performance in NTORQ ...TVS NTORQ 125 Features. The TVS NTorq 125 is easily the most feature-loaded ICE scooter on sale in the country. The base trims get a multifunction LCD ...</h3>
         <h1 class="paragraph1" style="color:black">Ex-showroom : ₹<?php echo $ex_showrrom5; ?></h1>  
       </br>
+</br>
         <h1 style="margin-top: -50px;margin-left:-100px;">Vechile Availability :<?php echo $available5; ?></h1>
         <br>
-        <a href="../userpage/jupiterdetails/jupiter.html" class="click1">click here for further details</a>
+        <a href="../userpage/diodetails/dio.php" class="click1">click here for further details</a>
       </div>
     </div>
     </br>

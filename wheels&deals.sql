@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2022 at 06:38 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Dec 28, 2022 at 01:31 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.1.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -52,13 +52,14 @@ CREATE TABLE `accessory` (
   `speedometer` varchar(255) NOT NULL,
   `stand` varchar(255) NOT NULL,
   `Charger` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `accessory`
 --
 
 INSERT INTO `accessory` (`fitting_id`, `booking_id`, `u_id`, `mirror`, `speedometer`, `stand`, `Charger`) VALUES
+('FWD-10247', 'WD-109274', 'UWD-1143', 'Chrome-Mirror', 'Digital', 'W-Center-Stand', 'Charger'),
 ('FWD-10496', 'WD-104067', 'UWD-876', 'Chrome-Mirror', 'Analog', 'W-Center-Stand', 'Charger'),
 ('FWD-10678', 'WD-119403', 'UWD-785', 'Plane-Mirror', 'Analog', 'W/O-Center-Stand', 'Charger'),
 ('FWD-10779', 'WD-104383', 'UWD-1123', 'Plane-Mirror', 'Digital', 'W-Center-Stand', 'Charger'),
@@ -81,7 +82,7 @@ CREATE TABLE `admintable` (
   `a_password` varchar(100) NOT NULL,
   `a_name` varchar(50) NOT NULL,
   `a_email` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `admintable`
@@ -109,7 +110,7 @@ CREATE TABLE `bills` (
   `road_tax` int(255) NOT NULL,
   `insurance` int(255) NOT NULL,
   `total_price` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `bills`
@@ -137,7 +138,7 @@ CREATE TABLE `stock_price` (
   `vehicle_name` varchar(20) NOT NULL,
   `available` varchar(20) NOT NULL,
   `ex_showroom` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `stock_price`
@@ -145,8 +146,11 @@ CREATE TABLE `stock_price` (
 
 INSERT INTO `stock_price` (`vechile_id`, `vehicle_name`, `available`, `ex_showroom`) VALUES
 (1, 'Activa 6G', 'Available', '75000'),
-(2, 'Access 125', 'Available', '75000'),
-(3, 'Jupiter 125', 'Available', '80000');
+(2, 'Access 125', 'Available', '92000'),
+(3, 'Jupiter 125', 'Available', '95000'),
+(4, 'aprila', 'Available', '130000'),
+(5, 'ntorq', 'Available', '109000'),
+(6, 'dio', 'Available', '73000');
 
 -- --------------------------------------------------------
 
@@ -160,7 +164,7 @@ CREATE TABLE `test_ride` (
   `mob_no` varchar(12) NOT NULL,
   `model` varchar(10) NOT NULL,
   `location_` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `test_ride`
@@ -187,7 +191,7 @@ CREATE TABLE `users` (
   `email` varchar(40) NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(70) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
@@ -196,6 +200,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`u_id`, `first_name`, `last_name`, `email`, `username`, `password`) VALUES
 ('UWD-1101', 'akshitha', 'b', 'akshiii599@gmail.com', 'akshitha', '$2y$10$Lf5fKsJYKetBOaSIYyhmpuAH0hdlq6M4DG3A1Vx.3QqvuTtR.BQxK'),
 ('UWD-1123', 'Janhavi', 'Srinivas', 'reachjanhavi@gmail.com', 'janhavi1997', '$2y$10$MPa1iYotaBsSyqZ0Peg.O.N015dvE4qCakzqHubyrPh/1lx7CYci.'),
+('UWD-1143', 'nataraj', 'bs', 'natarajbs123@gmail.com', 'nataraj', '$2y$10$rTn..lz1oM/Y7CxYFWafROpD6SGoSwu4VQHEuYsIKhQg4XEKXX5ku'),
 ('UWD-785', 'Shashank', 'S', 'shaskshsashu267@gmail.com', 'shashank', '$2y$10$S4d46dBDISh4fBdS1ZsW8OvnQa33UaY/dzsRfujPZyK53HXq4uLly'),
 ('UWD-789', 'Tejas', 'Srinivas', 'stejas2002@gmail.com', 'tejas2002', '$2y$10$EvED7V8huULM.XKoc9zgcuacuv4TUlv/Q6jCJyNZORmc5fVJGUQWm'),
 ('UWD-845', 'Pratibha ', 'Javalagi', 'pratibhakj02@gmail.com', 'pratibha_kj', '$2y$10$ghbyOmycS3M/G4Qxh1fdWu8YrVQxhtBeTT8T2r0DIA85Uod/YhrNq'),
@@ -216,7 +221,7 @@ CREATE TABLE `user_verification` (
   `lastname` varchar(50) NOT NULL,
   `aadhar_no` varchar(15) NOT NULL,
   `driving_license` varchar(14) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user_verification`
@@ -228,6 +233,7 @@ INSERT INTO `user_verification` (`u_id`, `firstname`, `lastname`, `aadhar_no`, `
 ('UWD-789', 'Tejas', 'Srinivas', '7109-7199-2596', 'KA01-202075315'),
 ('UWD-944', 'Chethan ', 'BG', '7109-7199-9625', 'KA01-202075316'),
 ('UWD-980', 'Yathin', 'B N', '9017-9917-6952', 'KA03-202076589'),
+('UWD-1143', 'nataraj', 'bs', '6538-8345-9864', 'KA04-568743526'),
 ('UWD-908', 'Srinivas', 'Prasad', '8264-5678-1234', 'KA10-202010154'),
 ('UWD-785', 'Shashank', 'S', '3654-4892-3524', 'KA15-202075395'),
 ('UWD-845', 'Pratibha ', 'Javalagi', '8971-6547-1235 ', 'KA25-986574123'),
@@ -253,7 +259,7 @@ CREATE TABLE `vechile_booking` (
   `varient` varchar(20) NOT NULL,
   `status` varchar(255) NOT NULL,
   `book_date` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `vechile_booking`
@@ -263,6 +269,7 @@ INSERT INTO `vechile_booking` (`booking_id`, `u_id`, `email_`, `ph_no`, `vechile
 ('WD-101099', 'UWD-845', 'pratibhakj02@gmail.com', '+91-6360424399', 1, 'Activa-6G', 'Vijaynagar', 'White', 'DISC-BRACK-ALLOY', 'Processing', '2022-12-09 08:13:04'),
 ('WD-104067', 'UWD-876', 'varshachennur@gmail.com', '+91-8147191253', 1, 'Activa-6G', 'Vijaynagar', 'White', 'DRUM-BRAKE', 'Processing', '2022-12-21 06:29:26'),
 ('WD-104383', 'UWD-1123', 'reachjanhavi@gmail.com', '+91-7760549445', 1, 'Activa-6G', 'Yelahanka', 'Black', 'DISC-BRACK-ALLOY', 'Processing', '2022-12-10 22:41:37'),
+('WD-109274', 'UWD-1143', 'natarajbs123@gmail.com', '+91-6813854236', 2, 'Access-125', 'Indranagar', 'Wine_Red', 'DISC-BRACK-ALLOY', 'Processing', '2022-12-26 09:45:36'),
 ('WD-112640', 'UWD-789', 'stejas2002@gmail.com', '+91-9353931335', 2, 'Access-125', 'Indranagar', 'Wine_Red', 'DISC-BRACK-ALLOY', 'Processing', '21-12-2022 06:03:54'),
 ('WD-115640', 'UWD-1101', 'akshiii599@gmail.com', '+91-7483688094', 3, 'Jupiter-12', 'Koramangla', 'Aqua_Green', 'DISC-BRACK-ALLOY', 'Processing', '2022-12-21 06:22:04'),
 ('WD-116308', 'UWD-908', 'srinivasprsd.74@gmail.com', '+91-7892280411', 3, 'Jupiter-12', 'Yelahanka', 'Aqua_Green', 'DISC-BRACK-ALLOY', 'Processing', '2022-12-21 06:32:52'),
