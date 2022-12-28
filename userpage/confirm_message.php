@@ -170,6 +170,15 @@
         elseif($_POST['model'] == 'Jupiter-125'){
           $vechile_id = 3;
         }
+        elseif($_POST['model'] == 'Aprila'){
+          $vechile_id = 4;
+        }
+        elseif($_POST['model'] == 'Ntorq'){
+          $vechile_id = 5;
+        }
+        elseif($_POST['model'] == 'Dio'){
+          $vechile_id = 6;
+        }
       }
       $query = "SELECT available FROM stock_price WHERE vechile_id='$vechile_id'";
       $result = mysqli_query($con,$query);

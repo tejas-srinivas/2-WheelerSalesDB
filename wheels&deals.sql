@@ -148,9 +148,9 @@ INSERT INTO `stock_price` (`vechile_id`, `vehicle_name`, `available`, `ex_showro
 (1, 'Activa 6G', 'Available', '75000'),
 (2, 'Access 125', 'Available', '92000'),
 (3, 'Jupiter 125', 'Available', '95000'),
-(4, 'aprila', 'Available', '130000'),
-(5, 'ntorq', 'Available', '109000'),
-(6, 'dio', 'Available', '73000');
+(4, 'Aprila', 'Available', '130000'),
+(5, 'Ntorq', 'Available', '109000'),
+(6, 'Dio', 'Available', '73000');
 
 -- --------------------------------------------------------
 
