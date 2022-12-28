@@ -40,11 +40,13 @@
     <center><img src="../registerpage/logo.png" style="width: 450px; height: 150px; margin-top:-45px"></center>
     <center><h2 style="margin-top:-10px ;">Update Availability / Ex-Showroom</h2></center>
       <div class="form-group">
-        <input type="hidden" value="<?php echo intval($_GET['vec_id']) ?>" name="vechile_id">
+      <label for="exampleInputEmail1">Vehicle Id</label>
+        <input type="text" class="form-control" value="<?php echo intval($_GET['vec_id']) ?>" name="vechile_id" style="width:30rem;" disabled>
+        <input type="hidden" class="form-control" value="<?php echo intval($_GET['vec_id']) ?>" name="vechile_id" style="width:30rem;">
       </div>
       <br>
       <div class="form-group">
-        <label for="exampleInputEmail1">Availability</label>
+        <label for="exampleInputEmail1">Available / Not-Available</label>
         <input type="text" class="form-control" id="availability" value="<?php echo $avail ?>" name="available" style="width:30rem;">
       </div>
       <br>
