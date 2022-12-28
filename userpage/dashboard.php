@@ -245,7 +245,7 @@ if (!isset($_SESSION['username'])) {
 </br>
         <h1 style="margin-top: -50px;margin-left:-100px;">Vechile Availability :<?php echo $available4; ?></h1>
         <br>
-        <a href="../userpage/ntorq details/ntorq.php" class="click1">click here for further details</a>
+        <a href="../userpage/ntorqdetails/ntorq.php" class="click1">click here for further details</a>
       </div>
     </div>
     </br>
