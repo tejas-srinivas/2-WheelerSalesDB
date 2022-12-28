@@ -242,9 +242,12 @@ if($result3)
           <select id="model" name="model" onchange="dropdownChange(this.id,'color');" required>
                 <option value="<?php echo $model; ?>"><?php echo $model; ?></option>
                 <option value="">------</option>
-                <option name="activa" value="Activa-6G">Activa 6G</option>
-                <option name="access" value="Access-125">Access 125</option>
-                <option name="jupiter" value="Jupiter-125">Jupiter 125</option>
+                <option name="activa" value="Activa-6G">Activa-6G</option>
+                <option name="access" value="Access-125">Access-125</option>
+                <option name="jupiter" value="Jupiter-125">Jupiter-125</option>
+                <option name="aprila" value="Aprila">Aprila</option>
+                <option name="ntorq" value="Ntorq">Ntorq</option>
+                <option name="dio" value="Dio">Dio</option>
               </select>
           </div>
         </div>
