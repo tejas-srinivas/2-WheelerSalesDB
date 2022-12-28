@@ -234,7 +234,7 @@ if (!isset($_SESSION['username'])) {
 </br>
 </br>
     <div class="act">
-      <img class="img4" src="notrque.png" href="#" width="500px" height="300px ">
+      <img class="img4" src="ntorq.png" href="#" width="500px" height="300px ">
       </img>
       <div class="jupiterdetails">
 
