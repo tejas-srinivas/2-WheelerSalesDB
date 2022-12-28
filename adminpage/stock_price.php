@@ -109,7 +109,7 @@
     margin-left: 19rem;
     align-items: center;
     font-size: small;
-    margin-top:6rem;
+    margin-top:2rem;
 ">
         <table class="content">
           <thead>
@@ -117,7 +117,7 @@
               <th scope="col">Vehicle ID</th>
               <th scope="col">Vehicle Name</th>
               <th scope="col">Availability</th>
-              <th scope="col">Ex-Showroom</th>
+              <th scope="col">Ex- Showroom</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
