@@ -132,17 +132,17 @@
               </tr>
               <tr>
                   <td>Engine cc(Displacement)</td>
-                  <td>160.03 cc</td>
+                  <td>	124.8 cc</td>
                   
               </tr>
               <tr>
                   <td>Minimum power</td>
-                  <td>10.86 HP @ 7600 rpm</td>
+                  <td>9.25 HP @ 7000 rpm</td>
                   
               </tr>
               <tr>
                   <td>Maximum Torque</td>
-                  <td>11.6 Nm @ 6000 rpm</td>
+                  <td>10.5 Nm @ 5500 rpm</td>
                   
               </tr>
               <tr>
@@ -157,22 +157,22 @@
               </tr>
               <tr>
                   <td>Seat Height</td>
-                  <td>780 mm</td>
+                  <td>770 mm</td>
                   
               </tr>
               <tr>
                   <td>Ground Clearance </td>
-                  <td>155 mm</td>
+                  <td>	155 mm</td>
                   
               </tr>
               <tr>
                   <td>Kerb Weight</td>
-                  <td>122 kg</td>
+                  <td>118 kg</td>
                   
               </tr>
               <tr>
                   <td>Fule Tank Capacity</td>
-                  <td>6 litres</td>
+                  <td>	5.8 litres</td>
                   
               </tr>
              
@@ -196,17 +196,17 @@
             <tbody>
                 <tr>
                     <td>Overall Length</td>
-                    <td>1985 mm</td>
+                    <td>1861 mm</td>
                     
                 </tr>
                 <tr>
                     <td>Overall Width</td>
-                    <td>703 mm</td>
+                    <td>	710 mm</td>
                     
                 </tr>
                 <tr>
                     <td>Overall Height</td>
-                    <td>1166 mm</td>
+                    <td>1164 mm</td>
                     
                 </tr>
                 <tr>
@@ -216,22 +216,22 @@
                 </tr>
                 <tr>
                     <td>Seat Height</td>
-                    <td>780 mm</td>
+                    <td>	770 mm</td>
                     
                 </tr>
                 <tr>
                     <td>Maximum Wheelbase</td>
-                    <td>1365 mm</td>
+                    <td>	1285 mm</td>
                     
                 </tr>
                 <tr>
                     <td>Kerb Weight</td>
-                    <td>1365 mm</td>
+                    <td>	118 kg</td>
                     
                 </tr>
                 <tr>
                     <td>Fuel Tank Capacity </td>
-                    <td>6 litres</td>
+                    <td>	5.8 litres</td>
                     
                 </tr>
                 <tr>
@@ -261,17 +261,17 @@
         <tbody>
             <tr>
                 <td>Mileage</td>
-                <td>Aprilia SR 160 Race mileage is around 35-40 kmpl (approximate).</td>
+                <td>As reported by the NTorq owners in India, the real mileage of TVS NTorq 125 is 42 kmpl.</td>
                 
             </tr>
             <tr>
                 <td>Performance</td>
-                <td>In terms of performance, the 160cc scooter can accelerate from 0-60 kmph in around 7 seconds.</td>
+                <td>In terms of performance, the 125cc scooter can accelerate from 0-60 kmph in around 9 seconds.</td>
                 
             </tr>
             <tr>
                 <td>Top Speed</td>
-                <td>Aprilia SR 160 Race top speed is 100 kmph (approximate).</td>
+                <td>	TVS NTorq 125 top speed is 95 kmph (company-claimed).</td>
              </tr>
                
             </tbody>
@@ -294,12 +294,22 @@
         <tbody>
             <tr>
                 <td>Front Suspension</td>
-                <td>Front Forks with 30mm Inner Tube</td>
+                <td>	Telescopic Suspension with Hydraulic Dampers</td>
                 
             </tr>
             <tr>
                 <td>Rear Suspension</td>
-                <td>Mono Shock Absorber</td>
+                <td>	Coil Spring with Hydraulic Dampers</td>
+                
+            </tr>
+            <tr>
+                <td>Frame (Chassis)</td>
+                <td>	High Rigidity Under Bone Tubular Type</td>
+                
+            </tr>
+            <tr>
+                <td>Exhaust/Muffler</td>
+                <td>Sporty Stubby Muffler</td>
                 
             </tr>
             
@@ -322,7 +332,7 @@
             <tbody>
                 <tr>
                     <td>0-60 kmph</td>
-                    <td>7secs </td>
+                    <td>9secs </td>
                     
                 </tr>
                 
@@ -347,17 +357,17 @@
     <tbody>
         <tr>
             <td>Braking System</td>
-            <td>1-Channel ABS (Anti-Lock Braking System)</td>
+            <td>SBT (Synchronized Braking Technology)</td>
             
         </tr>
         <tr>
             <td>key features</td>
-            <td>Powerful Engine, Unique Design, Quick Acceleration, Attractive Shade, ABS, Informative Instrument Console, Slightly Better Performance in Compariso</td>
+            <td>	Some of the key TVS NTorq Black Panther Edition features include: Parking Brake, Engine Kill Switch, Large 22-litres Underseat Storage, Large Wheels, In-Built Lap Timer, In-Built 0-60 Recorder, 3 Trip Meters, Bluetooth Connectivity, Telescopic Suspension, Multi-Mode Display, Power/Eco Ride Mode Indicator, Signature LED Headlight, Black Panther Superhero-Inspired Decals.</td>
             
         </tr>
         tr>
             <td>similar bikes</td>
-            <td>Vespa VXL 149, Vespa SXL 149, Hero ZIR 150, Yamaha Aerox 155, Honda PCX 150, Vespa Elegante 149</td>
+            <td>Suzuki Access 125, Vespa LX 125, Aprilia SR 125, Honda Activa 125, Hero Destini 125, Yamaha Ray ZR 125</td>
             
         </tr>
         </tbody>
@@ -379,7 +389,7 @@
         <tbody>
             <tr>
                 <td>Engine Details</td>
-                <td>160.03cc, Single Cylinder, Air-Cooled, 4-Stroke</td>
+                <td>	124.8cc, Air-Cooled, 4-Stroke, Single Cylinder</td>
                 
             </tr>
             <tr>
@@ -394,17 +404,17 @@
             </tr>
             <tr>
                 <td>Engine cc (Displacement)</td>
-                <td>160.03 cc</td>
+                <td>124.8 cc</td>
                 
             </tr>
             <tr>
                 <td>Maximum Power</td>
-                <td>10.86 HP @ 7600 rpm</td>
+                <td>	9.25 HP @ 7000 rpm</td>
                 
             </tr>
             <tr>
                 <td>Maximum Torque</td>
-                <td>11.6 Nm @ 6000 rpm</td>
+                <td>10.5 Nm @ 5500 rpm</td>
                 
             </tr>
             <tr>
