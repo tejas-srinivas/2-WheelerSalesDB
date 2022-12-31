@@ -63,6 +63,7 @@
 	background: #f2f3f7;
 	box-shadow: 5px 5px 10px #999;
 	padding: 30px;
+	margin-left: 100px;
 }
 .signup-form .form-group {
 	margin-bottom: 20px;
@@ -92,17 +93,17 @@
 .signup-form a {
 	color: #f98e1d;
 	text-decoration: none;
+	
 }
 .signup-form a:hover {
 	text-decoration: underline;
 }
 
 .background {
-    background:url(../background_img/background4.jpeg); 
-    width: 1520px;
-    /* margin-top :-280px; */
-    height: 800px;
-    display: flex;
+     
+    background-size: cover;
+	margin-left: 4rem;
+	
 }
 .eye
 {

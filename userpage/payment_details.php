@@ -33,7 +33,7 @@ if($result) {
   $location = $row['location_'];
 
   $counter = 1;
-  while($counter < 4){
+  while($counter < 7){
     if($row['vechile_id'] == $counter){
       $query = "SELECT ex_showroom FROM stock_price where vechile_id='$counter'";
       $resulti = mysqli_query($con,$query);
