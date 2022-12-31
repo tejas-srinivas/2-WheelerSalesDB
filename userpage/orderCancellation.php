@@ -159,10 +159,10 @@ if (!isset($_SESSION['username'])) {
     <form action="orderCancellation.php" method="post">
     <div class="control" style="margin-left: 5rem;">
     <div class="name">
-        <label for="booking_id" style="font-size:20px;"><b>Enter Booking No :<b></label>
+        <label for="booking_id" style="font-size:20px;"><b>Enter Booking No : <b></label>
     </div>
     <div class="input">
-        <input type="text" id="booking_id" name="booking_id" placeholder="Enter Booking_ID" style="border-radius: 6px; width: 400px;height: 40px;border:1px solid gray;box-sizing:border-box;padding: 10px 15px;font-size:16px;" required>
+        <input type="text" id="booking_id" name="booking_id" placeholder="Enter Booking_No" style="border-radius: 6px; width: 400px;height: 40px;border:1px solid gray;box-sizing:border-box;padding: 10px 15px;font-size:16px;" required>
     </div>
     </div>
     <div class="button">

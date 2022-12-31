@@ -70,6 +70,34 @@
     }
   }  
 
+  $query = "SELECT count(model) AS aprilia_count FROM `vechile_booking` WHERE model LIKE'apr%'";
+  $result = mysqli_query($con,$query);
+  if($result)
+  {
+    while($rows=mysqli_fetch_assoc($result))
+    {
+      $apr_count = $rows['aprilia_count'];
+    }
+  }  
+  $query = "SELECT count(model) AS ntorq_count FROM `vechile_booking` WHERE model LIKE'nto%'";
+  $result = mysqli_query($con,$query);
+  if($result)
+  {
+    while($rows=mysqli_fetch_assoc($result))
+    {
+      $nto_count = $rows['ntorq_count'];
+    }
+  }  
+  $query = "SELECT count(model) AS dio_count FROM `vechile_booking` WHERE model LIKE'dio%'";
+  $result = mysqli_query($con,$query);
+  if($result)
+  {
+    while($rows=mysqli_fetch_assoc($result))
+    {
+      $dio_count = $rows['dio_count'];
+    }
+  }  
+
   $query = "SELECT SUM(total_price) AS revenue FROM `bills`";
   $result = mysqli_query($con,$query);
   if($result)
@@ -153,7 +181,7 @@
       
       
       width:1268px;
-      height: 90vh;
+      height: 200vh;
     }
     .cont{
         background: #f2f3f7;
@@ -293,9 +321,28 @@
             <h1 style="font-size:100px;text-align:center;"> <?php echo $access_count; ?> </h1>
         </div>
 
+       
         <div class="cont">
-            <h1 style="font-size:x-large;text-align:center;"> JUPITER SALES </h1>
+            <h1 style="font-size:x-large;text-align:center;">JUPITER SALES </h1>
             <h1 style="font-size:100px;text-align:center;"> <?php echo $jup_count; ?> </h1>
+        </div>
+      </div>
+      <br>
+      <div class="main" style="display: flex;justify-content: center;">
+        <div class="cont">
+            <h1 style="font-size:x-large;text-align:center;"> APRILIA SALES </h1>
+            <h1 style="font-size:100px;text-align:center;"> <?php echo $apr_count; ?> </h1> 
+        </div>
+
+        <div class="cont">
+            <h1 style="font-size:x-large;text-align:center;"> NTORQ SALES </h1>
+            <h1 style="font-size:100px;text-align:center;"> <?php echo $nto_count; ?> </h1>
+        </div>
+
+       
+        <div class="cont">
+            <h1 style="font-size:x-large;text-align:center;">DIO SALES </h1>
+            <h1 style="font-size:100px;text-align:center;"> <?php echo $dio_count; ?> </h1>
         </div>
       </div>
   </section> 

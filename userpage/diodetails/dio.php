@@ -133,17 +133,17 @@
               </tr>
               <tr>
                   <td>Engine cc(Displacement)</td>
-                  <td>160.03 cc</td>
+                  <td>109.51 cc</td>
                   
               </tr>
               <tr>
                   <td>Minimum power</td>
-                  <td>10.86 HP @ 7600 rpm</td>
+                  <td>	7.65 HP @ 8000 rpm</td>
                   
               </tr>
               <tr>
                   <td>Maximum Torque</td>
-                  <td>11.6 Nm @ 6000 rpm</td>
+                  <td>9 Nm @ 4750 rpm</td>
                   
               </tr>
               <tr>
@@ -158,22 +158,22 @@
               </tr>
               <tr>
                   <td>Seat Height</td>
-                  <td>780 mm</td>
+                  <td>765 mm</td>
                   
               </tr>
               <tr>
                   <td>Ground Clearance </td>
-                  <td>155 mm</td>
+                  <td>	160 mm</td>
                   
               </tr>
               <tr>
                   <td>Kerb Weight</td>
-                  <td>122 kg</td>
+                  <td>105 kg</td>
                   
               </tr>
               <tr>
                   <td>Fule Tank Capacity</td>
-                  <td>6 litres</td>
+                  <td>5.3 litres</td>
                   
               </tr>
              
@@ -197,47 +197,47 @@
             <tbody>
                 <tr>
                     <td>Overall Length</td>
-                    <td>1985 mm</td>
+                    <td>1808 mm</td>
                     
                 </tr>
                 <tr>
                     <td>Overall Width</td>
-                    <td>703 mm</td>
+                    <td>723 mm</td>
                     
                 </tr>
                 <tr>
                     <td>Overall Height</td>
-                    <td>1166 mm</td>
+                    <td>	1150 mm</td>
                     
                 </tr>
                 <tr>
                     <td>Ground Clearance</td>
-                    <td>155 mm</td>
+                    <td>160 mm</td>
                     
                 </tr>
                 <tr>
                     <td>Seat Height</td>
-                    <td>780 mm</td>
+                    <td>765 mm</td>
                     
                 </tr>
                 <tr>
                     <td>Maximum Wheelbase</td>
-                    <td>1365 mm</td>
+                    <td>1260 mm</td>
                     
                 </tr>
                 <tr>
                     <td>Kerb Weight</td>
-                    <td>1365 mm</td>
+                    <td>105 kg</td>
                     
                 </tr>
                 <tr>
                     <td>Fuel Tank Capacity </td>
-                    <td>6 litres</td>
+                    <td>	5.3 litres</td>
                     
                 </tr>
                 <tr>
-                    <td>Under-seat Storage</td>
-                    <td>22 litres</td>
+                    <td>seat Length</td>
+                    <td>650 mm</td>
                     
                 </tr>
                
@@ -262,17 +262,17 @@
         <tbody>
             <tr>
                 <td>Mileage</td>
-                <td>Aprilia SR 160 Race mileage is around 35-40 kmpl (approximate).</td>
+                <td>	Honda Dio 110 mileage is 48 kmpl (approximate).</td>
                 
             </tr>
             <tr>
                 <td>Performance</td>
-                <td>In terms of performance, the 160cc scooter can accelerate from 0-60 kmph in around 7 seconds.</td>
+                <td>In terms of performance, the 110cc scooter can accelerate from 0-60 kmph in around 9 seconds.</td>
                 
             </tr>
             <tr>
                 <td>Top Speed</td>
-                <td>Aprilia SR 160 Race top speed is 100 kmph (approximate).</td>
+                <td>Honda Dio top speed is 83 kmph (company-claimed).</td>
              </tr>
                
             </tbody>
@@ -295,12 +295,17 @@
         <tbody>
             <tr>
                 <td>Front Suspension</td>
-                <td>Front Forks with 30mm Inner Tube</td>
+                <td>	Telescopic</td>
                 
             </tr>
             <tr>
                 <td>Rear Suspension</td>
-                <td>Mono Shock Absorber</td>
+                <td>3-Step Adjustable, Spring Loaded Hydraulic</td>
+                
+            </tr>
+            <tr>
+                <td>Frame (Chassis)</td>
+                <td>Under Bone</td>
                 
             </tr>
             
@@ -323,7 +328,7 @@
             <tbody>
                 <tr>
                     <td>0-60 kmph</td>
-                    <td>7secs </td>
+                    <td>9secs </td>
                     
                 </tr>
                 
@@ -348,17 +353,17 @@
     <tbody>
         <tr>
             <td>Braking System</td>
-            <td>1-Channel ABS (Anti-Lock Braking System)</td>
+            <td>CBS (Combined Braking System)</td>
             
         </tr>
         <tr>
             <td>key features</td>
-            <td>Powerful Engine, Unique Design, Quick Acceleration, Attractive Shade, ABS, Informative Instrument Console, Slightly Better Performance in Compariso</td>
+            <td>LED Headlight, All-Digital Console, Sporty Design, Combi Braking System, Lightweight, Tubeless Tyres, Wide Seat</td>
             
         </tr>
         tr>
             <td>similar bikes</td>
-            <td>Vespa VXL 149, Vespa SXL 149, Hero ZIR 150, Yamaha Aerox 155, Honda PCX 150, Vespa Elegante 149</td>
+            <td>TVS Jupiter, Suzuki Access, Hero Pleasure Plus, Yamaha Fascino, Honda Activa 6G</td>
             
         </tr>
         </tbody>
@@ -380,12 +385,12 @@
         <tbody>
             <tr>
                 <td>Engine Details</td>
-                <td>160.03cc, Single Cylinder, Air-Cooled, 4-Stroke</td>
+                <td>109.51cc, Fan-Cooled, 4-Stroke, SI Engine</td>
                 
             </tr>
             <tr>
                 <td>Fuel System</td>
-                <td>160.03cc, Single Cylinder, Air-Cooled, 4-Stroke</td>
+                <td>Programmed Fuel Injection (PGM-Fi)</td>
                 
             </tr>
             <tr>
@@ -395,17 +400,17 @@
             </tr>
             <tr>
                 <td>Engine cc (Displacement)</td>
-                <td>160.03 cc</td>
+                <td>109.51 cc</td>
                 
             </tr>
             <tr>
                 <td>Maximum Power</td>
-                <td>10.86 HP @ 7600 rpm</td>
+                <td>7.65 HP @ 8000 rpm</td>
                 
             </tr>
             <tr>
                 <td>Maximum Torque</td>
-                <td>11.6 Nm @ 6000 rpm</td>
+                <td>9 Nm @ 4750 rpm</td>
                 
             </tr>
             <tr>
@@ -421,12 +426,12 @@
             
             <tr>
                 <td>Bore</td>
-                <td>58 mm</td>
+                <td>47.0 mm</td>
                 
             </tr>
             <tr>
                 <td>Stroke</td>
-                <td>60.6 mm</td>
+                <td>63.1 mm</td>
                 
             </tr>
             <tr>

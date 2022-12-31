@@ -21,17 +21,17 @@ function dropdownChange(s1,s2)
       }
       else if(s1.value == "Aprila")
       {
-        var array = ['Blue|Blue','Aqua_Green|Aqua Green','White|White','Silver|Silver','Brown|Brown'];
+        var array = ['Nero|Nero','Red|Red','Glossy-White|Glossy-White','Grey|Grey','Matte-Black|Matte-Black'];
         document.getElementById('img').src="../userpage/aprila-.png";
       }
       else if(s1.value == "Ntorq")
       {
-        var array = ['Blue|Blue','Aqua_Green|Aqua Green','White|White','Silver|Silver','Brown|Brown'];
+        var array = ['Metallic red|Metallic red ','Steath black|Steath black','Marine Blue|Marine blue','Neon|Neon','Ligthning Grey|Lightning Grey'];
         document.getElementById('img').src="../userpage/ntorq.png";
       }
       else if(s1.value == "Dio")
       {
-        var array = ['Blue|Blue','Aqua_Green|Aqua Green','White|White','Silver|Silver','Brown|Brown'];
+        var array = ['Sporths Red|Sports red','Mat Axis Grey |Mat Axis grey','Matte Marvel Blue|Matte Marvel Blue','Strontium Silver|Strontium Silver','Vibrant orange|Vibrant orange'];
         document.getElementById('img').src="../userpage/dio.png";
       }
       for(var option in array)
