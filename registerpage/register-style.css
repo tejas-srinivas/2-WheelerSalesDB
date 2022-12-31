@@ -61,9 +61,9 @@
 	border-radius: 10px;
 	margin-bottom: 15px;
 	background: #f2f3f7;
-	box-shadow: 5px 5px 10px #999;
+	box-shadow: 5px 5px 10px rgb(14, 13, 13);
 	padding: 30px;
-	margin-left: 100px;
+	margin-left: 53px;
 }
 .signup-form .form-group {
 	margin-bottom: 20px;
