@@ -58,12 +58,10 @@ if(isset($_POST['pay'])){
   $result = mysqli_query($con,$query);
   if($result){
     echo "<script>alert('Payment recieved Successfully...');</script>";
-    echo "<script>window.location.href='../userpage/dashboard.php'</script>";
+    echo "<script>window.location.href='../userpage/payment_receipt.php'</script>";
 }
 }
 ?>
-
-
 
 <!doctype html>
 <html lang="en">
