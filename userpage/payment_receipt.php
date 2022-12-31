@@ -112,9 +112,6 @@ if(isset($_POST['pay'])){
     <h2>Delivery Date : <?php echo $delv_date; ?></h2>
   <table>
   <tr>
-    <!-- <th>Details</th> -->
-    <!-- <th>Price</th> -->
-    
     <th>Model</th>
     <th>Color</th>
     <th>Varient</th>
@@ -123,7 +120,6 @@ if(isset($_POST['pay'])){
     <th>Accessories</th>
     <th>Road Tax</th>
     <th>Insurance</th>
-  
   </tr>
   <br>
   <tr>
@@ -136,7 +132,6 @@ if(isset($_POST['pay'])){
     <td>₹ <?php echo $road_tax; ?></td>
     <td>₹ <?php echo $insurance; ?></td>
   </tr>
-  
   </table>
       <br>
     <div class="total-bill" style="margin-left:40rem;">

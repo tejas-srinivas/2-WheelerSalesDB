@@ -17,6 +17,9 @@ if (mysqli_connect_error()) {
 }
 
 $u_id = $_SESSION['u_id'];
+$email = $_SESSION['email'];
+$firstname = $_SESSION['first_name'];
+$lastname = $_SESSION['last_name'];
 $road_tax = 10500;
 $insurance = 2500;
 $accessory_price = 4325;
@@ -53,14 +56,74 @@ if($result) {
 $d=strtotime("+1 Week");
 $delv_date = date("Y-m-d", $d) ;
 $total_bill = $road_tax + $insurance + $accessory_price + $ex_showroom."/-";
+$b_status='Processing';
+$p_status = 'Recieved';
 if(isset($_POST['pay'])){
   $query = "INSERT INTO bills(booking_id,delv_date,location_,color,model,varient,ex_showroom,accessory_price,road_tax,insurance,total_price) VALUES ('$booking_id','$delv_date','$location','$color','$model','$varient','$ex_showroom','$accessory_price','$road_tax','$insurance','$total_bill')";
   $result = mysqli_query($con,$query);
   if($result){
-    echo "<script>alert('Payment recieved Successfully...');</script>";
-    echo "<script>window.location.href='../userpage/payment_receipt.php'</script>";
-}
-}
+
+    require '../PhpMailer/PHPMailerAutoload.php';
+
+	    $mail = new PHPMailer;
+	    $mail->isSMTP(); 
+
+	    $mail->CharSet="UTF-8";
+	    $mail->Host = "smtp.gmail.com";
+	    $mail->SMTPDebug = 1; 
+	    $mail->Port = 587; //465 or 587
+
+	     $mail->SMTPSecure = 'tls';  
+	    $mail->SMTPAuth = true; 
+	    $mail->IsHTML(true);
+	    //Authentication
+	    $mail->Username = "wheels.and.deals88@gmail.com";
+		$mail->Password = "qeozihxctftouppg";
+
+	    //Set Params
+	    $mail->SetFrom("wheels.and.deals88@gmail.com");
+	    $mail->AddAddress($_SESSION['email']);
+	    $mail->Subject = "Booking Confirmation";
+	    $mail->Body = "Your Vehicle booking has been confirmed.<br>Here are your booking details:<br> Boking ID: ".$booking_id."<br>Full Name: ".$firstname.$lastname."<br>Booking Status: ".$b_status."<br>Payment Status: ".$p_status."<br>Delivery Date: ".$delv_date."<br>Vehicles details:
+			<table>
+			<tr>
+    <th>Model</th>
+    <th>Color</th>
+    <th>Varient</th>
+    <th>Location</th>
+    <th>Ex-Showroom</th>
+    <th>Accessories</th>
+    <th>Road Tax</th>
+    <th>Insurance</th>
+    <th>Total_Price
+  </tr>
+	    	<tr>
+        <td>".$model."</td>
+        <td>".$color."</td>
+        <td>".$varient."</td>
+        <td>".$location."</td>
+        <td>₹".$ex_showroom."</td>
+        <td>₹".$accessory_price."</td>
+        <td>₹".$road_tax."</td>
+        <td>₹".$insurance."</td>
+        <td>₹".$total_bill."</td>
+        </tr>
+        </table><br>";
+
+
+	     if(!$mail->Send()) {
+	        echo "Mailer Error: " . $mail->ErrorInfo;
+	     } 
+       else {
+	      echo "<script>alert('Payment recieved Successfully...');</script>";
+        echo "<script>window.location.href='../userpage/payment_receipt.php'</script>";
+	     }
+     }
+     else {
+      echo "<script>alert('An error occured! Please try again');</script>";  
+    }
+    }
+	
 ?>
 
 <!doctype html>
