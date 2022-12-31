@@ -63,8 +63,6 @@ if(isset($_POST['pay'])){
 }
 ?>
 
-
-
 <!doctype html>
 <html lang="en">
   <head>
