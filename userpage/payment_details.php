@@ -77,8 +77,10 @@ if(isset($_POST['pay'])){
 	    $mail->SMTPAuth = true; 
 	    $mail->IsHTML(true);
 	    //Authentication
+
 	    $mail->Username = "wheels.and.deals88@gmail.com";
 		$mail->Password = "uyetjdumrxcyorbh";
+
 
 	    //Set Params
 	    $mail->SetFrom("wheels.and.deals88@gmail.com");
