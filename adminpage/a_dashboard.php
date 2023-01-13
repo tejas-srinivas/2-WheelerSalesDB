@@ -260,6 +260,12 @@
             </a>
           </li>
           <li class="nav-link">
+            <a href="../adminpage/v_logs.php">
+            <i class="fa-solid fa-user icon"></i>
+              <span class="text nav-text">Logs</span>
+            </a>
+          </li>
+          <li class="nav-link">
             <a href="../adminpage/logout.php">
             <i class="fa-solid fa-power-off icon"></i>
               <span class="text nav-text">Logout</span>

@@ -12,13 +12,14 @@ $DATABASE_USER = 'root';
 $DATABASE_PASS = '';
 $DATABASE_NAME = 'wheels&deals';
 $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-$query = "SELECT count(*) AS total from vechile_booking";
-$result = mysqli_query($con,$query);
-if($result) {
-  while($rows = mysqli_fetch_assoc($result)){
-  $count = $rows['total'];
-  }
-}
+$query = "SELECT count(*) AS total from book_logs";
+              $result = mysqli_query($con,$query);
+              if($result) {
+                while($rows = mysqli_fetch_assoc($result)){
+                  $count = $rows['total'];
+                }
+                
+              }
 ?>
 <!doctype html>
 <html lang="en">
@@ -32,53 +33,15 @@ if($result) {
     <!-- Bootstrap CSS -->
     
     <link href="../adminpage/admin_style.css" rel="stylesheet" type="text/css">
-    <title>Vehicle Bookings</title>
+    <title>Test-Ride Clients</title>
   </head>
   <style>
     section{
-      background:url(../background_img/bookings.jpeg);
+      background:url(../background_img/background8.jpg);
       background-repeat: no-repeat;
       background-size: cover;
       width:1268px;
     }
-    .content {
-      border-collapse: collapse;
-      margin : 25px 2px;
-      font-size: 0.9rem;
-      min-width: 600px;
-    }
-
-    .content thead tr{
-      background-color: #f98e1d;
-      color: #ffffff;
-      text-align: left;
-      font-weight: bold;
-    }
-
-    .content th, .table td {
-      padding: 13px 14px ;
-      height: 48px;
-      min-width: 60px;
-    }
-
-    .content tbody tr{
-      border-bottom: 1px solid #f98e1d;
-      
-    }
-
-    .content tbody tr:nth-of-type(even){
-      background-color: lightgray;
-    }
-
-    .content tbody tr:last-of-type {
-      border-bottom: 2px solid #f98e1d;
-    }
-
-    .content td{
-      padding-left: 15px ;
-      height: 15px;
-    }
-    
   </style>
   <body>
     <nav class="designer-slider">
@@ -90,7 +53,7 @@ if($result) {
         <div class="text logo-text">
           <span class="heading"><h1>Welcome,</h1></span>
           <span class="sub-heading"><?php echo $_SESSION['a_name']; ?>
-          </span>
+          </<span>
         </div>
       </div>
     </header> 
@@ -110,14 +73,14 @@ if($result) {
             </a>
           </li>
           <li class="nav-link">
-            <a href="../adminpage/logs.php" style="background-color: #f98e1d; color: white">
+            <a href="../adminpage/logs.php">
               <i class="fa-solid fa-motorcycle icon"></i>
               <span class="text nav-text">Bookings</span>
             </a>
           </li>
           <li class="nav-link">
-            <a href="../adminpage/Testride_users.php">
-              <i class="fa-solid fa-road icon"></i>
+            <a href="../adminpage/Testride_users.php" >
+            <i class="fa-solid fa-road icon"></i>
               <span class="text nav-text">Test-Ride Clients</span>
             </a>
           </li>
@@ -127,6 +90,7 @@ if($result) {
               <span class="text nav-text">Users Info</span>
             </a>
           </li>
+          
           <li class="nav-link">
             <a href="../adminpage/stock_price.php">
             <i class="fa-solid fa-money-bill icon"></i>
@@ -146,6 +110,12 @@ if($result) {
             </a>
           </li>
           <li class="nav-link">
+            <a href="../adminpage/v_logs.php" style="background-color: #f98e1d; color: white">
+            <i class="fa-solid fa-user icon"></i>
+              <span class="text nav-text">Logs</span>
+            </a>
+          </li>
+          <li class="nav-link">
             <a href="../adminpage/logout.php">
             <i class="fa-solid fa-power-off icon"></i>
               <span class="text nav-text">Logout</span>
@@ -155,27 +125,28 @@ if($result) {
       </div>
     </div> 
   </nav>  
-   <section class="home" style="height:120vh;">
-      <div class="text"><h1 style="color:#ffff ;">Manage Bookings</h1></div>
-      <div class="border" style="border: 0.5px solid white;"></div>
+   <section class="home">
+      <div class="text" style="color: white;"><h1>Testride Clients</h1></div>
+      <div class="border" style="border: 0.5px solid white"></div>
       <br>
       <br>
-        <div class="container" style="padding: 45px 23px;width: 1212px;
-    margin-left: 2rem;">
-        <div class="text"><h4 style="color:#f98e1d;margin-top:-40px;margin-left:-3.5rem;">Total Bookings : <?php echo $count; ?></h4></div>
-        <table class="content" style="font-size:12.9px;margin-top:-0.4rem;">
+        <div class="container" style="background: #f2f3f7;
+    box-shadow: 5px 5px 10px #0000;
+    padding: 41px 35px;
+    border-radius: 20px;
+    width: 680px;
+    margin-left: 20rem;
+    align-items: center;
+    font-size: small;">
+        <div class="text"><h4 style="color:#f98e1d;margin-top:-40px;">Logs Generated : <?php echo $count; ?></h4></div>
+        <table class="content">
           <thead>
             <tr>
-              <th scope="col">Booking ID</th>
-              <th scope="col">User ID</th>
-              <th scope="col">Booking Date</th>
-              <th scope="col">Phone</th>
-              <th scope="col">Model</th>
-              <th scope="col">Location</th>
-              <th scope="col">Color</th>
-              <th scope="col">Varient</th>
+              <th scope="col">User_ID</th>
+              <th scope="col">Booking_ID</th>
               <th scope="col">Status</th>
               <th scope="col">Action</th>
+              <th scope="col">Date_Time</th>
             </tr>
           </thead>
           <tbody>
@@ -188,41 +159,21 @@ if($result) {
               if (mysqli_connect_error()) {
                 exit('Error connecting to the database' . mysqli_connect_errno());
               }
-
-              $sql = "SELECT * from vechile_booking";
-              $resultj = mysqli_query($con,$sql);
-              if($resultj){
-                while($row = mysqli_fetch_array($resultj)){
+              $sql = "SELECT * from book_logs";
+              $result = mysqli_query($con,$sql);
+              if($result){
+                while($row = mysqli_fetch_array($result)){
+                  $uid = $row['u_id'];
                   $booking_id = $row['booking_id'];
-                  $u_id = $row['u_id'];
-                  $book_date = $row['book_date'];
-                  $ph_no = $row['ph_no'];
-                  $model = $row['model'];
-                  $location_ = $row['location_'];
-                  $color = $row['color'];
-                  $varient = $row['varient'];
-                  $vechile_id = $row['vechile_id'];
                   $status = $row['status'];
+                  $action = $row['action'];
+                  $d_t = $row['date_time'];
                   echo '<tr>
-                  <td scope="row">'.$booking_id.'</td>
-                  <td>'.$u_id.'</td>
-                  <td>'.$book_date.'</td>
-                  <td>'.$ph_no.'</td>
-                  <td>'.$model.'</td>
-                  <td>'.$location_.'</td>
-                  <td>'.$color.'</td>
-                  <td>'.$varient.'</td>
+                  <td scope="row">'.$uid.'</td>
+                  <td>'.$booking_id.'</td>
                   <td>'.$status.'</td>
-                  <td>
-                    <button name="update" style="background-color: #f98e1d;
-                    color: white;padding: 8px 16px;margin: 8px 0;border: none;cursor: pointer;
-                    border-radius:8px;
-                    text-decoration:none;"><a href="logs_update.php?up_id='.$booking_id.'&vec_id='.$vechile_id.'" style="color:white;text-decoration:none;">Update</a></button>
-                    <button name="delete" style="background-color: #ff0011;
-                    color: white;padding: 8px 16px;margin: 8px 0;border: none;cursor: pointer;
-                    border-radius:8px;
-                    text-decoration:none;"><a href="logs_delete.php?del_id='.$booking_id.'" style="color:white;text-decoration:none;">Delete</a></button>
-                  </td>
+                  <td>'.$action.'</td>
+                  <td>'.$d_t.'</td>
                 </tr>';
                 }
               }
@@ -230,8 +181,7 @@ if($result) {
           </tbody>
         </table>
         </div>
-      </div>
    </section>
-    
+  
   </body>
 </html>

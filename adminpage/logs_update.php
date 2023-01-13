@@ -153,7 +153,7 @@
     $model_ = $_POST['model'];
     $color_ = $_POST['color'];
     $varient_ = $_POST['varient'];
-    //$email_ = $_POST['email_'];
+    $email_ = $_POST['email_'];
     $location_ = $_POST['location_'];
     $status_ = $_POST['status'];
     $delv_date_ = $_POST['delv_date'];
