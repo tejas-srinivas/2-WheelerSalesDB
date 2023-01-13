@@ -70,6 +70,7 @@
           <div class="form-group" style="width:30rem;">
               <label for="model">Model</label>
               <br>
+              <img class="img" src="../userpage/Select.png" id="img" width="350px" height="250px">
               <select id="model" name="model" onchange="dropdownChange(this.id,'color');" required>
                 <option value="<?php echo $model; ?>"><?php echo $model; ?></option>
                 <option value="">------</option>

@@ -98,6 +98,12 @@ $query = "SELECT count(*) AS total from test_ride";
             </a>
           </li>
           <li class="nav-link">
+            <a href="../adminpage/bills.php">
+            <i class="fa-solid fa-money-bill icon"></i>
+              <span class="text nav-text">Bills</span>
+            </a>
+          </li>
+          <li class="nav-link">
             <a href="../adminpage/profile.php">
             <i class="fa-solid fa-user icon"></i>
               <span class="text nav-text">Profile</span>

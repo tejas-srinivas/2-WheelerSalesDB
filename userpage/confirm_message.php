@@ -187,7 +187,8 @@
         $available = $row['available'];
         if($row['available'] == 'Available'){
           if (isset($_POST['submit-vechile-details'])) {
-            $sql ="INSERT INTO vechile_booking(booking_id,u_id,email_,ph_no,vechile_id,model,location_,color,varient,status,book_date) VALUES ('$booking_id','$u_id','$email_','$ph_no','$vechile_id','$model','$location_','$color','$varient','$status','$book_date')";  
+            $sql = "CALL `BOOKING`('$booking_id','$u_id','$email_','$ph_no','$vechile_id','$model','$location_','$color','$varient','$status','$book_date');";
+            //$sql ="INSERT INTO vechile_booking(booking_id,u_id,email_,ph_no,vechile_id,model,location_,color,varient,status,book_date) VALUES ('$booking_id','$u_id','$email_','$ph_no','$vechile_id','$model','$location_','$color','$varient','$status','$book_date')";  
             $result = mysqli_query($con,$sql);  
             if ($result) {
               $query = "SELECT * FROM vechile_booking WHERE booking_id='$booking_id'";

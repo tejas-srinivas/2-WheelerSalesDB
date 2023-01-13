@@ -248,6 +248,12 @@
             </a>
           </li>
           <li class="nav-link">
+            <a href="../adminpage/bills.php">
+            <i class="fa-solid fa-money-bill icon"></i>
+              <span class="text nav-text">Bills</span>
+            </a>
+          </li>
+          <li class="nav-link">
             <a href="../adminpage/profile.php">
             <i class="fa-solid fa-user icon"></i>
               <span class="text nav-text">Profile</span>
@@ -264,7 +270,7 @@
     </div> 
   </nav>  
   
-  <section class="home" style="height:120vh;">
+  <section class="home" style="height:150vh;">
       <div class="text" style="color:white"><h1>Dashboard</h1></div>
       <div class="border" style="border: 0.5px solid white ;"></div>
       <br>

@@ -7,12 +7,6 @@
     $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
 
     $booking_id = $_GET['del_id'];
-    $sql = "SELECT u_id FROM vechile_booking WHERE booking_id='$booking_id";
-    $lock = mysqli_query($con,$sql);
-    if($lock){
-        $row = mysqli_fetch_assoc($lock);
-        $u_id = $row['u_id'];
-    }
 
         $query1 = "DELETE FROM vechile_booking WHERE booking_id = '$booking_id'" ;
         $result1 = mysqli_query($con,$query1);

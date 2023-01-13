@@ -25,15 +25,12 @@ DELIMITER $$
 --
 -- Procedures
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `count_users` ()   BEGIN
-	SELECT COUNT(*) AS Total_users FROM users;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `BOOKING` (IN `bid` VARCHAR(255) CHARSET utf8mb4, IN `uid` VARCHAR(255) CHARSET utf8mb4, IN `email` VARCHAR(255) CHARSET utf8mb4, IN `phno` VARCHAR(255) CHARSET utf8mb4, IN `vid` VARCHAR(255) CHARSET utf8mb4, IN `model` VARCHAR(255) CHARSET utf8mb4, IN `location` VARCHAR(255) CHARSET utf8mb4, IN `color` VARCHAR(255) CHARSET utf8mb4, IN `varient` VARCHAR(255) CHARSET utf8mb4, IN `status` VARCHAR(255) CHARSET utf8mb4, IN `bdate` VARCHAR(255) CHARSET utf8mb4)   BEGIN
+INSERT INTO vechile_booking(booking_id,u_id,email_,ph_no,vechile_id,model,location_,color,varient,status,book_date) VALUES (bid,uid,email,phno,vid,model,location,color,varient,status,bdate);  
 END$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `update_logs` (IN `email` VARCHAR(255), IN `ph_no` VARCHAR(255), IN `vechile_id` VARCHAR(255), IN `model` VARCHAR(255), IN `location` VARCHAR(255), IN `color` VARCHAR(255), IN `varient` VARCHAR(255), IN `booking_id` VARCHAR(255))   BEGIN
-UPDATE `vechile_booking` SET `email_` = 'email', `ph_no` = 'ph_no',`vechile_id` = 'vechile_id',`model`='model',`location_` = 'location' , `color`='color' , `varient`='varient' WHERE `bills`.`booking_id` = 'booking_id';
-
-UPDATE `bills` SET `model`='model',`color`='color', `varient`='varient',`location_` = 'location' WHERE `bills`.`booking_id` = 'booking_id';
-
+CREATE DEFINER=`root`@`localhost` PROCEDURE `EXSHOWROOM` (IN `avail` VARCHAR(255) CHARSET utf8mb4, IN `showroom` VARCHAR(255) CHARSET utf8mb4, IN `vid` VARCHAR(255) CHARSET utf8mb4)   BEGIN
+UPDATE `stock_price` SET  `available` = avail, `ex_showroom` = showroom WHERE `vechile_id` = vid;
 END$$
 
 DELIMITER ;

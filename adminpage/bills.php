@@ -7,22 +7,19 @@
 ?>
 
 <?php
-  
-  $DATABASE_HOST = 'localhost';
-  $DATABASE_USER = 'root';
-  $DATABASE_PASS = '';
-  $DATABASE_NAME = 'wheels&deals';
-  $con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
-  $query = "SELECT count(*) AS total from users";
-                $result = mysqli_query($con,$query);
-                if($result) {
-                  while($rows = mysqli_fetch_assoc($result)){
-                    $count = $rows['total'];
-                  }
-                  
-                }
+$DATABASE_HOST = 'localhost';
+$DATABASE_USER = 'root';
+$DATABASE_PASS = '';
+$DATABASE_NAME = 'wheels&deals';
+$con = mysqli_connect($DATABASE_HOST, $DATABASE_USER, $DATABASE_PASS, $DATABASE_NAME);
+$query = "SELECT count(*) AS total from bills   ";
+$result = mysqli_query($con,$query);
+if($result) {
+  while($rows = mysqli_fetch_assoc($result)){
+  $count = $rows['total'];
+  }
+}
 ?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -35,13 +32,53 @@
     <!-- Bootstrap CSS -->
     
     <link href="../adminpage/admin_style.css" rel="stylesheet" type="text/css">
-    <title>Clients</title>
+    <title>Vehicle Logs</title>
   </head>
   <style>
+    section{
+      background:url(../background_img/bookings.jpeg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      width:1268px;
+    }
+    .content {
+      border-collapse: collapse;
+      margin : 25px 2px;
+      font-size: 0.9rem;
+      min-width: 600px;
+    }
+
+    .content thead tr{
+      background-color: #f98e1d;
+      color: #ffffff;
+      text-align: left;
+      font-weight: bold;
+    }
+
     .content th, .table td {
-    padding: 5px 14px;
-    min-width: 98px;
-}
+      padding: 7px 9px ;
+      height: 48px;
+      min-width: 60px;
+    }
+
+    .content tbody tr{
+      border-bottom: 1px solid #f98e1d;
+      
+    }
+
+    .content tbody tr:nth-of-type(even){
+      background-color: lightgray;
+    }
+
+    .content tbody tr:last-of-type {
+      border-bottom: 2px solid #f98e1d;
+    }
+
+    .content td{
+      padding-left: 15px ;
+      height: 15px;
+    }
+    
   </style>
   <body>
     <nav class="designer-slider">
@@ -53,7 +90,7 @@
         <div class="text logo-text">
           <span class="heading"><h1>Welcome,</h1></span>
           <span class="sub-heading"><?php echo $_SESSION['a_name']; ?>
-          </<span>
+          </span>
         </div>
       </div>
     </header> 
@@ -67,7 +104,7 @@
             </a>
           </li>
         <li class="nav-link">
-            <a href="../adminpage/clients.php" style="background-color: #f98e1d; color: white">
+            <a href="../adminpage/clients.php">
             <i class="fa-solid fa-users icon"></i>
               <span class="text nav-text">Clients</span>
             </a>
@@ -97,7 +134,7 @@
             </a>
           </li>
           <li class="nav-link">
-            <a href="../adminpage/bills.php">
+            <a href="../adminpage/stock_price.php" style="background-color: #f98e1d; color: white">
             <i class="fa-solid fa-money-bill icon"></i>
               <span class="text nav-text">Bills</span>
             </a>
@@ -118,21 +155,29 @@
       </div>
     </div> 
   </nav>  
-  <section class="home" style="background:url(../background_img/client.jpg);height:750px;width:1268px;">
-      <div class="text"><h1>Clients</h1></div>
-      <div class="border"></div>
+   <section class="home" style="height:120vh;">
+      <div class="text"><h1 style="color:#ffff ;">Manage Bills</h1></div>
+      <div class="border" style="border: 0.5px solid white;"></div>
       <br>
-        <div class="container" style="width:1210px;margin-left:2rem;padding:40px 24px;">
-        <div class="text"><h4 style="color:#f98e1d;margin-top:-40px;margin-left:-3.5rem;">Total Users : <?php echo $count; ?></h4></div>
-        <table class="content" style="font-size:small;margin-top:-0.4rem;">
+      <br>
+        <div class="container" style="padding: 45px 23px;width: 1212px;
+    margin-left: 2rem;">
+        <div class="text"><h4 style="color:#f98e1d;margin-top:-40px;margin-left:-3.5rem;">Total Bills : <?php echo $count; ?></h4></div>
+        <table class="content" style="font-size:12.9px;margin-top:-0.4rem;">
           <thead>
             <tr>
-              <th scope="col">User ID</th>
-              <th scope="col">First name</th>
-              <th scope="col">Last name</th>
-              <th scope="col">Email</th>
-              <th scope="col">Username</th>
-              <th scope="col">Password</th>
+              <th scope="col">Booking ID</th>
+              <th scope="col">Delv_Date</th>
+              <th scope="col">Ex-Showroom</th>
+              <th scope="col">Model</th>
+              <th scope="col">Location</th>
+              <th scope="col">Color</th>
+              <th scope="col">Varient</th>
+              <th scope="col">Acc_Price</th>
+              <th scope="col">Road_Tax</th>
+              <th scope="col">Insurance</th>
+              <th scope="col">Tot_Price</th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -145,23 +190,40 @@
               if (mysqli_connect_error()) {
                 exit('Error connecting to the database' . mysqli_connect_errno());
               }
-              $sql = "SELECT * from users";
+
+              $sql = "SELECT * from Bills";
               $resultj = mysqli_query($con,$sql);
               if($resultj){
                 while($row = mysqli_fetch_array($resultj)){
-                  $u_id = $row['u_id'];
-                  $firstname = $row['first_name'];
-                  $lastname = $row['last_name'];
-                  $email = $row['email'];
-                  $username = $row['username'];
-                  $password = $row['password'];
+                  $booking_id = $row['booking_id'];
+                  $delv_date = $row['delv_date'];
+                  $ex_showroom = $row['ex_showroom'];
+                  $model = $row['model'];
+                  $location_ = $row['location_'];
+                  $color = $row['color'];
+                  $varient = $row['varient'];
+                  $accessory_price = $row['accessory_price'];
+                  $road_tax = $row['road_tax'];
+                  $insurance = $row['insurance'];
+                  $total_price = $row['total_price'];
                   echo '<tr>
-                  <td scope="row">'.$u_id.'</td>
-                  <td>'.$firstname.'</td>
-                  <td>'.$lastname.'</td>
-                  <td>'.$email.'</td>
-                  <td>'.$username.'</td>
-                  <td>'.$password.'</td>
+                  <td scope="row">'.$booking_id.'</td>
+                  <td>'.$delv_date.'</td>
+                  <td>₹'.$ex_showroom.'</td>
+                  <td>'.$model.'</td>
+                  <td>'.$location_.'</td>
+                  <td>'.$color.'</td>
+                  <td>'.$varient.'</td>
+                  <td>₹'.$accessory_price.'</td>
+                  <td>₹'.$road_tax.'</td>
+                  <td>₹'.$insurance.'</td>
+                  <td>₹'.$total_price.'</td>
+                  <td>
+                    <button name="delete" style="background-color: #ff0011;
+                    color: white;padding: 8px 16px;margin: 8px 0;border: none;cursor: pointer;
+                    border-radius:8px;
+                    text-decoration:none;"><a href="bills_delete.php?del_id='.$booking_id.'" style="color:white;text-decoration:none;">Delete</a></button>
+                  </td>
                 </tr>';
                 }
               }
@@ -169,6 +231,7 @@
           </tbody>
         </table>
         </div>
+      </div>
    </section>
     
   </body>

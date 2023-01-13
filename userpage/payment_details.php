@@ -78,13 +78,15 @@ if(isset($_POST['pay'])){
 	    $mail->IsHTML(true);
 	    //Authentication
 	    $mail->Username = "wheels.and.deals88@gmail.com";
-		$mail->Password = "qeozihxctftouppg";
+		$mail->Password = "uyetjdumrxcyorbh";
 
 	    //Set Params
 	    $mail->SetFrom("wheels.and.deals88@gmail.com");
 	    $mail->AddAddress($_SESSION['email']);
 	    $mail->Subject = "Booking Confirmation";
-	    $mail->Body = "Your Vehicle booking has been confirmed.<br>Here are your booking details:<br> Boking ID: ".$booking_id."<br>Full Name: ".$firstname.$lastname."<br>Booking Status: ".$b_status."<br>Payment Status: ".$p_status."<br>Delivery Date: ".$delv_date."<br>Vehicles details:
+      $mail->addEmbeddedImage(dirname(__FILE__).'/logo.png','logo');
+	    $mail->Body = "<center><img src='cid:logo' style='width:300px; margin-top: -5px; height:120px;'>
+      <h1 style='color:#000'><b>Payment Receipt</b></h1></center>Your Vehicle booking has been confirmed.<br>Here are your booking details:<br> Boking ID: ".$booking_id."<br>Full Name: ".$firstname.$lastname."<br>Booking Status: ".$b_status."<br>Payment Status: ".$p_status."<br>Delivery Date: ".$delv_date."<br>Vehicles details:
 			<table>
 			<tr>
     <th>Model</th>

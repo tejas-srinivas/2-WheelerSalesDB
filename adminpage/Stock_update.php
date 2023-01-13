@@ -77,7 +77,8 @@
     $vechile_id = $_POST['vechile_id'];
     $available = $_POST['available'];
     $ex_showroom = $_POST['ex_showroom'];
-    $query = "UPDATE `stock_price` SET  `available` = '$available', `ex_showroom` = '$ex_showroom' WHERE `vechile_id` = '$vechile_id'";
+    $query = "CALL `EXSHOWROOM`('$available','$ex_showroom','$vechile_id');";
+    //$query = "UPDATE `stock_price` SET  `available` = '$available', `ex_showroom` = '$ex_showroom' WHERE `vechile_id` = '$vechile_id'";
     $result = mysqli_query($con, $query);
     if ($result) {
       echo "<script>alert('Updated Sucessfully');</script>";
