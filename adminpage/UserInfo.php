@@ -60,7 +60,7 @@
           <li class="nav-link">
             <a href="../adminpage/logs.php">
               <i class="fa-solid fa-motorcycle icon"></i>
-              <span class="text nav-text">Logs</span>
+              <span class="text nav-text">Bookings</span>
             </a>
           </li>
           <li class="nav-link">

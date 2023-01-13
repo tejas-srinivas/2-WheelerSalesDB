@@ -153,24 +153,24 @@
     $model_ = $_POST['model'];
     $color_ = $_POST['color'];
     $varient_ = $_POST['varient'];
-    $email_ = $_POST['email_'];
+    //$email_ = $_POST['email_'];
     $location_ = $_POST['location_'];
     $status_ = $_POST['status'];
     $delv_date_ = $_POST['delv_date'];
 
-    if(isset($_POST['model']))
-      {
-        if($_POST['model'] == 'Activa-6G'){
-          $vechile_id = 1;
-        }
-        elseif($_POST['model'] == 'Access-125'){
-          $vechile_id = 2;
-        }
-        elseif($_POST['model'] == 'Jupiter-125'){
-          $vechile_id = 3;
-        }
-      }
-    $query = "UPDATE `vechile_booking` SET  `email_` = '$email_', `ph_no` = '$ph_no_',`vechile_id` = '$vechile_id',`model`='$model_', `location_` = '$location_' , `color`='$color_' , `varient`='$varient_',`status`='$status_' WHERE `booking_id` = '$booking'";
+    // if(isset($_POST['model']))
+    //   {
+    //     if($_POST['model'] == 'Activa-6G'){
+    //       $vechile_id = 1;
+    //     }
+    //     elseif($_POST['model'] == 'Access-125'){
+    //       $vechile_id = 2;
+    //     }
+    //     elseif($_POST['model'] == 'Jupiter-125'){
+    //       $vechile_id = 3;
+    //     }
+    //   }
+    $query = "UPDATE `vechile_booking` SET  `email_` = '$email_', `ph_no` = '$ph_no_',`model`='$model_', `location_` = '$location_' , `color`='$color_' , `varient`='$varient_',`status`='$status_' WHERE `booking_id` = '$booking'";
     $result = mysqli_query($con,$query);
     if($result){
       $query1 = "UPDATE `bills` SET `delv_date`='$delv_date_',`model`='$model_',`color`='$color_', `varient`='$varient_',`location_` = '$location_' WHERE `booking_id` = '$booking'";
