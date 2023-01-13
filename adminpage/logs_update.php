@@ -170,7 +170,7 @@
     //       $vechile_id = 3;
     //     }
     //   }
-    $query = "UPDATE `vechile_booking` SET  `email_` = '$email_', `ph_no` = '$ph_no_',`model`='$model_', `location_` = '$location_' , `color`='$color_' , `varient`='$varient_',`status`='$status_' WHERE `booking_id` = '$booking'";
+    $query = "UPDATE `vechile_booking` SET `ph_no` = '$ph_no_',`model`='$model_', `location_` = '$location_' , `color`='$color_' , `varient`='$varient_',`status`='$status_' WHERE `booking_id` = '$booking'";
     $result = mysqli_query($con,$query);
     if($result){
       $query1 = "UPDATE `bills` SET `delv_date`='$delv_date_',`model`='$model_',`color`='$color_', `varient`='$varient_',`location_` = '$location_' WHERE `booking_id` = '$booking'";
