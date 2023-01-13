@@ -112,7 +112,7 @@ if($result) {
           <li class="nav-link">
             <a href="../adminpage/logs.php" style="background-color: #f98e1d; color: white">
               <i class="fa-solid fa-motorcycle icon"></i>
-              <span class="text nav-text">Logs</span>
+              <span class="text nav-text">Bookings</span>
             </a>
           </li>
           <li class="nav-link">
