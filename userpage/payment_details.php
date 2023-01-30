@@ -78,12 +78,12 @@ if(isset($_POST['pay'])){
 	    $mail->IsHTML(true);
 	    //Authentication
 
-	    $mail->Username = "wheels.and.deals88@gmail.com";
-		$mail->Password = "uyetjdumrxcyorbh";
+	    $mail->Username = "Enter your Gmail";
+		$mail->Password = "Enter Password";
 
 
 	    //Set Params
-	    $mail->SetFrom("wheels.and.deals88@gmail.com");
+	    $mail->SetFrom("Enter your gmail");
 	    $mail->AddAddress($_SESSION['email']);
 	    $mail->Subject = "Booking Confirmation";
       $mail->addEmbeddedImage(dirname(__FILE__).'/logo.png','logo');
